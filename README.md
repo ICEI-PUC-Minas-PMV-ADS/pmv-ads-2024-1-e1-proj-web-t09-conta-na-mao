@@ -1,25 +1,24 @@
-# Título do Projeto
+Conta na Mão
 
-`CURSO`
+ Análise e Desenvolvimento de Sistemas
 
-`DISCIPLINA`
+Projeto: Desenvolvimento de Aplicação Web Front-End
 
-`SEMESTRE`
+1º Semestre
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Angelo Alvares de Abreu Oliveira
+* Bruno Silvério MAdureira
+* Karina Nunes de Freitas
+* Railanda Silva Leão
+
 
 ## Orientador
 
-* Nome completo do professor
+* Humberto Azevedo Nigiri do Carmo
 
 # Documentação
 
