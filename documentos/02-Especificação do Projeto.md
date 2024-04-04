@@ -2,23 +2,18 @@
 
 ## Perfis de Usuários
 
-[Enumere e faça o detalhamento dos perfis de usuários. Utilize o modelo de tabela abaixo para sintetizá-los.]
+| | Roberto - 22 anos |
+|--------------------|-------|
+| Descrição | Recém-ingressado na vida profissional. |
+| Necessidades | Acesso rápido e fácil às despesas.
+Controle financeiro abrangente, incluindo gerenciamento e categorização de gastos. Recursos de orçamento para evitar gastos excessivos.  |
 
-<table>
-<tbody>
-<tr align=center>
-<th colspan="2">Perfil Nome </th>
-</tr>
-<tr>
-<td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
-</tr>
-<tr>
-<td><b>Necessidades</b></td>
-<td>...</td>
-</tr>
-</tbody>
-</table>
+| | Clara - 33 anos |
+|--------------------|-------|
+| Descrição | Jovem adulto que planeja se casar e busca estabilidade financeira. |
+| Necessidades | Registrar todas as despesas relacionados ao casamento.
+Desenvolver um planejamento financeiro detalhado para o casamento. |
+
 
 
 ## Histórias de Usuários
@@ -52,9 +47,13 @@
 
 ### Requisitos não Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos não-funcionais]
-
 |ID      | Descrição               |Prioridade |
+|--------|-------------------------|----|
+| RNF-01 | O sistema deve ser responsivo | Alta | 
+| RNF-02 | O sistema ficará hospedado no github pages | Alta | 
+| RNF-03 | O sistema deve funcionar preferêncialmente nos navegadores Firefox, Chrome, Brave, Edge, Opera e Safari | Alta | 
+| RNF-04 | As informações fornecidas na plataforma passarão por auditoria humana | Média | 
+
 |--------|-------------------------|----|
 | RNF-01 |  ...                    | ...   | 
 | ...    |  ...                    | ...   | 
