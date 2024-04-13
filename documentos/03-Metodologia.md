@@ -18,8 +18,9 @@ A equipe utiliza o Scrum como base para definição do processo de desenvolvimen
 - Equipe de Design: Karina Freitas.
 
 ### Processo
+Nossa equipe segue uma metodologia ágil de desenvolvimento de software, utilizando a metodologia Scrum para gerenciar o projeto de forma eficiente. Durante o ciclo de desenvolvimento, realizamos reuniões diárias de stand-up para acompanhar o progresso, discutir impedimentos e garantir a colaboração contínua entre os membros da equipe
 
-####
+Nosso quadro Kanban está estruturado da seguinte forma:
 - Backlog: recebe as tarefas a serem trabalhadas e representa o Product Backlog. Todas as atividades identificadas no decorrer do projeto também devem ser incorporadas a esta lista. 
 - To Do: Esta lista representa o Sprint Backlog. Este é o Sprint atual que estamos trabalhando. 
 - Doing: Quando uma tarefa tiver sido iniciada, ela é movida para cá. 
@@ -50,16 +51,13 @@ A equipe utiliza o Scrum como base para definição do processo de desenvolvimen
 </figure> 
   
 ### Ferramentas
-
-[Descreva aqui as ferramentas empregadas no projeto e os ambiente de trabalho utilizados pela  equipe para desenvolvê-lo. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).]
-
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
 | AMBIENTE                            | PLATAFORMA                         | LINK DE ACESSO                         |
 |-------------------------------------|------------------------------------|----------------------------------------|
-| Repositório de código fonte         | GitHub                             | http://....                            |
-| Documentos do projeto               | GitHub                             | http://....                            |
-| Projeto de Interface                | Figma                              | (https://www.figma.com/files/team/1359205780990473554/Conta-na-m%C3%A3o?fuid=1360995305894869996) |
+| Repositório de código fonte         | GitHub                             | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/teams/conta-na-mao |
+| Documentos do projeto               | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/tree/main/documentos |
+| Projeto de Interface                | Figma                              | https://www.figma.com/files/team/1359205780990473554/Conta-na-m%C3%A3o?fuid=1360995305894869996 |
 | Gerenciamento do Projeto            | GitHub Projects                    | http://....                            |
 | Hospedagem                          | GitHub Pages                       | http://....                            |
 
