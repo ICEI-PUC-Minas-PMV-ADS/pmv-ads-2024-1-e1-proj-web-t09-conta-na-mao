@@ -2,11 +2,10 @@
 
 ## Perfis de Usuários
 
-| | Roberto - 22 anos |
+| Roberto - 22 anos |
 |--------------------|-------|
-| Descrição | Recém-ingressado na vida profissional. |
-| Necessidades | Acesso rápido e fácil às despesas.
-Controle financeiro abrangente, incluindo gerenciamento e categorização de gastos. Recursos de orçamento para evitar gastos excessivos.  |
+| Descrição | Recém-ingressado na vida profissional |
+| Necessidades | Acesso rápido e fácil às despesas; Controle financeiro abrangente, incluindo gerenciamento e categorização de gastos; Recursos de orçamento para evitar gastos excessivos.  |
 
 | | Clara - 33 anos |
 |--------------------|-------|
