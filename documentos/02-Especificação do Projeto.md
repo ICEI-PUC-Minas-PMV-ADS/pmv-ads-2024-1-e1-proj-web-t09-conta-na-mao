@@ -38,10 +38,14 @@ Desenvolver um planejamento financeiro detalhado para o casamento. |
 
 [Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
 
-|ID    | Descrição                | Prioridade |
+|ID    | Descrição                        | Prioridade |
 |-------|---------------------------------|----|
-| RF-01 |  ...                    | ...   | 
-|  ...  |  ...                    | ...   |
+| RF-01 | Os usuários devem ter a opção de se cadastrar na plataforma | Alta  | 
+| RF-02 | Os usuários só poderão acessar as informações após efetuarem o login na plataforma | Alta   |
+| RF-03 | Os usuários devem poder armazenar seus cupons ficcais | Alta |
+| RF-04 | Os usuários devem ter a capacidade de categorizar seus cupons conforme desejaram | Média |
+| RF-05 | OS usuários devem ter uma seção dedicada para editar as informações pessoais que inseriram | Média |
+| RF-06 | Os usuários poderão visualizar, ao final de cada mês, onde ocorreram seus maiores gastos | Média |
 
 **Prioridade: Alta / Média / Baixa. 
 
@@ -49,14 +53,9 @@ Desenvolver um planejamento financeiro detalhado para o casamento. |
 
 |ID      | Descrição               |Prioridade |
 |--------|-------------------------|----|
-| RNF-01 | O sistema deve ser responsivo | Alta | 
-| RNF-02 | O sistema ficará hospedado no github pages | Alta | 
+| RNF-01 | O sistema deve ser responsivo, adaptando-se a diferentes dispositivos e tamanho de tela | Alta | 
+| RNF-02 | Todas as entradas de dados do usuário devem ser validadas e filtradas para prevenir injeções de código malicioso, como SQL injection ou cross-site scripting(XSS) | Alta | 
 | RNF-03 | O sistema deve funcionar preferêncialmente nos navegadores Firefox, Chrome, Brave, Edge, Opera e Safari | Alta | 
-| RNF-04 | As informações fornecidas na plataforma passarão por auditoria humana | Média | 
-
-|--------|-------------------------|----|
-| RNF-01 |  ...                    | ...   | 
-| ...    |  ...                    | ...   | 
-
+| RNF-04 | A interface do usuário deve ser intuitiva e fácil de usar, com navegação clara e organizada, de forma que os usuários possam encontrar facilmente o que estão procurando | Média |
 **Prioridade: Alta / Média / Baixa. 
 
