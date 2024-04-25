@@ -2,11 +2,18 @@
 
 Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
 
-[Apresente a estrutura padrão da sua aplicação.]
+As páginas terão como elementos padrões o menu de navegação, header e o footer, além dos elementos de identidade visual citados abaixo:
+- Cores (RBG): #285295, #213453, #f6f9fd, #1e1f24;
+- Font-family: "Poppins", sans-serif;
+- Font-size: 48px, 28px, 18px, 14px;
 
-> **Links Úteis**:
->
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+O código utilizado para a construção dos elementos citados, incluindo a responsividade, pode ser consultado <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/tree/main/codigo-fonte">aqui</a>. As imagens e ícones utilizados no projeto estão disponíveis <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/tree/main/codigo-fonte/src/imagens">aqui</a>.
+
+### Tela inicial
+
+Exibe o funcionamento e os serviços oferecidos pela plataforma.
+
+![Página inicial da versão Desktop da Conta na mão](./img/prototypes/pag-inicial.png)
+<figure> 
+    <figcaption>Figura 1 - Página inicial da versão Desktop
+</figure>
