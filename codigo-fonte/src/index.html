@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="PUC Minas" />
     <meta
       name="keywords"
       content="finanças pessoais, gerenciamento financeiro, controle de gastos, orçamento pessoal, educação financeira, aplicativo financeiro, QR Code, digitalização de gastos, relatórios financeiros, alertas de gastos"
@@ -17,7 +18,7 @@
   </head>
   <body>
     <div class="barra">
-      <div class="barra-navegacao">
+      <header class="barra-navegacao">
         <h2 class="logo">Conta na mão</h2>
         <nav class="nav-links">
           <a href="/">Início</a>
@@ -28,8 +29,8 @@
           <a href="/entrar">Entrar</a>
           <a href="/cadastrar" class="botao-link">Cadastrar</a>
         </nav>
-      </div>
-      <header class="introducao">
+      </header>
+      <main class="introducao">
         <img
           src="./imagens/Revenue-bro.png"
           alt="Figura ilustrativa de um homem sentado em um puff com seu notebook, atrás aparece imagens de finanças."
@@ -39,22 +40,22 @@
           <h1 class="titulo-principal">
             Já pensou em ter o controle na palma da sua mão?
           </h1>
-          <span class="subtitulo-principal">
+          <p class="subtitulo-principal">
             Gerencie suas finanças de forma intuitiva: acompanhe gastos,
             controle orçamento e alcance metas com facilidade, garantindo uma
             vida financeira organizada e tranquila.
-          </span>
+          </p>
           <div class="intro-links">
             <a href="/cadastrar" class="botao-link">Comece agora</a>
             <div class="servico-link">
-              <a href="#servicos" class="subtitulo-principal"
-                >Saiba mais dos serviços</a
-              >
+              <a href="#servicos" class="subtitulo-principal">
+                Saiba mais dos serviços
+              </a>
               <img src="./imagens/arrow-right.png" alt="Seta para a direita" />
             </div>
           </div>
         </div>
-      </header>
+      </main>
     </div>
     <section class="instrucao">
       <div class="passos">
@@ -63,27 +64,27 @@
           <span class="passo-numero">1</span>
           <div class="passo-conteudo">
             <h4 class="passo-titulo">Cadastrar</h4>
-            <span class="passo-subtitulo"
-              >Cadastre-se facilmente para começar a usar.</span
-            >
+            <p class="passo-subtitulo">
+              Cadastre-se facilmente para começar a usar.
+            </p>
           </div>
         </div>
         <div class="passo">
           <span class="passo-numero">2</span>
           <div class="passo-conteudo">
             <h4 class="passo-titulo">Escanear</h4>
-            <span class="passo-subtitulo"
-              >Leia QR Codes para registrar as transações realizadas.</span
-            >
+            <p class="passo-subtitulo">
+              Leia QR Codes para registrar as transações realizadas.
+            </p>
           </div>
         </div>
         <div class="passo">
           <span class="passo-numero">3</span>
           <div class="passo-conteudo">
             <h4 class="passo-titulo">Controlar</h4>
-            <span class="passo-subtitulo"
-              >Gerencie suas finanças com praticidade e eficiência.</span
-            >
+            <p class="passo-subtitulo">
+              Gerencie suas finanças com praticidade e eficiência.
+            </p>
           </div>
         </div>
       </div>
@@ -101,11 +102,11 @@
             <h4 class="servico-titulo">
               Digitalização de Gastos e Redução de Papelada
             </h4>
-            <span class="servico-subtitulo"
-              >Simplifique a gestão financeira ao digitalizar e registrar gastos
+            <p class="servico-subtitulo">
+              Simplifique a gestão financeira ao digitalizar e registrar gastos
               via QR Code, eliminando documentos físicos de forma eficiente e
-              sustentável.</span
-            >
+              sustentável.
+            </p>
           </div>
           <img
             src="./imagens/Transfer-files-bro.png"
@@ -118,10 +119,10 @@
             <h4 class="servico-titulo">
               Análises Detalhadas e Relatórios Personalizados
             </h4>
-            <span class="servico-subtitulo"
-              >Facilite a compreensão de suas finanças com análises detalhadas e
+            <p class="servico-subtitulo">
+              Facilite a compreensão de suas finanças com análises detalhadas e
               relatórios personalizados sobre seus padrões de gastos.
-            </span>
+            </p>
           </div>
           <img
             src="./imagens/Online-report-pana.png"
@@ -132,10 +133,10 @@
         <div class="servico">
           <div class="servico-descricao">
             <h4 class="servico-titulo">Orçamento em Tempo Real</h4>
-            <span class="servico-subtitulo"
-              >Mantenha-se atualizado com seu orçamento em tempo real para
+            <p class="servico-subtitulo">
+              Mantenha-se atualizado com seu orçamento em tempo real para
               ajustes e decisões imediatas.
-            </span>
+            </p>
           </div>
           <img
             src="./imagens/Revenue-pana.png"
@@ -146,10 +147,10 @@
         <div class="servico">
           <div class="servico-descricao">
             <h4 class="servico-titulo">Alertas de Gastos Excedidos</h4>
-            <span class="servico-subtitulo"
-              >Receba alertas automáticos ao ultrapassar limites predefinidos,
+            <p class="servico-subtitulo">
+              Receba alertas automáticos ao ultrapassar limites predefinidos,
               mantendo o controle e evitando excessos.
-            </span>
+            </p>
           </div>
           <img
             src="./imagens/Warning-rafiki.png"
@@ -169,20 +170,19 @@
             class="section-img"
           />
           <div class="sobre-texto">
-            <span
-              >A Conta na Mão cuida da sua estabilidade financeira para que você
+            <p>
+              A Conta na Mão cuida da sua estabilidade financeira para que você
               possa se dedicar ao que realmente importa. Nosso compromisso é
               proporcionar segurança e tranquilidade, garantindo fácil acesso e
               resolução rápida de problemas. Queremos simplificar sua vida,
               liberando tempo precioso para você aproveitar ao máximo os
               momentos com sua família. Estamos aqui para ajudá-lo a construir
               um futuro financeiro sólido, para que você possa focar no que
-              realmente importa: criar memórias duradouras com aqueles que
-              ama.</span
-            >
+              realmente importa: criar memórias duradouras com aqueles que ama.
+            </p>
             <div class="sobre-assinatura">
-              <img src="./imagens/logo.png" alt="" />
-              <span>Com dedicação e compromisso, Equipe Conta na Mão</span>
+              <img src="./imagens/logo.png" alt="Logo da Conta na mão" />
+              <p>Com dedicação e compromisso, Equipe Conta na Mão</p>
             </div>
           </div>
         </div>
@@ -191,11 +191,11 @@
     <footer>
       <div class="footer-conta">
         <h2 class="logo">Conta na mão</h2>
-        <span
-          >Empoderando jovens para poupar e aprender sobre dinheiro. Sua
+        <p>
+          Empoderando jovens para poupar e aprender sobre dinheiro. Sua
           ferramenta essencial para educação financeira e hábitos inteligentes
-          de economia.</span
-        >
+          de economia.
+        </p>
       </div>
       <div class="footer-links">
         <div class="contato">
@@ -205,29 +205,29 @@
         </div>
         <div class="download">
           <h4>Download</h4>
-          <a href="/"
-            ><img src="./imagens/applestore.png" alt="Apple Store"
-          /></a>
-          <a href="/"
-            ><img src="./imagens/googleplay.png" alt="Google Play"
-          /></a>
+          <a href="/">
+            <img src="./imagens/applestore.png" alt="Apple Store" />
+          </a>
+          <a href="/">
+            <img src="./imagens/googleplay.png" alt="Google Play" />
+          </a>
         </div>
         <div class="redes-sociais">
           <h4>Redes Sociais</h4>
           <nav class="redes-links">
-            <a href="/"
-              ><img src="./imagens/Instagram.png" alt="Logo do Instagram"
-            /></a>
-            <a href="/"
-              ><img src="./imagens/Facebook.png" alt="Logo do Facebook"
-            /></a>
-            <a href="/"
-              ><img src="./imagens/Twitter.png" alt="Logo do Twitter"
-            /></a>
+            <a href="/">
+              <img src="./imagens/Instagram.png" alt="Logo do Instagram" />
+            </a>
+            <a href="/">
+              <img src="./imagens/Facebook.png" alt="Logo do Facebook" />
+            </a>
+            <a href="/">
+              <img src="./imagens/Twitter.png" alt="Logo do Twitter" />
+            </a>
           </nav>
         </div>
       </div>
     </footer>
-    <span class="direitos">Todos os direitos reservados. 2024</span>
+    <p class="direitos">Todos os direitos reservados. 2024</p>
   </body>
 </html>
