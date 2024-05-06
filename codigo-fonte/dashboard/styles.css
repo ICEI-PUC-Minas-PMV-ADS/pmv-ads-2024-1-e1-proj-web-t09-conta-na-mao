@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #1e1f24;
+}
+
+.menu {
+  background-color: #f6f9fd;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.logo {
+  color: #213453;
+  padding: 45px 0 0 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1e1f24;
+  font-size: 14px;
+}
+
+.categorias-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.categoria-link {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 10px 25px;
+}
+
+.categoria-link:hover {
+  background-color: #e8eef7;
+}
+
+.icon-menu {
+  width: 24px;
+}
+
+.titulo-pagina {
+  font-size: 20px;
+  display: block;
+  margin-block-start: 0.23em;
+  margin-block-end: 0.23em;
+}
+
+.visao-geral {
+  display: flex;
+  flex-direction: column;
+  padding: 45px 60px;
+  gap: 30px;
+}
+
+.info-geral {
+  display: flex;
+  justify-content: space-between;
+  width: 850px;
+  height: 80px;
+  border-radius: 16px;
+  border: 2px solid #285295;
+  padding: 12px 24px;
+  color: #213453;
+}
+
+.info p {
+  font-size: 14px;
+}
+
+.info h4 {
+  font-size: 20px;
+}
+
+.variaveis {
+  display: flex;
+  gap: 40px;
+}
+
+.result {
+  padding: 0 10px 0 100px;
+}
+
+.disponivel {
+  color: #216c5a;
+}
+
+.botao-link {
+  cursor: pointer;
+  background-color: #285295;
+  color: #f6f9fd;
+  padding: 6px 20px;
+  text-align: center;
+  width: fit-content;
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0px 6px 8px -3px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.botao-link:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.botao-secundario {
+  cursor: pointer;
+  color: #285295;
+  padding: 4px 16px;
+  text-align: center;
+  width: fit-content;
+  border: 1px solid #285295;
+  border-radius: 32px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.botao-secundario:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.link-vazio {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-controle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-controle {
+  display: flex;
+  gap: 20px;
+}
+
+.filtro-categoria {
+  display: flex;
+  align-items: center;
+}
+
+.filtro-categoria label {
+  margin-right: 10px;
+  color: #285295;
+  font-size: 14px;
+}
+
+.filtro {
+  width: 170px;
+  color: #285295;
+  padding: 6px 10px;
+  border-radius: 32px;
+  border: 1px solid #aebed7;
+}
+
+.variavel {
+  margin-top: 20px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 16px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.variavel:hover {
+  transform: scale(1.001);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.itens-categorias {
+  display: flex;
+  gap: 10px;
+}
+
+.item-nome {
+  display: inline-block;
+  width: 100px;
+}
+
+.item-categoria {
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.item-valor {
+  color: #213453;
+}
+
+.renda {
+  background-color: #d7ffd0;
+}
+
+.gasto-fixo {
+  background-color: #fff2d0;
+}
+
+.casa {
+  background-color: #d0e9ff;
+}
+
+.mercado {
+  background-color: #ffd3d0;
+}
+
+.compras {
+  background-color: #dcd0ff;
+}
