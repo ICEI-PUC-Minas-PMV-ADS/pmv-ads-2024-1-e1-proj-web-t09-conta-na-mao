@@ -48,6 +48,7 @@ body {
   align-items: center;
   gap: 17px;
   padding: 10px 25px;
+  text-align: left;
 }
 
 .categoria-link:hover {
@@ -68,15 +69,19 @@ body {
 .visao-geral {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   padding: 45px 60px;
   gap: 30px;
+  width: 1000px;
+  min-width: 485px;
 }
 
 .info-geral {
   display: flex;
   justify-content: space-between;
-  width: 850px;
-  height: 80px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 40px;
   border-radius: 16px;
   border: 2px solid #285295;
   padding: 12px 24px;
@@ -91,13 +96,8 @@ body {
   font-size: 20px;
 }
 
-.variaveis {
-  display: flex;
-  gap: 40px;
-}
-
 .result {
-  padding: 0 10px 0 100px;
+  margin: 0 0 0 auto;
 }
 
 .disponivel {
@@ -136,6 +136,7 @@ body {
   font-size: 14px;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: 0.2s ease-in-out;
 }
 
@@ -153,10 +154,13 @@ body {
 .menu-controle {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
-.add-controle {
+.add-controle,
+.add-controle-botoes {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -235,4 +239,148 @@ body {
 
 .compras {
   background-color: #dcd0ff;
+}
+
+.icon-menu-principal {
+  display: none;
+}
+
+@media (max-width: 1130px) {
+  .add-controle .botao-qr {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .add-controle-botoes {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu-controle {
+    justify-content: center;
+  }
+
+  .botao-secundario {
+    width: 45%;
+  }
+}
+
+@media (max-width: 1020px) {
+  .result {
+    margin: 0;
+  }
+
+  .info-geral {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 985px) {
+  .menu-controle {
+    flex-direction: column;
+  }
+
+  .filtro-categoria {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .add-controle,
+  .add-controle-botoes,
+  .filtro {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .botao-secundario {
+    width: 45%;
+  }
+}
+
+@media (max-width: 730px) {
+  body {
+    flex-direction: column;
+  }
+
+  .categorias-menu {
+    display: none;
+  }
+
+  .logo {
+    padding: 24px;
+  }
+
+  .visao-geral {
+    width: fit-content;
+  }
+
+  .menu {
+    flex-direction: row;
+    padding-left: 60px;
+    width: 100vw;
+  }
+
+  .icon-menu-principal {
+    display: block;
+    width: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    width: max-content;
+    font-size: 20px;
+  }
+
+  .visao-geral,
+  .menu {
+    padding-left: 30px;
+  }
+
+  .visao-geral {
+    min-width: 405px;
+  }
+
+  .titulo-pagina {
+    font-size: 18px;
+  }
+
+  .item-valor,
+  .item-nome,
+  .botao-secundario {
+    font-size: 12px;
+  }
+
+  .item-nome {
+    width: 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .visao-geral {
+    min-width: 395px;
+  }
+}
+
+@media (max-width: 320px) {
+  .visao-geral,
+  .menu {
+    padding-left: 10px;
+  }
+
+  .visao-geral {
+    min-width: 370px;
+  }
+
+  .info-geral {
+    gap: 10px;
+  }
+
+  .info-geral p,
+  .info-geral h4 {
+    font-size: 16px;
+  }
 }
