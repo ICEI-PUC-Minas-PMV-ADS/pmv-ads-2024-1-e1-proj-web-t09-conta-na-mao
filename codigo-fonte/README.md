@@ -19,3 +19,10 @@ O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um
 #### Adicionado
 
 - Home Page: Arquivo HTML, CSS e imagens.
+
+### [0.1.1] - 06/05/2024
+
+#### Adicionado
+
+- Dashboard Page: Arquivo HTML, CSS e imagens.
+- Login Page: Arquivo HTML.
