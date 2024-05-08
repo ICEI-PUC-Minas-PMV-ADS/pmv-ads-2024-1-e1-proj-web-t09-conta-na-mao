@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="cadastro.css">
+</head>
+<body>
+    <section class="container centralizado">
+        <div class="centralizar">
+            <div class="primeiroCadastro">
+                <div class="input-group">
+                    <div class="inputbox">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" class="inputUser" required>
+                    </div>
+                    <div class="inputbox">
+                        <label for="confEmail">Repetir e-mail</label>
+                        <input type="email" name="confEmail" id="confEmail" class="inputUser" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="inputbox">
+                        <label for="senha">Crie uma senha</label>
+                        <input type="password" name="senha" id="senha" class="inputUser" required>
+                    </div>
+                    <div class="inputbox">
+                        <label for="confSenha">Repetir e-mail</label>
+                        <input type="password" name="confSenha" id="confSenha" class="inputUser" required>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="cadastPrefe">
+                <fieldset>
+                    <legend><strong>Dados Cadastrais</strong></legend>
+                    <br>
+                    <div class="inputbox">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" class="inputUser" required>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" name="sobrenome" id="sobrenome" class="inputUser" required>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <label for="genero">Gênero</label>
+                        <select id="genero" name="genero">
+                            <option value="Selecione">Selecione</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <label for="cpf">CPF</label>
+                        <input type="number" name="cpf" id="cpf" class="inputUser" required>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <label for="tel">Celular</label>
+                        <input type="tel" name="telefone" id="tel" class="inputUser" required>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <label for="data_nascimento">Data de Nascimento</label>
+                        <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <input type="checkbox" name="ofertas" id="ofertas" class="inputUser">
+                        <label for="ofertas">Receber ofertas e novidades por e-mail</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend><strong>Área de Interesse</strong></legend>
+                    <div class="inputbox">
+                        <label for="objPrincipal">Qual é o seu objetivo principal ao usar nosso site?</label>
+                        <select id="genero" name="genero">
+                            <option value="Selecione">Selecione</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="inputbox">
+                        <label for="frequenciaDeUso">Com que frequência pretende usar o site para monitorar suas finanças?</label>
+                        <select id="genero" name="genero">
+                            <option value="Selecione">Selecione</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="inputbox">
+                        <label for="indicacaoFinanceira">Você gostaria de receber dicas de educação financeira através do nosso site?</label>
+                        <select id="genero" name="genero">
+                            <option value="Selecione">Selecione</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
