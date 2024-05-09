@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="PUC Minas" />
+    <meta
+      name="keywords"
+      content="finanças pessoais, gerenciamento financeiro, controle de gastos, orçamento pessoal, educação financeira, aplicativo financeiro, QR Code, digitalização de gastos, relatórios financeiros, alertas de gastos"
+    />
+    <meta
+      name="description"
+      content="Acompanhe gastos, controle orçamento e alcance metas com facilidade, garantindo uma vida financeira organizada e tranquila."
+    />
+    <title>Dashboard - Conta na mão</title>
+    <link rel="icon" href="../imagens/logo.png" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="menu">
+      <img
+        src="../imagens/menu-principal.svg"
+        alt="Ícone de menu com fundo azul"
+        class="icon-menu-principal"
+      />
+      <h2 class="logo">Conta na mão</h2>
+      <div class="categorias-menu">
+        <button class="categoria-link">
+          <img
+            src="../imagens/menu.svg"
+            alt="Ícone de menu"
+            class="icon-menu"
+          />
+          Visão geral
+        </button>
+        <button class="categoria-link">
+          <img
+            src="../imagens/qr-code.svg"
+            alt="Ícone de QR Code"
+            class="icon-menu"
+          />
+          Ler QR Code
+        </button>
+        <button class="categoria-link">
+          <img
+            src="../imagens/list.svg"
+            alt="Ícone de lista"
+            class="icon-menu"
+          />
+          Categorias
+        </button>
+        <button class="categoria-link">
+          <img
+            src="../imagens/paper.svg"
+            alt="Ícone de papel"
+            class="icon-menu"
+          />
+          Notas armazenadas
+        </button>
+        <button class="categoria-link">
+          <img
+            src="../imagens/user.svg"
+            alt="Ícone de usuário"
+            class="icon-menu"
+          />
+          Usuário
+        </button>
+        <button class="categoria-link">
+          <img
+            src="../imagens/logout.svg"
+            alt="Ícone de sair"
+            class="icon-menu"
+          />
+          Sair
+        </button>
+      </div>
+    </nav>
+    <section class="visao-geral">
+      <span class="titulo-pagina">Ler QR Code</span>
+      <div class="info-qr-code">
+        <div class="add-qr-code">
+        <div class="add-qr-code-camera">
+          <img src="../imagens/camera.svg" alt="Ícone de câmera" />
+          <a href="/">Abrir câmera</a>
+        </div>
+        <input type="file" name="imagem" id="image">
+        </div>
+        <div class="add-qr-code">
+          <div class="label-filtro">
+            <img src="../imagens/paper2.svg" alt="Ícone de papel" style="padding: 0 3px;"/>
+            <label>Conta:<label>
+          </div>
+          <div class="input-filtro">
+            <input type="text" name="conta" id="conta" class="filtro" />
+          </div>
+        </div>
+        <div class="add-qr-code">
+          <div class="label-filtro">
+          <img src="../imagens/list2.svg" alt="Ícone de lista" />
+          <label>Categoria:<label>
+          </div>
+          <div class="input-filtro">
+            <input type="text" name="categoria" id="categoria" class="filtro" />
+          </div>
+        </div>
+        <div class="add-qr-code">
+          <div class="label-filtro">
+          <img src="../imagens/money.svg" alt="Ícone de dinheiro" />
+          <label>Confirmar valor:<label>
+          </div>
+          <div class="input-filtro">
+            <input type="number" name="valor" id="valor" class="filtro" />
+          </div>
+        </div>
+        <div class="add-qr-code-botao">
+          <a class="botao-link botao-qr" href="/">Enviar</a>
+          <a href="/codigo-fonte/dashboard/index.html">Voltar</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
