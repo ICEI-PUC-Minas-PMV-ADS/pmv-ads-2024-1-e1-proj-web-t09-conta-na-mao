@@ -1,0 +1,53 @@
+.menu {
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #285295;
+}
+
+.visao-geral {
+  width: auto;
+}
+
+.info-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.usuario-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.usuario-nome {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #285295;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.usuario-dados span {
+  color: #285295;
+}
+
+.usario-botoes {
+  display: flex;
+  gap: 35px;
+  margin-top: 20px;
+}
+
+@media (max-width: 730px) {
+  .menu {
+    height: auto;
+  }
+  .botao-secundario {
+    width: max-content;
+  }
+}
