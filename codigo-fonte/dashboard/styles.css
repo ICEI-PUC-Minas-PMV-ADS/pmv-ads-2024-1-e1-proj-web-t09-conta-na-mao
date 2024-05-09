@@ -13,6 +13,10 @@ body {
   color: #1e1f24;
 }
 
+a {
+  text-decoration: none;
+}
+
 .menu {
   background-color: #f6f9fd;
   min-width: 280px;
