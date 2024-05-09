@@ -1,0 +1,9 @@
+.menu {
+  height: 100vh;
+}
+
+@media (max-width: 730px) {
+  .menu {
+    height: auto;
+  }
+}
