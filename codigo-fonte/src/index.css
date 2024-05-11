@@ -249,6 +249,10 @@ footer {
   margin: 18px;
 }
 
+.icon-menu-principal {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .servico {
     width: 470px;
@@ -278,8 +282,18 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .icon-menu-principal {
+    display: block;
+    width: 40px;
+  }
+
   .barra-navegacao {
     justify-content: center;
+    gap: 40px;
+  }
+
+  .barra-navegacao nav {
+    display: none;
   }
 
   .titulo-principal {
