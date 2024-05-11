@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -12,10 +13,10 @@
       name="description"
       content="Acompanhe gastos, controle orçamento e alcance metas com facilidade, garantindo uma vida financeira organizada e tranquila."
     />
-    <title>Dashboard - Conta na mão</title>
-    <link rel="icon" href="../imagens/logo.png" />
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Usuário - Dashboard - Conta na mão</title>
+    <link rel="icon" href="../../imagens/logo.png" />
+    <link rel="stylesheet" href="../dashboard.css" />
+    <link rel="stylesheet" href="./usuario.css" />
   </head>
   <body>
     <nav class="menu">
@@ -32,7 +33,7 @@
             alt="Ícone de menu"
             class="icon-menu"
           />
-          Visão geral
+          <a href="../dashboard.html">Visão geral</a>
         </button>
         <button class="categoria-link">
           <img
@@ -40,7 +41,7 @@
             alt="Ícone de QR Code"
             class="icon-menu"
           />
-          Ler QR Code
+          <a href="../ler-qr-code/lerQrCode.html">Ler QR Code</a>
         </button>
         <button class="categoria-link">
           <img
@@ -48,7 +49,7 @@
             alt="Ícone de lista"
             class="icon-menu"
           />
-          Categorias
+          <a href="../categorias/categorias.html">Categorias</a>
         </button>
         <button class="categoria-link">
           <img
@@ -56,7 +57,9 @@
             alt="Ícone de papel"
             class="icon-menu"
           />
-          Notas armazenadas
+          <a href="../notas-armazenadas/notasArmazenadas.html">
+            Notas armazenadas
+          </a>
         </button>
         <button class="categoria-link">
           <img
@@ -64,7 +67,7 @@
             alt="Ícone de usuário"
             class="icon-menu"
           />
-          Usuário
+          <a href="./usuario.html">Usuário</a>
         </button>
         <button class="categoria-link">
           <img
@@ -72,45 +75,27 @@
             alt="Ícone de sair"
             class="icon-menu"
           />
-          Sair
+          <a href="../index.html">Sair</a>
         </button>
       </div>
     </nav>
     <section class="visao-geral">
-      <span class="titulo-pagina">Adicionar gasto</span>
-      <form class="info-gasto">
-        <div class="add-gasto">
-          <div class="label-filtro">
-            <img src="../imagens/paper2.svg" alt="Ícone de papel" style="padding: 0 3px;"/>
-            <label for="gasto">Gasto:<label>
-          </div>
-          <div class="input-filtro">
-            <input type="text" name="gasto" id="gasto" class="filtro" />
-          </div>
+      <span class="titulo-pagina">Usuário</span>
+      <div class="info-usuario">
+        <div class="usuario-nome">
+          <img src="../imagens/big-user.svg" alt="Ícone de usuário">
+          <span>Nome Sobrenome</span>
         </div>
-        <div class="add-gasto">
-          <div class="label-filtro">
-          <img src="../imagens/list2.svg" alt="Ícone de lista" />
-          <label for="categoria">Categoria:<label>
-          </div>
-          <div class="input-filtro">
-            <input type="text" name="categoria" id="categoria" class="filtro" />
-          </div>
+        <div class="usuario-dados">
+          <p>Email: <span>exemplo@email.com</span></p>
+          <p>CPF: <span>XXX.XXX.XXX-00</span></p>
+          <p>Contato: <span>(00) 91234-5678</span></p>
+          <p>Nascimento: <span>01/01/2024</span></p>
         </div>
-        <div class="add-gasto">
-          <div class="label-filtro">
-          <img src="../imagens/money.svg" alt="Ícone de dinheiro" />
-          <label for="valor">Valor:<label>
-          </div>
-          <div class="input-filtro">
-            <input type="number" name="valor" id="valor" class="filtro" />
-          </div>
+        <div class="usario-botoes">
+          <a class="botao-secundario">Mudar senha</a>
+          <a class="botao-secundario">Excluir usuário</a>
         </div>
-        <div class="add-gasto-botao">
-          <input type="button" class="botao-link botao-envio" value="Enviar">
-          <a href="/codigo-fonte/dashboard/index.html">Voltar</a>
-        </div>
-      </form>
     </section>
   </body>
 </html>

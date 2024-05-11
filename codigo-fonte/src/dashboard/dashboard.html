@@ -14,7 +14,7 @@
     />
     <title>Dashboard - Conta na mão</title>
     <link rel="icon" href="./imagens/logo.png" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
   </head>
   <body>
     <nav class="menu">
@@ -27,7 +27,7 @@
       <div class="categorias-menu">
         <button class="categoria-link">
           <img src="./imagens/menu.svg" alt="Ícone de menu" class="icon-menu" />
-          Visão geral
+          <a href="./dashboard.html">Visão geral</a>
         </button>
         <button class="categoria-link">
           <img
@@ -35,7 +35,7 @@
             alt="Ícone de QR Code"
             class="icon-menu"
           />
-          Ler QR Code
+          <a href="./ler-qr-code/lerQrCode.html">Ler QR Code</a>
         </button>
         <button class="categoria-link">
           <img
@@ -43,7 +43,7 @@
             alt="Ícone de lista"
             class="icon-menu"
           />
-          Categorias
+          <a href="./categorias/categorias.html">Categorias</a>
         </button>
         <button class="categoria-link">
           <img
@@ -51,7 +51,9 @@
             alt="Ícone de papel"
             class="icon-menu"
           />
-          Notas armazenadas
+          <a href="./notas-armazenadas/notasArmazenadas.html">
+            Notas armazenadas
+          </a>
         </button>
         <button class="categoria-link">
           <img
@@ -59,7 +61,7 @@
             alt="Ícone de usuário"
             class="icon-menu"
           />
-          Usuário
+          <a href="./usuario/usuario.html">Usuário</a>
         </button>
         <button class="categoria-link">
           <img
@@ -67,7 +69,7 @@
             alt="Ícone de sair"
             class="icon-menu"
           />
-          Sair
+          <a href="../index.html">Sair</a>
         </button>
       </div>
     </nav>
@@ -93,20 +95,18 @@
       </div>
       <nav class="menu-controle">
         <div class="add-controle">
-          <a
-            class="botao-link botao-qr"
-            href="/codigo-fonte/dashboard/ler-qr-code/index.html"
+          <a class="botao-link botao-qr" href="./ler-qr-code/lerQrCode.html"
             >Ler QR Code</a
           >
           <div class="add-controle-botoes">
             <a
               class="botao-secundario"
-              href="/codigo-fonte/dashboard/adicionar-renda/index.html"
+              href="./adicionar-renda/adicionarRenda.html"
               >Adicionar renda</a
             >
             <a
               class="botao-secundario"
-              href="/codigo-fonte/dashboard/adicionar-gasto/index.html"
+              href="./adicionar-gasto/adicionarGasto.html"
               >Adicionar gasto</a
             >
           </div>
