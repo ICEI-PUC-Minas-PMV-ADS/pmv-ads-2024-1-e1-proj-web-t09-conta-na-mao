@@ -192,11 +192,10 @@ footer {
 
 a,
 a:hover {
-  text-decoration: none;
   color: #1e1f24;
 }
 
 .enviar a,
 .enviar a:hover {
-  color: #ffffffff;
+  color: #ffffff;
 }
