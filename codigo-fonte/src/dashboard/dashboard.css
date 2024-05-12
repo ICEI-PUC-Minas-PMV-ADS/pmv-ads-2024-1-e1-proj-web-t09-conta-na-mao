@@ -59,6 +59,11 @@ a {
   background-color: #e8eef7;
 }
 
+.categoria-link a,
+.categoria-link a:hover {
+  color: #1e1f24;
+}
+
 .icon-menu {
   width: 24px;
 }

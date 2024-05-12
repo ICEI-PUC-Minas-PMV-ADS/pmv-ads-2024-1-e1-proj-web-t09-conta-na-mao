@@ -17,3 +17,12 @@ Exibe o funcionamento e os serviços oferecidos pela plataforma.
 <figure> 
     <figcaption>Figura 1 - Página inicial da versão Desktop
 </figure>
+
+### Tela Dashboard
+
+Exibe a visão geral das contas fornecidas e cadastradas pelo usuário.
+
+![Página dashboard da versão Desktop da Conta na mão](./img/prototypes/visao-geral.png)
+<figure> 
+    <figcaption>Figura 1 - Página dashboard da versão Desktop
+</figure>

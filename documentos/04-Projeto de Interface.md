@@ -38,12 +38,11 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 4 - Protótipo da versão Mobile
 </figure>
 
-<hr>
+## Versão Desktop
 
-### Versão Desktop
+### Página inicial
 
-- Página inicial
-  A tela inicial apresenta banners, cards e imagens ilustrativas que direcionam o cliente para a página de login ou cadastro, caso seja novo usuário.
+A tela inicial apresenta banners, cards e imagens ilustrativas que direcionam o cliente para a página de login ou cadastro, caso seja novo usuário.
 
 ![Protótipo da página inicial da versão Desktop da Conta na mão](./img/prototypes/pag-inicial.png)
 
@@ -51,8 +50,9 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 5 - Protótipo da página inicial da versão Desktop
 </figure>
 
-- Página de cadastro
-  A tela de cadastro possui formulário para inserir diversos dados pessoais e área de interesse do usuário.
+### Página de cadastro
+
+A tela de cadastro possui formulário para inserir diversos dados pessoais e área de interesse do usuário.
 
 ![Protótipo da página de cadastro da versão Desktop da Conta na mão](./img/prototypes/cadastroo.png)
 
@@ -60,8 +60,9 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 6 - Protótipo da página cadastro da versão Desktop
 </figure>
 
-- Página de login
-  A tela de login apresenta campos para inserir e-mail e senha do usuário já cadastrado.
+### Página de login
+
+A tela de login apresenta campos para inserir e-mail e senha do usuário já cadastrado.
 
 ![Protótipo da página de login da versão Desktop da Conta na mão](./img/prototypes/login.png)
 
@@ -69,7 +70,7 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 7 - Protótipo da página login da versão Desktop
 </figure>
  
- - Página de Visão geral
+### Página de Visão geral
  A tela de visão geral apresenta todas as contas inseridas do usuário, com atualização em tempo real de seu saldo.
  
 ![Protótipo da página de visão geral da versão Desktop da Conta na mão](./img/prototypes/visao-geral.png)
@@ -78,8 +79,9 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 8 - Protótipo da página visão geral da versão Desktop
 </figure>
 
-- Página de Ler QR Code
-  A tela de ler QR Code apresenta um breve formulário de inserção do cadastro da nota física, nome da conta, categoria e confirmação do valor.
+### Página de Ler QR Code
+
+A tela de ler QR Code apresenta um breve formulário de inserção do cadastro da nota física, nome da conta, categoria e confirmação do valor.
 
 ![Protótipo da página de ler QR Code da versão Desktop da Conta na mão](./img/prototypes/ler-qr-code.png)
 
@@ -87,8 +89,9 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 9 - Protótipo da página Ler QR Code da versão Desktop
 </figure>
 
-- Página de Adicionar renda
-  A tela de adicionar renda apresenta um breve formulário de inserção de renda, categoria e valor.
+### Página de Adicionar renda
+
+A tela de adicionar renda apresenta um breve formulário de inserção de renda, categoria e valor.
 
 ![Protótipo da página de adicionar renda da versão Desktop da Conta na mão](./img/prototypes/add-renda.png)
 
@@ -96,8 +99,9 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 10 - Protótipo da página adicionar renda da versão Desktop
 </figure>
 
-- Página de Adicionar gasto
-  A tela de adicionar gasto apresenta um breve formulário de inserção de gasto, categoria e valor.
+### Página de Adicionar gasto
+
+A tela de adicionar gasto apresenta um breve formulário de inserção de gasto, categoria e valor.
 
 ![Protótipo da página de adicionar gasto da versão Desktop da Conta na mão](./img/prototypes/add-gasto.png)
 
@@ -105,20 +109,32 @@ Apresentação geral do fluxo de telas.
     <figcaption>Figura 11 - Protótipo da página adicionar gasto da versão Desktop
 </figure>
 
-- Página de Usuário
-  A tela de usuário apresenta uma breve informação da conta do usuário logada, possibilitando a troca de senha ou exclusão de usuário.
+### Página de Categorias
+
+A tela de categorias apresenta um breve formulário com filtro, adição e subtração de categorias..
+
+![Protótipo da página de categorias da versão Desktop da Conta na mão](./img/prototypes/categorias.png)
+
+<figure> 
+    <figcaption>Figura 12 - Protótipo da página categorias da versão Desktop
+</figure>
+
+### Página de Usuário
+
+A tela de usuário apresenta uma breve informação da conta do usuário logada, possibilitando a troca de senha ou exclusão de usuário.
 
 ![Protótipo da página de usuário da versão Desktop da Conta na mão](./img/prototypes/usuario.png)
 
 <figure> 
-    <figcaption>Figura 12 - Protótipo da página usuário da versão Desktop
+    <figcaption>Figura 13 - Protótipo da página usuário da versão Desktop
 </figure>
 
-- Página de Notas
-  A tela de notas apresenta um breve resumo de todas as notas cadastradas, possibilitando a filtragem por categorias delas.
+### Página de Notas
+
+A tela de notas apresenta um breve resumo de todas as notas cadastradas, possibilitando a filtragem por categorias delas.
 
 ![Protótipo da página de notas da versão Desktop da Conta na mão](./img/prototypes/notas.png)
 
 <figure> 
-    <figcaption>Figura 13 - Protótipo da página de notas da versão Desktop
+    <figcaption>Figura 14 - Protótipo da página de notas da versão Desktop
 </figure>
