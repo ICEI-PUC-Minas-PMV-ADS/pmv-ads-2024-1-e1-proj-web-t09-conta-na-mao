@@ -1,191 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 html {
-    font-family: Poppins, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #1E1F24;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #1e1f24;
 }
 main {
-    padding: 2rem;
+  padding: 2rem;
 }
 .menu {
-    background: #F6F9FD;
-    width: 100%;
+  background: #f6f9fd;
+  width: 100%;
 }
 
 nav {
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 ul {
-    list-style: none;
+  list-style: none;
 }
 .logo {
-    font-weight: 700px;
-    font-size: 2rem;
-    line-height: 48px;
-    color: #213453;
+  font-weight: 700px;
+  font-size: 2rem;
+  line-height: 48px;
+  color: #213453;
 }
 .menuopcions {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
 }
 
 .option {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
 }
-.hero{
-    width: 100%;
-    background: #F6F9FD;
-    border-radius: 16px;
-    align-items: center;
+.hero {
+  width: 100%;
+  background: #f6f9fd;
+  border-radius: 16px;
+  align-items: center;
 }
 
 .inputUser {
-    border-radius: 0.5rem;
-    max-width: 260px;
-    height: 1.5rem;
-    border-color: #88A9DC;
+  border-radius: 0.5rem;
+  max-width: 260px;
+  height: 1.5rem;
+  border-color: #88a9dc;
 }
 .primeiraparte {
-    display: flex;
-    gap: 1rem;
-    padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
 }
 
 .teste {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.5rem;
 }
 .inputbox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 .segundaparte {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
 }
 .teste2 {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.5rem;
 }
 .questionario {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
 }
 .selectOption {
-    border-radius: 0.5rem;
-    width: 10.9rem;
-    height: 1.5rem;
-    border-color: #88A9DC;
+  border-radius: 0.5rem;
+  width: 10.9rem;
+  height: 1.5rem;
+  border-color: #88a9dc;
 }
 #data_nascimento {
-    width: 10.9rem;
+  width: 10.9rem;
 }
 .ofertas {
-    font-size: 11px;
-    line-height: 15px;
+  font-size: 11px;
+  line-height: 15px;
 }
 #ofertas {
-    width: 11px;
-    height: 11px;
-    border: 1px;
+  width: 11px;
+  height: 11px;
+  border: 1px;
 }
 .description {
-    font-size: 18px;
-    line-height: 27px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 0rem 4rem;
-    gap: 10rem;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0rem 4rem;
+  gap: 10rem;
 }
 .button {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
 }
 
 .enviar {
-     /* Resetando estilos padrão */
-     border: none;
-     padding: 0.5em 1em;
-     font-size: inherit;
-     background-color: transparent;
-     color: inherit;
-     cursor: pointer;
-     /* Adicionando estilos personalizados */
-     background-color: #285295;
-     color: #FFFFFF;
-     border-radius: 32px;
-     width: 134px;
+  /* Resetando estilos padrão */
+  border: none;
+  padding: 0.5em 1em;
+  font-size: inherit;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  /* Adicionando estilos personalizados */
+  background-color: #285295;
+  color: #ffffff;
+  border-radius: 32px;
+  width: 134px;
 }
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 6rem;
-    padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+  padding: 2rem;
 }
 .sobre {
-   display: flex;
-   flex-direction: column;
-   font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
 }
 .suporte {
-    font-size: 12px;
+  font-size: 12px;
 }
 .imgdownload {
-    max-width: 15%;
-    align-items: flex-start;
+  max-width: 15%;
+  align-items: flex-start;
 }
 .imgdownload > figure > img {
-    width: 100px;
-    border-radius: 0.5rem;
+  width: 100px;
+  border-radius: 0.5rem;
 }
 .socialmidia {
-    display: flex;
-    max-width: 10vh;
-    gap: 0.5rem;
+  display: flex;
+  max-width: 10vh;
+  gap: 0.5rem;
 }
 .socialmidia > figure > img {
-    width: 30px;
-    border-radius: 1rem;
+  width: 30px;
+  border-radius: 1rem;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #1e1f24;
+}
+
+.enviar a,
+.enviar a:hover {
+  color: #ffffffff;
 }

@@ -1,144 +1,227 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
-    <link rel="stylesheet" type="text/css" href="cadastro.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="./cadastro.css" />
+  </head>
+  <body>
     <header class="menu">
-        <nav>
-            <h2 class="logo">Conta na mão</h2>
-            <ul class="menuopcions">
-                <li><a>Início</a></li>
-                <li><a>Serviços</a></li>
-                <li><a>Sobre</a></li>
-            </ul>
-            <ul class="option">
-                <li><a>Entrar</a></li>
-                <button class="enviar">Cadastrar</button>
-            </ul>
-        </nav>
+      <nav>
+        <h2 class="logo">Conta na mão</h2>
+        <ul class="menuopcions">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../index.html#servicos">Serviços</a></li>
+          <li><a href="../index.html#sobre">Sobre</a></li>
+        </ul>
+        <ul class="option">
+          <li><a href="../login/login.html">Entrar</a></li>
+          <button class="enviar">
+            <a href="../cadastro/cadastro.html">Cadastrar</a>
+          </button>
+        </ul>
+      </nav>
     </header>
     <main>
-        <h2>Área de Cadastro</h2>
-        <section class="hero">
-            <section class="primeiraparte">
-                <div class="teste">
-                    <label for="email">E-mail </label>
-                    <label for="confEmail">Repetir e-mail</label>
-                </div>
-                <div class="inputbox">
-                    <input type="email" name="email" id="email" class="inputUser" required>
-                    <input type="email" name="confEmail" id="confEmail" class="inputUser" required>                                               
-                </div>
-                <div class="teste">
-                    <label for="senha">Crie uma senha</label>
-                    <label for="confSenha">Repetir senha</label>
-                </div>
-                <div class="inputbox">
-                    <input type="password" name="senha" id="senha" class="inputUser" required>
-                    <input type="password" name="confSenha" id="confSenha" class="inputUser" required>
-                </div>
-            </section>
-            <section>
-                <div class="description">
-                    <span><strong>Dados Cadastrais</strong></span>
-                    <span><strong>Área de Interesse</strong></span>              
-                </div>
-            </section>
-            <section class="segundaparte">            
-                <div class="teste2">
-                    <label for="nome">Nome</label>
-                    <label for="sobrenome">Sobrenome</label>
-                    <label for="genero">Gênero</label>
-                    <label for="cpf">CPF</label>
-                    <label for="tel">Celular</label>
-                    <label for="data_nascimento">Nascimento</label>         
-                </div>
-                <div class="inputbox">
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
-                    <input type="text" name="sobrenome" id="sobrenome" class="inputUser" required>
-                    <select id="genero" name="genero" class="selectOption">
-                        <option value="Selecione">Selecione</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                    <input type="number" name="cpf" id="cpf" class="inputUser" required>
-                    <input type="tel" name="telefone" id="tel" class="inputUser" required>
-                    <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
-                    <div class="ofertas">
-                        <input type="checkbox" name="ofertas" id="ofertas">
-                        <label for="ofertas">Receber ofertas e novidades por e-mail</label>
-                    </div>
-                </div>
-                <div class="questionario">
-                    <div class="questionario">
-                        <label for="objPrincipal">Qual é o seu objetivo principal ao usar nosso site?</label>
-                        <select id="genero" name="genero" class="selectOption">
-                            <option value="Selecione">Selecione</option>
-                            <option value="option1">Economizar dinheiro</option>
-                            <option value="option2">Estabelecer metas financeiras</option>
-                            <option value="option3">Melhorar a gestão financeira pessoal</option>
-                            <option value="option4">Alcançar a independência financeira</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </div>
-                    <div class="questionario">
-                        <label for="frequenciaDeUso">Com que frequência pretende usar o site<br>para monitorar suas finanças?</label>
-                        <select id="genero" name="genero" class="selectOption">
-                            <option value="Selecione">Selecione</option>
-                            <option value="alta">Alta</option>
-                            <option value="medio">Médio</option>
-                            <option value="baixo">Baixa</option>
-                            <option value="outro">Não sei responder</option>
-                        </select>
-                    </div>
-                    <div class="questionario">
-                        <label for="indicacaoFinanceira">Você gostaria de receber dicas de educação financeira<br>através do nosso site?</label>
-                        <select id="genero" name="genero" class="selectOption">
-                            <option value="Selecione">Selecione</option>
-                            <option value="sim">SIM</option>
-                            <option value="nao">NÃO</option>
-                        </select>
-                    </div>
-                </div>
-            </section>
-            <div class="button">
-                <button class="enviar">Enviar</button>
+      <h2>Área de Cadastro</h2>
+      <section class="hero">
+        <section class="primeiraparte">
+          <div class="teste">
+            <label for="email">E-mail </label>
+            <label for="confEmail">Repetir e-mail</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="inputUser"
+              required
+            />
+            <input
+              type="email"
+              name="confEmail"
+              id="confEmail"
+              class="inputUser"
+              required
+            />
+          </div>
+          <div class="teste">
+            <label for="senha">Crie uma senha</label>
+            <label for="confSenha">Repetir senha</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="password"
+              name="senha"
+              id="senha"
+              class="inputUser"
+              required
+            />
+            <input
+              type="password"
+              name="confSenha"
+              id="confSenha"
+              class="inputUser"
+              required
+            />
+          </div>
+        </section>
+        <section>
+          <div class="description">
+            <span><strong>Dados Cadastrais</strong></span>
+            <span><strong>Área de Interesse</strong></span>
+          </div>
+        </section>
+        <section class="segundaparte">
+          <div class="teste2">
+            <label for="nome">Nome</label>
+            <label for="sobrenome">Sobrenome</label>
+            <label for="genero">Gênero</label>
+            <label for="cpf">CPF</label>
+            <label for="tel">Celular</label>
+            <label for="data_nascimento">Nascimento</label>
+          </div>
+          <div class="inputbox">
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              class="inputUser"
+              required
+            />
+            <input
+              type="text"
+              name="sobrenome"
+              id="sobrenome"
+              class="inputUser"
+              required
+            />
+            <select id="genero" name="genero" class="selectOption">
+              <option value="Selecione">Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Outro</option>
+            </select>
+            <input
+              type="number"
+              name="cpf"
+              id="cpf"
+              class="inputUser"
+              required
+            />
+            <input
+              type="tel"
+              name="telefone"
+              id="tel"
+              class="inputUser"
+              required
+            />
+            <input
+              type="date"
+              name="data_nascimento"
+              id="data_nascimento"
+              class="inputUser"
+              required
+            />
+            <div class="ofertas">
+              <input type="checkbox" name="ofertas" id="ofertas" />
+              <label for="ofertas"
+                >Receber ofertas e novidades por e-mail</label
+              >
             </div>
-        </section>        
+          </div>
+          <div class="questionario">
+            <div class="questionario">
+              <label for="objPrincipal"
+                >Qual é o seu objetivo principal ao usar nosso site?</label
+              >
+              <select id="genero" name="genero" class="selectOption">
+                <option value="Selecione">Selecione</option>
+                <option value="option1">Economizar dinheiro</option>
+                <option value="option2">Estabelecer metas financeiras</option>
+                <option value="option3">
+                  Melhorar a gestão financeira pessoal
+                </option>
+                <option value="option4">
+                  Alcançar a independência financeira
+                </option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="questionario">
+              <label for="frequenciaDeUso"
+                >Com que frequência pretende usar o site<br />para monitorar
+                suas finanças?</label
+              >
+              <select id="genero" name="genero" class="selectOption">
+                <option value="Selecione">Selecione</option>
+                <option value="alta">Alta</option>
+                <option value="medio">Médio</option>
+                <option value="baixo">Baixa</option>
+                <option value="outro">Não sei responder</option>
+              </select>
+            </div>
+            <div class="questionario">
+              <label for="indicacaoFinanceira"
+                >Você gostaria de receber dicas de educação financeira<br />através
+                do nosso site?</label
+              >
+              <select id="genero" name="genero" class="selectOption">
+                <option value="Selecione">Selecione</option>
+                <option value="sim">SIM</option>
+                <option value="nao">NÃO</option>
+              </select>
+            </div>
+          </div>
+        </section>
+        <div class="button">
+          <button class="enviar">Enviar</button>
+        </div>
+      </section>
     </main>
     <footer>
-        <div class="sobre">
-            <span class="logo"><strong>Conta na mão</strong></span>
-            <p>Empoderando jovens para poupar e aprender<br>
-            sobre dinheiro. Sua ferramenta essencial para<br>
-            educação financeira e hábitos inteligentes<br> economia.</p>
+      <div class="sobre">
+        <span class="logo"><strong>Conta na mão</strong></span>
+        <p>
+          Empoderando jovens para poupar e aprender<br />
+          sobre dinheiro. Sua ferramenta essencial para<br />
+          educação financeira e hábitos inteligentes<br />
+          economia.
+        </p>
+      </div>
+      <div>
+        <h5><strong>Contato</strong></h5>
+        <ul class="suporte">
+          <li><a>Ajuda/FAQ</a></li>
+          <li><a>Atendimento</a></li>
+        </ul>
+      </div>
+      <div class="imgdownload">
+        <h5><strong>Download</strong></h5>
+        <figure>
+          <img src="./imag/apple.svg" alt="imagem do logo da apple" />
+        </figure>
+        <figure>
+          <img src="./imag/android.svg" alt="imagem do logo do android" />
+        </figure>
+      </div>
+      <div>
+        <h5><strong>Redes Sociais</strong></h5>
+        <div class="socialmidia">
+          <figure>
+            <img src="./imag/instagram.svg" alt="imagem do logo do instagram" />
+          </figure>
+          <figure>
+            <img src="./imag/facebook.svg" alt="imagem do logo do facebook" />
+          </figure>
+          <figure>
+            <img src="./imag/twitter.svg" alt="imagem do logo do twitter" />
+          </figure>
         </div>
-        <div>
-            <h5><strong>Contato</strong></h5>
-            <ul class="suporte">
-                <li><a>Ajuda/FAQ</a></li>
-                <li><a>Atendimento</a></li>
-            </ul>
-        </div>
-        <div class="imgdownload">
-            <h5><strong>Download</strong></h5>
-            <figure><img src="/codigo-fonte/src/cadastro/imag/apple.svg" alt="imagem do logo da apple"></figure>
-            <figure><img src="/codigo-fonte/src/cadastro/imag/android.svg" alt="imagem do logo do android"></figure>
-        </div>
-        <div>
-            <h5><strong>Redes Sociais</strong></h5>
-            <div class="socialmidia">
-                <figure><img src="/codigo-fonte/src/cadastro/imag/instagram.svg" alt="imagem do logo do instagram"></figure>
-                <figure><img src="/codigo-fonte/src/cadastro/imag/facebook.svg" alt="imagem do logo do facebook"></figure>
-                <figure><img src="/codigo-fonte/src/cadastro/imag/twitter.svg" alt="imagem do logo do twitter"></figure>
-            </div>
-        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
