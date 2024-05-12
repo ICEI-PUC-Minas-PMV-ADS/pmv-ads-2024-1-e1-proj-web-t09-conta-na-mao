@@ -62,7 +62,7 @@ Railan Leão
 
 #### Instruções de acesso
 
-Abra um navegador de Internet e informe a seguinte URL: https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/codigo-fonte/src/index.html
+Abra um navegador de Internet e informe a seguinte URL: https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/codigo-fonte/src/login/login.html
 
 Ao clicar em Entrar no canto superior direito da tela, terá acesso a página de login.
 
