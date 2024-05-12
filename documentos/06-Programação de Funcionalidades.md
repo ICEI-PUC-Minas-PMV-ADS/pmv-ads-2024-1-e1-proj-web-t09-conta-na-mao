@@ -27,7 +27,7 @@ Pré-requisitos: <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024
 
 #### Instruções de acesso
 
-Abra um navegador de Internet e informe a seguinte URL: https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/codigo-fonte/src/index.html
+Abra um navegador de Internet e informe a seguinte URL: https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/codigo-fonte/src/cadastro/cadastro.html
 
 Ao clicar em “Cadastrar” no canto superior direito da tela, terá acesso a página de cadastro.
 
