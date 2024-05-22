@@ -155,3 +155,9 @@ a:hover {
 .enviar a:hover {
   color: #ffffffff;
 }
+
+a{
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
