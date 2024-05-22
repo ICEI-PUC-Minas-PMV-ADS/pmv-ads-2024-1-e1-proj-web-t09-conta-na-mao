@@ -11,6 +11,7 @@ body {
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   color: #1e1f24;
+  position: relative;
 }
 
 a {
@@ -113,6 +114,10 @@ a {
   color: #216c5a;
 }
 
+.indisponivel {
+  color: #6c2121;
+}
+
 .botao-link {
   cursor: pointer;
   background-color: #285295;
@@ -187,7 +192,7 @@ a {
 .filtro {
   width: 170px;
   color: #285295;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 32px;
   border: 1px solid #aebed7;
 }
@@ -252,6 +257,43 @@ a {
 
 .icon-menu-principal {
   display: none;
+}
+
+#mensagemEnvio {
+  display: flex;
+  justify-content: center;
+}
+
+#mensagemEnvio span {
+  position: absolute;
+  bottom: 20px;
+  font-size: 14px;
+  color: #285295;
+  border: 1px solid #285295;
+  border-radius: 16px;
+  padding: 10px 20px;
+  margin: 20px;
+  animation: subirMensagem 0.5s, descerMensagem 0.5s 3s forwards;
+}
+
+@keyframes subirMensagem {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes descerMensagem {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
 
 @media (max-width: 1130px) {
@@ -324,6 +366,8 @@ a {
 
   .visao-geral {
     width: fit-content;
+    margin: auto;
+    padding: auto;
   }
 
   .menu {

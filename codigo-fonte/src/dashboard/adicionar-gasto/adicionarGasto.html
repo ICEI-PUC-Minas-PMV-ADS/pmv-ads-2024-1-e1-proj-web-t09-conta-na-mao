@@ -16,6 +16,7 @@
     <link rel="icon" href="../../imagens/logo.png" />
     <link rel="stylesheet" href="../dashboard.css" />
     <link rel="stylesheet" href="./adicionarGasto.css" />
+    <script src="./adicionarGasto.js" defer></script>
   </head>
   <body>
     <nav class="menu">
@@ -92,8 +93,8 @@
         </div>
         <div class="add-gasto">
           <div class="label-filtro">
-          <img src="../imagens/list2.svg" alt="Ícone de lista" />
-          <label for="categoria">Categoria:<label>
+            <img src="../imagens/list2.svg" alt="Ícone de lista" />
+            <label for="categoria">Categoria:<label>
           </div>
           <div class="input-filtro">
             <input type="text" name="categoria" id="categoria" class="filtro" />
@@ -101,18 +102,19 @@
         </div>
         <div class="add-gasto">
           <div class="label-filtro">
-          <img src="../imagens/money.svg" alt="Ícone de dinheiro" />
-          <label for="valor">Valor:<label>
+            <img src="../imagens/money.svg" alt="Ícone de dinheiro" />
+            <label for="valor">Valor:<label>
           </div>
           <div class="input-filtro">
             <input type="number" name="valor" id="valor" class="filtro" />
           </div>
         </div>
         <div class="add-gasto-botao">
-          <input type="button" class="botao-link botao-envio" value="Enviar">
+          <input type="button" class="botao-link botao-envio" value="Enviar" onclick="adicionarGasto()">
           <a href="../dashboard.html">Voltar</a>
         </div>
       </form>
+      <div id="mensagemEnvio"></div>
     </section>
   </body>
 </html>

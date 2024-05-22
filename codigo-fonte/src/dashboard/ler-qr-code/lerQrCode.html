@@ -16,6 +16,7 @@
     <link rel="icon" href="../../imagens/logo.png" />
     <link rel="stylesheet" href="../dashboard.css" />
     <link rel="stylesheet" href="./lerQrCode.css" />
+    <script src="./lerQrCode.js" defer></script>
   </head>
   <body>
     <nav class="menu">
@@ -116,10 +117,11 @@
           </div>
         </div>
         <div class="add-qr-code-botao">
-          <a class="botao-link botao-qr" href="/">Enviar</a>
+          <a class="botao-link botao-qr" onclick="adicionarQrCode()">Enviar</a>
           <a href="../dashboard.html">Voltar</a>
         </div>
       </div>
+      <div id="mensagemEnvio"></div>
     </section>
   </body>
 </html>

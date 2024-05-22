@@ -15,6 +15,7 @@
     <title>Dashboard - Conta na mão</title>
     <link rel="icon" href="./imagens/logo.png" />
     <link rel="stylesheet" href="./dashboard.css" />
+    <script src="./dashboard.js" defer></script>
   </head>
   <body>
     <nav class="menu">
@@ -76,21 +77,25 @@
     <section class="visao-geral">
       <span class="titulo-pagina">Visão geral</span>
       <div class="info-geral">
-        <div class="info">
+        <div class="info" id="rendas">
           <p>Total de rendas:</p>
-          <h4>R$ 2.574,60</h4>
+          <!-- <h4>R$ 2.574,60</h4> -->
+          <h4></h4>
         </div>
-        <div class="info">
+        <div class="info" id="gastos">
           <p>Total de gastos:</p>
-          <h4>R$ 1.824,36</h4>
+          <!-- <h4>R$ 1.824,36</h4> -->
+          <h4></h4>
         </div>
-        <div class="info">
+        <div class="info" id="investimentos">
           <p>Investimentos:</p>
-          <h4>R$ 500,00</h4>
+          <!-- <h4>R$ 500,00</h4> -->
+          <h4></h4>
         </div>
-        <div class="info result">
+        <div class="info result" id="total">
           <p>Disponível:</p>
-          <h4 class="disponivel">R$ 250,24</h4>
+          <!-- <h4 class="disponivel">R$ 250,24</h4> -->
+          <h4></h4>
         </div>
       </div>
       <nav class="menu-controle">
@@ -120,7 +125,7 @@
         </div>
       </nav>
       <div class="itens-variaveis">
-        <div class="variavel">
+        <!-- <div class="variavel">
           <div class="itens-categorias">
             <img src="./imagens/arrow-up.svg" alt="Seta para cima" />
             <span class="item-nome">Salário</span>
@@ -167,7 +172,7 @@
             <span class="item-categoria compras">Compras</span>
           </div>
           <span class="item-valor">- R$ 197,96</span>
-        </div>
+        </div> -->
       </div>
     </section>
   </body>

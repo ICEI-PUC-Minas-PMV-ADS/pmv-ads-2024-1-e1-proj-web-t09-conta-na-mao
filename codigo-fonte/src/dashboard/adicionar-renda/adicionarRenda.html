@@ -16,6 +16,7 @@
     <link rel="icon" href="../../imagens/logo.png" />
     <link rel="stylesheet" href="../dashboard.css" />
     <link rel="stylesheet" href="./adicionarRenda.css" />
+    <script src="./adicionarRenda.js" defer></script>
   </head>
   <body>
     <nav class="menu">
@@ -105,14 +106,16 @@
           <label for="valor">Valor:<label>
           </div>
           <div class="input-filtro">
-            <input type="number" name="valor" id="valor" class="filtro" />
+            <!-- <input type="number" name="valor" id="valor" class="filtro" /> -->
+            <input type="text" name="valor" id="valor" class="filtro" />
           </div>
         </div>
         <div class="add-renda-botao">
-          <input type="button" class="botao-link botao-envio" value="Enviar">
+          <input type="button" class="botao-link botao-envio" value="Enviar" onclick="adicionarRenda()">
           <a href="../dashboard.html">Voltar</a>
         </div>
       </form>
+      <div id="mensagemEnvio"></div>
     </section>
   </body>
 </html>
