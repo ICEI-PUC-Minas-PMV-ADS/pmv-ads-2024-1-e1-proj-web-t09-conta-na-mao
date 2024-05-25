@@ -1,6 +1,5 @@
 const cadastrarUsuario = () => {
   try {
-    const id = Math.floor(Math.random() * 1000);
     const email = document.getElementById("email").value;
     const confEmail = document.getElementById("confEmail").value;
     const senha = document.getElementById("senha").value;
@@ -37,9 +36,7 @@ const cadastrarUsuario = () => {
     if (!verificarEmail(email, confEmail)) return;
     if (!verificarSenha(senha, confSenha)) return;
 
-    let contas = JSON.parse(localStorage.getItem("contaUsuario")) || [];
-    let novaConta = {
-      id,
+    let novoUsuario = {
       email,
       senha,
       nome,
@@ -53,11 +50,7 @@ const cadastrarUsuario = () => {
       frequenciaDeUso,
       indicacaoFinanceira,
     };
-
-    contas.push(novaConta);
-    localStorage.setItem("contaUsuario", JSON.stringify(contas));
-
-    alert("Usuário cadastrado com sucesso!");
+    postUsuario(novoUsuario);
   } catch (error) {
     console.error("Erro ao cadastrar usuário:", error);
   }
@@ -117,4 +110,20 @@ const verificarTodosCamposPreenchidos = (
     return false;
   }
   return true;
+};
+
+const postUsuario = (novoUsuario) => {
+  fetch("http://localhost:3000/usuarios", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(novoUsuario),
+  })
+    .then((resposta) => resposta.json())
+    .then((dados) => {
+      localStorage.setItem("usuarioLogado", JSON.stringify(dados));
+      window.location.href = "../cadastro/cadastro.html";
+    })
+    .catch((erro) => console.error("Erro: ", erro));
 };
