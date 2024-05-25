@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
     <link rel="stylesheet" type="text/css" href="./cadastro.css" />
+    <script src="./cadastro.js"></script>
   </head>
   <body>
     <header class="menu">
@@ -77,12 +78,12 @@
         </section>
         <section class="segundaparte">
           <div class="teste2">
-            <label for="nome">Nome</label>
-            <label for="sobrenome">Sobrenome</label>
-            <label for="genero">Gênero</label>
-            <label for="cpf">CPF</label>
-            <label for="tel">Celular</label>
-            <label for="data_nascimento">Nascimento</label>
+            <label for="nome" id="nome">Nome</label>
+            <label for="sobrenome" id="sobrenome">Sobrenome</label>
+            <label for="genero" id="genero">Gênero</label>
+            <label for="cpf" id="cpf">CPF</label>
+            <label for="tel" id="telefone">Celular</label>
+            <label for="data_nascimento" id="dataNascimento">Nascimento</label>
           </div>
           <div class="inputbox">
             <input
@@ -138,7 +139,11 @@
               <label for="objPrincipal"
                 >Qual é o seu objetivo principal ao usar nosso site?</label
               >
-              <select id="genero" name="genero" class="selectOption">
+              <select
+                id="objPrincipal"
+                name="objPrincipal"
+                class="selectOption"
+              >
                 <option value="Selecione">Selecione</option>
                 <option value="option1">Economizar dinheiro</option>
                 <option value="option2">Estabelecer metas financeiras</option>
@@ -156,7 +161,11 @@
                 >Com que frequência pretende usar o site<br />para monitorar
                 suas finanças?</label
               >
-              <select id="genero" name="genero" class="selectOption">
+              <select
+                id="frequenciaDeUso"
+                name="frequenciaDeUso"
+                class="selectOption"
+              >
                 <option value="Selecione">Selecione</option>
                 <option value="alta">Alta</option>
                 <option value="medio">Médio</option>
@@ -169,7 +178,11 @@
                 >Você gostaria de receber dicas de educação financeira<br />através
                 do nosso site?</label
               >
-              <select id="genero" name="genero" class="selectOption">
+              <select
+                id="indicacaoFinanceira"
+                name="indicacaoFinanceira"
+                class="selectOption"
+              >
                 <option value="Selecione">Selecione</option>
                 <option value="sim">SIM</option>
                 <option value="nao">NÃO</option>
@@ -178,7 +191,7 @@
           </div>
         </section>
         <div class="button">
-          <button class="enviar">Enviar</button>
+          <button class="enviar" onclick="cadastrarUsuario()">Enviar</button>
         </div>
       </section>
     </main>
