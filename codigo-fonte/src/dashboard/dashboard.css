@@ -375,6 +375,7 @@ a {
     flex-direction: row;
     padding-left: 60px;
     width: 100vw;
+    height: auto;
   }
 
   .icon-menu-principal {
