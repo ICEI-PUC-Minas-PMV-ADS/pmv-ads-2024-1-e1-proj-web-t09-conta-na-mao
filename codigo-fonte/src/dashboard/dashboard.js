@@ -162,3 +162,55 @@ const atualizarSaldoTotal = () => {
 
 gerarRelatorio();
 atualizarSaldoTotal();
+
+// FILTRO
+
+const filtrarCategoriaBotao = document.querySelector("#filtrarCategoria");
+const filtro = document.querySelector(".filtro");
+const semResultado = document.querySelector(".sem-resultado");
+
+const filtrarCategoria = (categoria) => {
+  const variaveis = document.querySelectorAll(".variavel");
+  let categoriaEncontrada = false;
+
+  if (categoria === "" || categoria === "Todos") {
+    variaveis.forEach((variavel) => {
+      variavel.style.display = "flex";
+    });
+    return true;
+  }
+
+  variaveis.forEach((variavel) => {
+    const itemCategoria = variavel.querySelector(".item-categoria").textContent;
+
+    if (categoria === itemCategoria) {
+      variavel.style.display = "flex";
+      categoriaEncontrada = true;
+    } else {
+      variavel.style.display = "none";
+    }
+  });
+
+  return categoriaEncontrada;
+};
+
+const exibirMensagemErro = (categoria) => {
+  semResultado.style.display = "block";
+  semResultado.innerText = `Não há itens para a categoria ${categoria}`;
+
+  categoriaEncontrada = false;
+};
+
+const verificarCategoria = (event) => {
+  event.preventDefault();
+  const categoria = filtro.value.trim();
+  const categoriaEncontrada = filtrarCategoria(categoria);
+
+  if (!categoriaEncontrada) {
+    exibirMensagemErro(categoria);
+  } else {
+    semResultado.style.display = "none";
+  }
+};
+
+filtrarCategoriaBotao.addEventListener("click", verificarCategoria);
