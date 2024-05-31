@@ -1,5 +1,3 @@
-let listaDeContas = [];
-
 const adicionarGasto = () => {
   let nomeGasto = document.getElementById("gasto").value;
   let categoriaGasto = document.getElementById("categoria").value;
@@ -16,8 +14,8 @@ const adicionarGasto = () => {
       valorGasto,
       tipo,
     };
-    listaDeContas.push(novoGasto);
     adicionarListaDeGastos(novoGasto);
+    postGasto(novoGasto);
 
     mensagemEnvio.innerHTML = "<span>Conta adicionada com sucesso!</span>";
   } else {
@@ -45,4 +43,23 @@ const adicionarListaDeGastos = (novoGasto) => {
 
   listaDeGastos.gastos.push(novoGasto);
   localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
+};
+
+// Método para postar no banco de dados
+// O banco de dados está sendo atualizado
+// porém a página recarrega e estamos perdendo os dados no localStorage
+
+const postGasto = (novoGasto) => {
+  fetch("http://localhost:3000/listaDeGastos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(novoGasto),
+  })
+    .then((resposta) => resposta.json())
+    .then((dados) => {
+      localStorage.setItem("listaDeGastos", JSON.stringify(dados));
+    })
+    .catch((erro) => console.error("Erro: ", erro));
 };
