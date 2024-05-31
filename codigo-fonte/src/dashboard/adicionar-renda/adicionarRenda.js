@@ -4,13 +4,21 @@ const adicionarRenda = () => {
   let nomeRenda = document.getElementById("renda").value;
   let categoriaRenda = document.getElementById("categoria").value;
   let valorRenda = document.getElementById("valor").value;
+  let tipo = categoriaRenda.toLowerCase().replace(" ", "-");
 
   let verificarCadastro = nomeRenda && categoriaRenda && valorRenda;
   let mensagemEnvio = document.getElementById("mensagemEnvio");
 
   if (verificarCadastro) {
     valorRenda = parseFloat(valorRenda.replace("R$ ", "").replace(",", "."));
-    listaDeContas.push({ nomeRenda, categoriaRenda, valorRenda });
+    let novaRenda = {
+      nomeRenda,
+      categoriaRenda,
+      valorRenda,
+      tipo,
+    };
+    listaDeContas.push(novaRenda);
+    adicionarListaDeRendas(novaRenda);
 
     mensagemEnvio.innerHTML = "<span>Renda adicionada com sucesso!</span>";
   } else {
@@ -33,3 +41,11 @@ const tratarValorInput = () => {
 };
 
 tratarValorInput();
+
+const adicionarListaDeRendas = (novaRenda) => {
+  const listaDeRendasLocalStorage = localStorage.getItem("listaDeRendas");
+  const listaDeRendas = JSON.parse(listaDeRendasLocalStorage);
+
+  listaDeRendas.rendas.push(novaRenda);
+  localStorage.setItem("listaDeRendas", JSON.stringify(listaDeRendas));
+};
