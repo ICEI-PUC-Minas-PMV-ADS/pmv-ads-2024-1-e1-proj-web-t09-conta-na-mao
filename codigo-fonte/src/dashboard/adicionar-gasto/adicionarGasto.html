@@ -84,8 +84,12 @@
       <form class="info-gasto">
         <div class="add-gasto">
           <div class="label-filtro">
-            <img src="../imagens/paper2.svg" alt="Ícone de papel" style="padding: 0 3px;"/>
-            <label for="gasto">Gasto:<label>
+            <img
+              src="../imagens/paper2.svg"
+              alt="Ícone de papel"
+              style="padding: 0 3px"
+            />
+            <label for="gasto">Gasto:</label>
           </div>
           <div class="input-filtro">
             <input type="text" name="gasto" id="gasto" class="filtro" />
@@ -94,7 +98,7 @@
         <div class="add-gasto">
           <div class="label-filtro">
             <img src="../imagens/list2.svg" alt="Ícone de lista" />
-            <label for="categoria">Categoria:<label>
+            <label for="categoria">Categoria:</label>
           </div>
           <div class="input-filtro">
             <input type="text" name="categoria" id="categoria" class="filtro" />
@@ -103,14 +107,19 @@
         <div class="add-gasto">
           <div class="label-filtro">
             <img src="../imagens/money.svg" alt="Ícone de dinheiro" />
-            <label for="valor">Valor:<label>
+            <label for="valor">Valor:</label>
           </div>
           <div class="input-filtro">
             <input type="number" name="valor" id="valor" class="filtro" />
           </div>
         </div>
         <div class="add-gasto-botao">
-          <input type="button" class="botao-link botao-envio" value="Enviar" onclick="adicionarGasto()">
+          <input
+            type="button"
+            class="botao-link botao-envio"
+            value="Enviar"
+            onclick="adicionarGasto()"
+          />
           <a href="../dashboard.html">Voltar</a>
         </div>
       </form>
