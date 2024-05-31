@@ -21,6 +21,7 @@ a {
 .menu {
   background-color: #f6f9fd;
   min-width: 280px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 60px;
