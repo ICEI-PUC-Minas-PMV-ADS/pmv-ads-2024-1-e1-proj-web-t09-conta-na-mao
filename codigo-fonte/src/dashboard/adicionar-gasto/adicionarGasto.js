@@ -26,6 +26,19 @@ const adicionarGasto = () => {
   }
 };
 
+const tratarValorInput = () => {
+  let input = document.getElementById("valor");
+
+  input.addEventListener("focus", () => {
+    if (input.value === "" || input.value === "R$ ") {
+      input.value = "R$ ";
+    } else {
+      let valor = parseFloat(input.value.replace("R$ ", ""));
+      input.value = "R$ " + valor.toFixed(2).replace(".", ",");
+    }
+  });
+};
+
 const adicionarListaDeGastos = (novoGasto) => {
   const listaDeGastosLocalStorage = localStorage.getItem("listaDeGastos");
   const listaDeGastos = JSON.parse(listaDeGastosLocalStorage);
