@@ -214,3 +214,33 @@ const verificarCategoria = (event) => {
 };
 
 filtrarCategoriaBotao.addEventListener("click", verificarCategoria);
+
+// PEGAR DADOS DO USUÁRIO
+
+const criarListasNoLocalStorage = () => {
+  const usuarioLocalStorage = localStorage.getItem("usuarioLogado");
+  const usuario = JSON.parse(usuarioLocalStorage);
+
+  const listaDeGastos = {
+    email: usuario.email,
+    gastos: [],
+  };
+  localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
+
+  const listaDeRendas = {
+    email: usuario.email,
+    rendas: [],
+  };
+  localStorage.setItem("listaDeRendas", JSON.stringify(listaDeRendas));
+
+  const listaDeInvestimentos = {
+    email: usuario.email,
+    investimentos: [],
+  };
+  localStorage.setItem(
+    "listaDeInvestimentos",
+    JSON.stringify(listaDeInvestimentos)
+  );
+};
+
+criarListasNoLocalStorage();
