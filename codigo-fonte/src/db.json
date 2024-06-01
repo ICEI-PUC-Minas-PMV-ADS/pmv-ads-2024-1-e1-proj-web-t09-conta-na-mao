@@ -26,11 +26,39 @@
   ],
   "listaDeGastos": [
     {
-      "id": "afda",
+      "id": "2795",
+      "nomeGasto": "Internet",
+      "categoriaGasto": "Casa",
+      "valorGasto": "120",
+      "tipo": "casa"
+    },
+    {
+      "id": "4dc7",
+      "nomeGasto": "Internet",
+      "categoriaGasto": "Casa",
+      "valorGasto": "140",
+      "tipo": "casa"
+    },
+    {
+      "id": "a1ad",
       "nomeGasto": "Gás",
       "categoriaGasto": "Casa",
-      "valorGasto": "100",
+      "valorGasto": "R$ 100",
       "tipo": "casa"
+    },
+    {
+      "id": "5313",
+      "nomeGasto": "Roupas",
+      "categoriaGasto": "Compras",
+      "valorGasto": "R$ 249",
+      "tipo": "compras"
+    },
+    {
+      "id": "6d45",
+      "nomeGasto": "Viagem",
+      "categoriaGasto": "Férias",
+      "valorGasto": "R$ 2400",
+      "tipo": "férias"
     }
   ],
   "listaDeRendas": [],
