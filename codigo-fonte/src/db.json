@@ -61,6 +61,14 @@
       "tipo": "férias"
     }
   ],
-  "listaDeRendas": [],
+  "listaDeRendas": [
+    {
+      "id": "caa7",
+      "nomeRenda": "Salário",
+      "categoriaRenda": "Renda",
+      "valorRenda": 1400,
+      "tipo": "renda"
+    }
+  ],
   "listaDeInvestimentos": []
 }

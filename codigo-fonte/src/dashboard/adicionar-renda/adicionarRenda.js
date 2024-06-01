@@ -1,5 +1,3 @@
-let listaDeContas = [];
-
 const adicionarRenda = () => {
   let nomeRenda = document.getElementById("renda").value;
   let categoriaRenda = document.getElementById("categoria").value;
@@ -11,14 +9,14 @@ const adicionarRenda = () => {
 
   if (verificarCadastro) {
     valorRenda = parseFloat(valorRenda.replace("R$ ", "").replace(",", "."));
+
     let novaRenda = {
       nomeRenda,
       categoriaRenda,
       valorRenda,
       tipo,
     };
-    listaDeContas.push(novaRenda);
-    adicionarListaDeRendas(novaRenda);
+    postRenda(novaRenda);
 
     mensagemEnvio.innerHTML = "<span>Renda adicionada com sucesso!</span>";
   } else {
@@ -40,8 +38,6 @@ const tratarValorInput = () => {
   });
 };
 
-tratarValorInput();
-
 const adicionarListaDeRendas = (novaRenda) => {
   const listaDeRendasLocalStorage = localStorage.getItem("listaDeRendas");
   const listaDeRendas = JSON.parse(listaDeRendasLocalStorage);
@@ -49,3 +45,20 @@ const adicionarListaDeRendas = (novaRenda) => {
   listaDeRendas.rendas.push(novaRenda);
   localStorage.setItem("listaDeRendas", JSON.stringify(listaDeRendas));
 };
+
+const postRenda = (novaRenda) => {
+  fetch("http://localhost:3000/listaDeRendas", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(novaRenda),
+  })
+    .then((resposta) => resposta.json())
+    .then((novaRenda) => {
+      adicionarListaDeRendas(novaRenda);
+    })
+    .catch((erro) => console.error("Erro: ", erro));
+};
+
+tratarValorInput();
