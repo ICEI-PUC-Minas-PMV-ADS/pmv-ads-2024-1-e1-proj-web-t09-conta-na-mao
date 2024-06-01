@@ -59,6 +59,13 @@
       "categoriaGasto": "Férias",
       "valorGasto": "R$ 2400",
       "tipo": "férias"
+    },
+    {
+      "id": "cd4a",
+      "nomeConta": "Luz",
+      "categoriaConta": "Casa",
+      "valorConta": 160,
+      "tipo": "casa"
     }
   ],
   "listaDeRendas": [

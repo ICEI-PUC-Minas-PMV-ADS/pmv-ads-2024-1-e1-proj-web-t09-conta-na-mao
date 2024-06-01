@@ -1,5 +1,3 @@
-let listaDeContas = [];
-
 const adicionarQrCode = () => {
   let nomeConta = document.getElementById("conta").value;
   let categoriaConta = document.getElementById("categoria").value;
@@ -10,16 +8,17 @@ const adicionarQrCode = () => {
   let mensagemEnvio = document.getElementById("mensagemEnvio");
 
   if (verificarCadastro) {
+    valorConta = parseFloat(valorConta.replace("R$ ", "").replace(",", "."));
+
     let novoGasto = {
       nomeConta,
       categoriaConta,
       valorConta,
       tipo,
     };
-    listaDeContas.push(novoGasto);
+    postQrCode(novoGasto);
 
     mensagemEnvio.innerHTML = "<span>Conta adicionada com sucesso!</span>";
-    adicionarListaDeGastos(novoGasto);
   } else {
     mensagemEnvio.innerHTML =
       "<span>Todos os campos precisam ser preenchidos.</span>";
@@ -46,3 +45,20 @@ const adicionarListaDeGastos = (novoGasto) => {
   listaDeGastos.gastos.push(novoGasto);
   localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
 };
+
+const postQrCode = (novoGasto) => {
+  fetch("http://localhost:3000/listaDeGastos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(novoGasto),
+  })
+    .then((resposta) => resposta.json())
+    .then((novoGasto) => {
+      adicionarListaDeGastos(novoGasto);
+    })
+    .catch((erro) => console.error("Erro: ", erro));
+};
+
+tratarValorInput();
