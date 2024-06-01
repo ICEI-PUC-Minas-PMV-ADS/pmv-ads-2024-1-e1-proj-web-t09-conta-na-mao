@@ -256,7 +256,7 @@ a {
   background-color: #dcd0ff;
 }
 
-.icon-menu-principal {
+#menu {
   display: none;
 }
 
@@ -294,6 +294,12 @@ a {
   to {
     opacity: 0;
     transform: translateY(10px);
+  }
+}
+
+@media (min-width: 730px) {
+  .menu-lateral {
+    display: none !important;
   }
 }
 
@@ -378,9 +384,35 @@ a {
     height: auto;
   }
 
-  .icon-menu-principal {
+  #menu {
     display: block;
-    width: 40px;
+  }
+
+  .menu-lateral {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #f6f9fd;
+    width: 70%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .botao-fechar-menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+
+  .menu-aberto {
+    display: flex;
+  }
+
+  .menu-fechado {
+    display: none;
   }
 }
 

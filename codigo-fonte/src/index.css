@@ -249,7 +249,7 @@ footer {
   margin: 18px;
 }
 
-.icon-menu-principal {
+#menu {
   display: none;
 }
 
@@ -282,7 +282,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .icon-menu-principal {
+  #menu {
     display: block;
     width: 40px;
   }

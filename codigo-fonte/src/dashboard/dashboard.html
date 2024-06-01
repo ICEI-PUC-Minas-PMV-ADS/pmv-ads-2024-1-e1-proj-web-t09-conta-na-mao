@@ -19,11 +19,37 @@
   </head>
   <body>
     <nav class="menu">
-      <img
-        src="./imagens/menu-principal.svg"
-        alt="Ícone de menu com fundo azul"
-        class="icon-menu-principal"
-      />
+      <button class="link-vazio" id="menu" onclick="abrirMenu()">
+        <img
+          src="./imagens/menu-principal.svg"
+          alt="Ícone de menu com fundo azul"
+          class="icon-menu-principal"
+        />
+      </button>
+      <div class="menu-lateral menu-fechado">
+        <button class="link-vazio botao-fechar-menu" onclick="abrirMenu()">
+          <img src="./imagens/close.svg" alt="Ícone de menu com fundo azul" />
+        </button>
+        <button class="categoria-link">
+          <a href="./dashboard.html">Visão geral</a>
+        </button>
+        <button class="categoria-link">
+          <a href="./ler-qr-code/lerQrCode.html">Ler QR Code</a>
+        </button>
+        <button class="categoria-link">
+          <a href="./categorias/categorias.html">Categorias</a>
+        <button class="categoria-link">
+          <a href="./notas-armazenadas/notasArmazenadas.html">
+            Notas armazenadas
+          </a>
+        </button>
+        <button class="categoria-link">
+          <a href="./usuario/usuario.html">Usuário</a>
+        </button>
+        <button class="categoria-link">
+          <a href="../index.html">Sair</a>
+        </button>
+      </div>
       <h2 class="logo">Conta na mão</h2>
       <div class="categorias-menu">
         <button class="categoria-link">
