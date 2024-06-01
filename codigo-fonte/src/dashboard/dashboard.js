@@ -1,59 +1,42 @@
-// teste para gerar os cards
+// PEGAR DADOS NO BANCO DE DADOS
 
-let listaDeRendas = [
-  {
-    nomeRenda: "Salário",
-    categoriaRenda: "Renda",
-    valorRenda: 2574.6,
-    tipo: "renda",
-  },
-];
+const getListaDeRendas = () => {
+  fetch("http://localhost:3000/listaDeRendas")
+    .then((resposta) => resposta.json())
+    .then((renda) => {
+      gerarItensDeRendas(renda);
+      atualizarRendaTotal();
+      atualizarSaldoTotal();
+    })
+    .catch((erro) => console.error("Erro: ", erro));
+};
 
-let listaDeGastos = [
-  {
-    nomeGasto: "Aluguel",
-    categoriaGasto: "Gasto fixo",
-    valorGasto: 1000,
-    tipo: "gasto-fixo",
-  },
-  {
-    nomeGasto: "Luz",
-    categoriaGasto: "Casa",
-    valorGasto: 117.5,
-    tipo: "casa",
-  },
-  {
-    nomeGasto: "Água",
-    categoriaGasto: "Casa",
-    valorGasto: 82.32,
-    tipo: "casa",
-  },
-  {
-    nomeGasto: "Mercado",
-    categoriaGasto: "Mercado",
-    valorGasto: 426.58,
-    tipo: "mercado",
-  },
-  {
-    nomeGasto: "Shopping",
-    categoriaGasto: "Compras",
-    valorGasto: 197.96,
-    tipo: "compras",
-  },
-];
+const getListaDeGastos = () => {
+  fetch("http://localhost:3000/listaDeGastos")
+    .then((resposta) => resposta.json())
+    .then((gasto) => {
+      gerarItensDeGastos(gasto);
+      atualizarGastoTotal();
+      atualizarSaldoTotal();
+    })
+    .catch((erro) => console.error("Erro: ", erro));
+};
 
-let listaInvestimentos = [
-  {
-    nomeInvestimento: "Poupança",
-    categoriaInvestimento: "Investimento",
-    valorInvestimento: 500,
-    tipo: "investimento",
-  },
-];
+const getListaDeInvestimentos = () => {
+  fetch("http://localhost:3000/listaDeInvestimentos")
+    .then((resposta) => resposta.json())
+    .then((investimento) => {
+      gerarItensDeInvestimentos(investimento);
+      atualizarInvestimentoTotal();
+      atualizarSaldoTotal();
+    })
+    .catch((erro) => console.error("Erro: ", erro));
+};
 
-const gerarRelatorio = () => {
+const gerarItensDeRendas = (renda) => {
   let listaVariaveis = document.getElementsByClassName("itens-variaveis")[0];
-  listaDeRendas.forEach((conta) => {
+
+  renda.forEach((conta) => {
     listaVariaveis.innerHTML += `
       <div class="variavel">
         <div class="itens-categorias">
@@ -63,14 +46,17 @@ const gerarRelatorio = () => {
       conta.categoriaRenda
     }</span>
         </div>
-        <span class="item-valor renda-valor">R$ ${conta.valorRenda
+        <span class="item-valor renda-valor">R$ ${parseFloat(conta.valorRenda)
           .toFixed(2)
           .replace(".", ",")}</span>
       </div>
     `;
   });
+};
 
-  listaDeGastos.forEach((conta) => {
+const gerarItensDeGastos = (gasto) => {
+  let listaVariaveis = document.getElementsByClassName("itens-variaveis")[0];
+  gasto.forEach((conta) => {
     listaVariaveis.innerHTML += `
       <div class="variavel">
         <div class="itens-categorias">
@@ -80,9 +66,35 @@ const gerarRelatorio = () => {
       conta.categoriaGasto
     }</span>
         </div>
-        <span class="item-valor gasto-valor">- R$ ${conta.valorGasto
-          .toFixed(2)
-          .replace(".", ",")}</span>
+          <span class="item-valor gasto-valor">- R$ ${parseFloat(
+            conta.valorGasto
+          )
+            .toFixed(2)
+            .replace(".", ",")}
+          </span>
+      </div>
+    `;
+  });
+};
+
+const gerarItensDeInvestimentos = (investimento) => {
+  let listaVariaveis = document.getElementsByClassName("itens-variaveis")[0];
+  investimento.forEach((conta) => {
+    listaVariaveis.innerHTML += `
+      <div class="variavel">
+        <div class="itens-categorias">
+          <img src="./imagens/arrow-down.svg" alt="Seta para baixo" />
+          <span class="item-nome">${conta.nomeInvestimento}</span>
+          <span class="item-categoria ${conta.tipo}">${
+      conta.categoriaInvestimento
+    }</span>
+        </div>
+          <span class="item-valor gasto-valor">- R$ ${parseFloat(
+            conta.valorInvestimento
+          )
+            .toFixed(2)
+            .replace(".", ",")}
+          </span>
       </div>
     `;
   });
@@ -91,16 +103,16 @@ const gerarRelatorio = () => {
 const atualizarRendaTotal = () => {
   let saldoRendas = 0;
   let valoresRenda = document.querySelectorAll(".renda-valor");
+  let totalRenda = document.querySelector("#rendas h4");
 
   valoresRenda.forEach((valorRenda) => {
-    let valor = parseFloat(
+    valorRenda = parseFloat(
       valorRenda.textContent.replace("R$ ", "").replace(",", ".")
     );
-    saldoRendas += valor;
+    saldoRendas += valorRenda;
   });
 
-  let totalRenda = document.querySelector("#rendas h4");
-  totalRenda.innerText = `R$ ${saldoRendas.toFixed(2).replace(".", ",")}`;
+  totalRenda.textContent = `R$ ${saldoRendas.toFixed(2).replace(".", ",")}`;
 
   return saldoRendas;
 };
@@ -108,35 +120,33 @@ const atualizarRendaTotal = () => {
 const atualizarGastoTotal = () => {
   let saldoGastos = 0;
   let valoresGasto = document.querySelectorAll(".gasto-valor");
+  let totalGasto = document.querySelector("#gastos h4");
 
   valoresGasto.forEach((valorGasto) => {
-    let valor = parseFloat(
+    valorGasto = parseFloat(
       valorGasto.textContent.replace("- R$ ", "").replace(",", ".")
     );
-    saldoGastos += valor;
+    saldoGastos += valorGasto;
   });
 
-  let totalGasto = document.querySelector("#gastos h4");
-  totalGasto.innerText = `R$ ${saldoGastos.toFixed(2).replace(".", ",")}`;
+  totalGasto.textContent = `R$ ${saldoGastos.toFixed(2).replace(".", ",")}`;
 
   return saldoGastos;
 };
 
 const atualizarInvestimentoTotal = () => {
   let saldoInvestimentos = 0;
-  // let valoresInvestimento = document.querySelectorAll(".investimento-valor");
+  let valoresInvestimento = document.querySelectorAll(".investimento-valor");
+  let totalInvestimento = document.querySelector("#investimentos h4");
 
-  // teste com lista
-  listaInvestimentos.forEach((valorInvestimento) => {
-    // let valor = parseFloat(
-    //   valorInvestimento.textContent.replace("R$ ", "").replace(",", ".")
-    // );
-    let valor = valorInvestimento.valorInvestimento;
-    saldoInvestimentos += valor;
+  valoresInvestimento.forEach((valorInvestimento) => {
+    valorInvestimento = parseFloat(
+      valorInvestimento.textContent.replace("- R$ ", "").replace(",", ".")
+    );
+    saldoInvestimentos += valorInvestimento;
   });
 
-  let totalInvestimento = document.querySelector("#investimentos h4");
-  totalInvestimento.innerText = `R$ ${saldoInvestimentos
+  totalInvestimento.textContent = `R$ ${saldoInvestimentos
     .toFixed(2)
     .replace(".", ",")}`;
 
@@ -147,21 +157,53 @@ const atualizarSaldoTotal = () => {
   let totalRendas = atualizarRendaTotal();
   let totalGastos = atualizarGastoTotal();
   let totalInvestimentos = atualizarInvestimentoTotal();
-
+  let total = document.querySelector("#total h4");
   let saldoTotal = totalRendas - (totalGastos + totalInvestimentos);
 
-  let total = document.querySelector("#total h4");
   total.innerText = `R$ ${saldoTotal.toFixed(2).replace(".", ",")}`;
 
   if (saldoTotal > 0) {
     total.classList.add("disponivel");
-  } else if (saldoTotal <= 0) {
+    total.classList.remove("indisponivel");
+  } else {
     total.classList.add("indisponivel");
+    total.classList.remove("disponivel");
   }
 };
 
-gerarRelatorio();
-atualizarSaldoTotal();
+getListaDeRendas();
+getListaDeGastos();
+getListaDeInvestimentos();
+
+// PEGAR DADOS NO LOCAL STORAGE
+
+// const criarListasNoLocalStorage = () => {
+//   const usuarioLocalStorage = localStorage.getItem("usuarioLogado");
+//   const usuario = JSON.parse(usuarioLocalStorage);
+
+//   const listaDeGastos = {
+//     email: usuario.email,
+//     gastos: [],
+//   };
+//   localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
+
+//   const listaDeRendas = {
+//     email: usuario.email,
+//     rendas: [],
+//   };
+//   localStorage.setItem("listaDeRendas", JSON.stringify(listaDeRendas));
+
+//   const listaDeInvestimentos = {
+//     email: usuario.email,
+//     investimentos: [],
+//   };
+//   localStorage.setItem(
+//     "listaDeInvestimentos",
+//     JSON.stringify(listaDeInvestimentos)
+//   );
+// };
+
+// criarListasNoLocalStorage();
 
 // FILTRO
 
@@ -214,33 +256,3 @@ const verificarCategoria = (event) => {
 };
 
 filtrarCategoriaBotao.addEventListener("click", verificarCategoria);
-
-// PEGAR DADOS DO USUÁRIO
-
-const criarListasNoLocalStorage = () => {
-  const usuarioLocalStorage = localStorage.getItem("usuarioLogado");
-  const usuario = JSON.parse(usuarioLocalStorage);
-
-  const listaDeGastos = {
-    email: usuario.email,
-    gastos: [],
-  };
-  localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
-
-  const listaDeRendas = {
-    email: usuario.email,
-    rendas: [],
-  };
-  localStorage.setItem("listaDeRendas", JSON.stringify(listaDeRendas));
-
-  const listaDeInvestimentos = {
-    email: usuario.email,
-    investimentos: [],
-  };
-  localStorage.setItem(
-    "listaDeInvestimentos",
-    JSON.stringify(listaDeInvestimentos)
-  );
-};
-
-criarListasNoLocalStorage();

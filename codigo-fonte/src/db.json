@@ -40,31 +40,17 @@
       "tipo": "casa"
     },
     {
-      "id": "a1ad",
-      "nomeGasto": "Gás",
-      "categoriaGasto": "Casa",
-      "valorGasto": "R$ 100",
-      "tipo": "casa"
-    },
-    {
-      "id": "5313",
-      "nomeGasto": "Roupas",
-      "categoriaGasto": "Compras",
-      "valorGasto": "R$ 249",
-      "tipo": "compras"
-    },
-    {
-      "id": "6d45",
+      "id": "ab74",
       "nomeGasto": "Viagem",
       "categoriaGasto": "Férias",
-      "valorGasto": "R$ 2400",
+      "valorGasto": 2400,
       "tipo": "férias"
     },
     {
-      "id": "cd4a",
-      "nomeConta": "Luz",
-      "categoriaConta": "Casa",
-      "valorConta": 160,
+      "id": "301b",
+      "nomeGasto": "Aluguel",
+      "categoriaGasto": "Casa",
+      "valorGasto": 1700,
       "tipo": "casa"
     }
   ],
@@ -74,6 +60,13 @@
       "nomeRenda": "Salário",
       "categoriaRenda": "Renda",
       "valorRenda": 1400,
+      "tipo": "renda"
+    },
+    {
+      "id": "c27e",
+      "nomeRenda": "Freelance",
+      "categoriaRenda": "Renda",
+      "valorRenda": 2000,
       "tipo": "renda"
     }
   ],
