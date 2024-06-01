@@ -105,46 +105,15 @@
     </nav>
     <section class="visao-geral">
       <span class="titulo-pagina">Notas armazenadas</span>
-      <div class="filtro-categoria">
+      <form class="filtro-categoria">
         <label>Filtrar:</label>
         <input type="text" name="categoria" id="categoria" class="filtro" />
-        <button class="link-vazio" type="submit">
+        <button class="link-vazio" type="submit" id="filtrarCategoria">
           <img src="../imagens/arrow-right.svg" alt="Seta para direita" />
         </button>
-      </div>
+      </form>
       <div class="itens-variaveis">
-        <div class="variavel">
-          <div class="itens-categorias">
-            <img src="../imagens/arrow-down.svg" alt="Seta para baixo" />
-            <span class="item-nome">Luz</span>
-            <span class="item-categoria casa">Casa</span>
-          </div>
-          <span class="item-valor">- R$ 117,50</span>
-        </div>
-        <div class="variavel">
-          <div class="itens-categorias">
-            <img src="../imagens/arrow-down.svg" alt="Seta para baixo" />
-            <span class="item-nome">Água</span>
-            <span class="item-categoria casa">Casa</span>
-          </div>
-          <span class="item-valor">- R$ 82,32</span>
-        </div>
-        <div class="variavel">
-          <div class="itens-categorias">
-            <img src="../imagens/arrow-down.svg" alt="Seta para baixo" />
-            <span class="item-nome">Mercado</span>
-            <span class="item-categoria mercado">Mercado</span>
-          </div>
-          <span class="item-valor">- R$ 426,58</span>
-        </div>
-        <div class="variavel">
-          <div class="itens-categorias">
-            <img src="../imagens/arrow-down.svg" alt="Seta para baixo" />
-            <span class="item-nome">Shopping</span>
-            <span class="item-categoria compras">Compras</span>
-          </div>
-          <span class="item-valor">- R$ 197,96</span>
-        </div>
+        <div class="sem-resultado"></div>
       </div>
     </section>
   </body>
