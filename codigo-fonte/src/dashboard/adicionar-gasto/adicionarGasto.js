@@ -8,6 +8,8 @@ const adicionarGasto = () => {
   let mensagemEnvio = document.getElementById("mensagemEnvio");
 
   if (verificarCadastro) {
+    valorGasto = parseFloat(valorGasto.replace("R$ ", "").replace(",", "."));
+
     let novoGasto = {
       nomeGasto,
       categoriaGasto,
