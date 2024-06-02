@@ -7,24 +7,53 @@
     <link rel="stylesheet" type="text/css" href="./login.css" />
     <link rel="icon" href="../imagens/logo.png" />
     <script src="./login.js"></script>
+    <link rel="stylesheet" href="../index.css" />
   </head>
   <body>
-    <header class="menu">
-      <nav>
-        <h2 class="logo">Conta na mão</h2>
-        <ul class="menuopcions">
-          <li><a href="../index.html">Início</a></li>
-          <li><a href="../index.html#servicos">Serviços</a></li>
-          <li><a href="../index.html#sobre">Sobre</a></li>
-        </ul>
-        <ul class="option">
-          <li><a href="../login/login.html">Entrar</a></li>
-          <button class="enviar">
+    <div class="barra">
+      <header class="barra-navegacao">
+        <button class="link-vazio" id="menu" onclick="abrirMenu()">
+          <img
+            src="../dashboard/imagens/menu-principal.svg"
+            alt="Ícone de menu com fundo azul"
+            class="icon-menu-principal"
+          />
+        </button>
+        <div class="menu-lateral menu-fechado">
+          <button class="link-vazio botao-fechar-menu" onclick="abrirMenu()">
+            <img
+              src="../dashboard/imagens/close.svg"
+              alt="Ícone de menu com fundo azul"
+            />
+          </button>
+          <button class="categoria-link">
+            <a href="../index.html">Início</a>
+          </button>
+          <button class="categoria-link">
+            <a href="../index.html#servicos">Serviços</a>
+          </button>
+          <button class="categoria-link">
+            <a href="../index.html#sobre">Sobre</a>
+          </button>
+          <button class="categoria-link">
+            <a href="./login.html">Entrar</a>
+          </button>
+          <button class="categoria-link">
             <a href="../cadastro/cadastro.html">Cadastrar</a>
           </button>
-        </ul>
-      </nav>
-    </header>
+        </div>
+        <h2 class="logo">Conta na mão</h2>
+        <nav class="nav-links">
+          <a href="../index.html">Início</a>
+          <a href="../index.html#servicos">Serviços</a>
+          <a href="../index.html#sobre">Sobre</a>
+        </nav>
+        <nav class="nav-links">
+          <a href="./login.html">Entrar</a>
+          <a href="../cadastro/cadastro.html" class="botao-link">Cadastrar</a>
+        </nav>
+      </header>
+    </div>
     <main>
       <h2>Entrar na sua Conta</h2>
       <section class="hero">
@@ -66,57 +95,45 @@
       </section>
     </main>
     <footer>
-      <div class="sobre">
-        <span class="logo"><strong>Conta na mão</strong></span>
+      <div class="footer-conta">
+        <h2 class="logo">Conta na mão</h2>
         <p>
-          Empoderando jovens para poupar e aprender<br />
-          sobre dinheiro. Sua ferramenta essencial para<br />
-          educação financeira e hábitos inteligentes<br />
-          economia.
+          Empoderando jovens para poupar e aprender sobre dinheiro. Sua
+          ferramenta essencial para educação financeira e hábitos inteligentes
+          de economia.
         </p>
       </div>
-      <div>
-        <h5><strong>Contato</strong></h5>
-        <ul class="suporte">
-          <li><a>Ajuda/FAQ</a></li>
-          <li><a>Atendimento</a></li>
-        </ul>
-      </div>
-      <div class="imgdownload">
-        <h5><strong>Download</strong></h5>
-        <figure>
-          <img src="../cadastro/imag/apple.svg" alt="imagem do logo da apple" />
-        </figure>
-        <figure>
-          <img
-            src="../cadastro/imag/android.svg"
-            alt="imagem do logo do android"
-          />
-        </figure>
-      </div>
-      <div>
-        <h5><strong>Redes Sociais</strong></h5>
-        <div class="socialmidia">
-          <figure>
-            <img
-              src="../cadastro/imag/instagram.svg"
-              alt="imagem do logo do instagram"
-            />
-          </figure>
-          <figure>
-            <img
-              src="../cadastro/imag/facebook.svg"
-              alt="imagem do logo do facebook"
-            />
-          </figure>
-          <figure>
-            <img
-              src="../cadastro/imag/twitter.svg"
-              alt="imagem do logo do twitter"
-            />
-          </figure>
+      <div class="footer-links">
+        <div class="contato">
+          <h4>Contato</h4>
+          <a href="../index.html">Ajuda/FAQ</a>
+          <a href="../index.html">Atendimento</a>
+        </div>
+        <div class="download">
+          <h4>Download</h4>
+          <a href="../index.html">
+            <img src="../imagens/applestore.png" alt="Apple Store" />
+          </a>
+          <a href="../index.html">
+            <img src="../imagens/googleplay.png" alt="Google Play" />
+          </a>
+        </div>
+        <div class="redes-sociais">
+          <h4>Redes Sociais</h4>
+          <nav class="redes-links">
+            <a href="../index.html">
+              <img src="../imagens/Instagram.png" alt="Logo do Instagram" />
+            </a>
+            <a href="../index.html">
+              <img src="../imagens/Facebook.png" alt="Logo do Facebook" />
+            </a>
+            <a href="../index.html">
+              <img src="../imagens/Twitter.png" alt="Logo do Twitter" />
+            </a>
+          </nav>
         </div>
       </div>
     </footer>
+    <p class="direitos">Todos os direitos reservados. 2024</p>
   </body>
 </html>

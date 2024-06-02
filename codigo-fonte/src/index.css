@@ -312,6 +312,10 @@ footer {
   gap: 10px;
 }
 
+.menu-lateral {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .servico {
     width: 470px;
