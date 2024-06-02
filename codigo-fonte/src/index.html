@@ -15,15 +15,39 @@
     <title>Conta na mão</title>
     <link rel="icon" href="./imagens/logo.png" />
     <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <div class="barra">
       <header class="barra-navegacao">
-        <img
-          src="./dashboard/imagens/menu-principal.svg"
-          alt="Ícone de menu com fundo azul"
-          class="icon-menu-principal"
-        />
+        <button class="link-vazio" id="menu" onclick="abrirMenu()">
+          <img
+            src="./dashboard/imagens/menu-principal.svg"
+            alt="Ícone de menu com fundo azul"
+            class="icon-menu-principal"
+          />
+        </button>
+        <div class="menu-lateral menu-fechado">
+          <button class="link-vazio botao-fechar-menu" onclick="abrirMenu()">
+            <img src="./dashboard/imagens/close.svg" alt="Ícone de menu com fundo azul" />
+          </button>
+          <button class="categoria-link">
+            <a href="/">Início</a>
+          </button>
+          <button class="categoria-link">
+            <a href="#servicos">Serviços</a>
+          </button>
+          <button class="categoria-link">
+            <a href="#sobre">Sobre</a>
+          <button class="categoria-link">
+            <a href="./login/login.html">
+              Entrar
+            </a>
+          </button>
+          <button class="categoria-link">
+            <a href="./cadastro/cadastro.html">Cadastrar</a>
+          </button>
+        </div>
         <h2 class="logo">Conta na mão</h2>
         <nav class="nav-links">
           <a href="/">Início</a>

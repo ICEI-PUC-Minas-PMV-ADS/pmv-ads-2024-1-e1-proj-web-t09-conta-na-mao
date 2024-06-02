@@ -55,6 +55,50 @@ body {
   text-align: center;
 }
 
+.botao-secundario {
+  cursor: pointer;
+  background-color: transparent;
+  color: #285295;
+  padding: 8px 16px;
+  text-align: center;
+  width: fit-content;
+  border: 1px solid #285295;
+  border-radius: 32px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+.link-vazio {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.categoria-link {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 10px 25px;
+  text-align: left;
+}
+
+.categoria-link:hover {
+  background-color: #e8eef7;
+}
+
+.categoria-link a,
+.categoria-link a:hover {
+  color: #1e1f24;
+}
+
 .introducao {
   display: flex;
   align-items: center;
@@ -253,6 +297,21 @@ footer {
   display: none;
 }
 
+.menu {
+  background-color: #f6f9fd;
+  min-width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.categorias-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 @media (max-width: 1024px) {
   .servico {
     width: 470px;
@@ -336,11 +395,61 @@ footer {
   footer {
     gap: 20px;
   }
+
+  .categorias-menu {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: row;
+    padding-left: 60px;
+    width: 100vw;
+    height: auto;
+  }
+
+  .menu-lateral {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #f6f9fd;
+    width: 70%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .botao-fechar-menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+
+  .menu-aberto {
+    display: flex;
+  }
+
+  .menu-fechado {
+    display: none;
+  }
 }
 
 @media (max-width: 570px) {
   .servico-img,
   .section-img {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .menu {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .menu {
+    padding-left: 10px;
   }
 }
