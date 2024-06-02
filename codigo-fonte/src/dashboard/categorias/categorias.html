@@ -39,6 +39,7 @@
         </button>
         <button class="categoria-link">
           <a href="./categorias.html">Categorias</a>
+        </button>
         <button class="categoria-link">
           <a href="../notas-armazenadas/notasArmazenadas.html">
             Notas armazenadas
@@ -108,39 +109,64 @@
     <section class="visao-geral">
       <span class="titulo-pagina">Categorias</span>
       <div class="categorias">
-        <div class="filtro-categoria">
+        <form class="filtro-categoria">
           <label>Filtrar:</label>
           <div class="input-categoria">
-            <input type="text" name="categoria" id="categoria" class="filtro" />
-            <button class="link-vazio" type="submit">
+            <input
+              type="text"
+              name="filtrar"
+              id="filtrar"
+              class="filtro input-filtro"
+            />
+            <button
+              class="link-vazio"
+              type="submit"
+              onclick="verificarCategoria(event)"
+            >
               <img src="../imagens/arrow-right.svg" alt="Seta para direita" />
             </button>
           </div>
-        </div>
-        <div class="filtro-categoria">
+        </form>
+        <form class="filtro-categoria">
           <label>Adicionar:</label>
           <div class="input-categoria">
-            <input type="text" name="categoria" id="categoria" class="filtro" />
-            <button class="link-vazio" type="submit">
+            <input
+              type="text"
+              name="adicionar"
+              id="adicionar"
+              class="filtro input-adicionar"
+            />
+            <button
+              class="link-vazio"
+              type="submit"
+              onclick="adicionarCategoria()"
+            >
               <img src="../imagens/arrow-right.svg" alt="Seta para direita" />
             </button>
           </div>
-        </div>
-        <div class="filtro-categoria">
+        </form>
+        <form class="filtro-categoria">
           <label>Remover:</label>
           <div class="input-categoria">
-            <input type="text" name="categoria" id="categoria" class="filtro" />
-            <button class="link-vazio" type="submit">
+            <input
+              type="text"
+              name="remover"
+              id="remover"
+              class="filtro input-remover"
+            />
+            <button
+              class="link-vazio"
+              type="submit"
+              onclick="removerCategoria()"
+            >
               <img src="../imagens/arrow-right.svg" alt="Seta para direita" />
             </button>
           </div>
-        </div>
+        </form>
       </div>
       <div class="itens-variaveis">
         <div class="variavel">
-          <span class="item-categoria casa">Casa</span>
-          <span class="item-categoria mercado">Mercado</span>
-          <span class="item-categoria compras">Compras</span>
+          <div class="sem-resultado"></div>
         </div>
       </div>
     </section>

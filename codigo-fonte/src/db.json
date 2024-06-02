@@ -38,6 +38,13 @@
       "categoriaGasto": "Casa",
       "valorGasto": 1700,
       "tipo": "casa"
+    },
+    {
+      "id": "8fde",
+      "nomeGasto": "Mercado",
+      "categoriaGasto": "Mercado",
+      "valorGasto": 222,
+      "tipo": "mercado"
     }
   ],
   "listaDeRendas": [
