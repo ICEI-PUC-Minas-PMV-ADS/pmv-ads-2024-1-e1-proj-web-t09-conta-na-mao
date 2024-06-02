@@ -1,20 +1,6 @@
 {
   "usuarios": [
     {
-      "id": "1",
-      "email": "karina.nuunes@yahoo.com.br",
-      "senha": "123456",
-      "nome": "Karina",
-      "sobrenome": "Nunes",
-      "genero": "Feminino",
-      "cpf": "123.456.789-00",
-      "telefone": "999999999",
-      "dataNascimento": "01/01/2000",
-      "objPrincipal": "Economizar dinheiro",
-      "frequenciaDeUso": "Alta",
-      "indicacaoFinanceira": "Sim"
-    },
-    {
       "id": "b74d",
       "email": "karina.nuunes@yahoo.com.br",
       "senha": "123",
