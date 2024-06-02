@@ -17,6 +17,7 @@ const adicionarRenda = () => {
       tipo,
     };
     postRenda(novaRenda);
+    adicionarListaDeRendas(novaRenda);
 
     mensagemEnvio.innerHTML = "<span>Renda adicionada com sucesso!</span>";
   } else {

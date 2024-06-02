@@ -177,33 +177,36 @@ getListaDeInvestimentos();
 
 // PEGAR DADOS NO LOCAL STORAGE
 
-// const criarListasNoLocalStorage = () => {
-//   const usuarioLocalStorage = localStorage.getItem("usuarioLogado");
-//   const usuario = JSON.parse(usuarioLocalStorage);
+const gerarListaDeRendasLocal = () => {
+  const listaDeRendas = JSON.parse(localStorage.getItem("listaDeRendas"));
+  const rendas = listaDeRendas.rendas;
 
-//   const listaDeGastos = {
-//     email: usuario.email,
-//     gastos: [],
-//   };
-//   localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
+  gerarItensDeRendas(rendas);
+  atualizarRendaTotal();
+};
 
-//   const listaDeRendas = {
-//     email: usuario.email,
-//     rendas: [],
-//   };
-//   localStorage.setItem("listaDeRendas", JSON.stringify(listaDeRendas));
+const gerarListaDeGastosLocal = () => {
+  const listaDeGastos = JSON.parse(localStorage.getItem("listaDeGastos"));
+  const gastos = listaDeGastos.gastos;
 
-//   const listaDeInvestimentos = {
-//     email: usuario.email,
-//     investimentos: [],
-//   };
-//   localStorage.setItem(
-//     "listaDeInvestimentos",
-//     JSON.stringify(listaDeInvestimentos)
-//   );
-// };
+  gerarItensDeGastos(gastos);
+  atualizarGastoTotal();
+};
 
-// criarListasNoLocalStorage();
+const gerarListaDeInvestimentosLocal = () => {
+  const listaDeInvestimentos = JSON.parse(
+    localStorage.getItem("listaDeInvestimentos")
+  );
+  const investimentos = listaDeInvestimentos.investimentos;
+
+  gerarItensDeInvestimentos(investimentos);
+  atualizarInvestimentoTotal();
+};
+
+gerarListaDeRendasLocal();
+gerarListaDeGastosLocal();
+gerarListaDeInvestimentosLocal();
+atualizarSaldoTotal();
 
 // FILTRO
 
