@@ -1,12 +1,17 @@
 {
   "usuarios": [
     {
-      "id": "b74d",
+      "id": "4a13",
       "email": "karina.nuunes@yahoo.com.br",
       "senha": "123",
-      "ofertas": false,
+      "nome": "Karina",
+      "sobrenome": "Nunes",
+      "genero": "feminino",
+      "cpf": "12312312312",
+      "telefone": "21911112222",
+      "dataNascimento": "1996-10-11",
       "objPrincipal": "option1",
-      "frequenciaDeUso": "medio",
+      "frequenciaDeUso": "alta",
       "indicacaoFinanceira": "sim"
     }
   ],

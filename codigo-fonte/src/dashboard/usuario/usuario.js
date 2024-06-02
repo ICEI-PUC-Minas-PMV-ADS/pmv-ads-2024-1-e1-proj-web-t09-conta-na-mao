@@ -30,17 +30,44 @@ const getDadosDoCliente = () => {
     .catch((erro) => console.error("Erro: ", erro));
 };
 
+const formatarCpf = (cpf) => {
+  const cpfFormatado = cpf.replace(
+    /(\d{3})(\d{3})(\d{3})(\d{2})/,
+    "$1.$2.$3-$4"
+  );
+
+  return cpfFormatado;
+};
+
+const formatarContato = (contato) => {
+  const contatoFormatado = contato.replace(
+    /(\d{2})(\d{5})(\d{4})/,
+    "($1) $2-$3"
+  );
+
+  return contatoFormatado;
+};
+
+const formatarData = (data) => {
+  const dataFormatada = new Date(data);
+  const dia = dataFormatada.getDate().toString().padStart(2, "0");
+  const mes = (dataFormatada.getMonth() + 1).toString().padStart(2, "0");
+  const ano = dataFormatada.getFullYear().toString();
+
+  return `${dia}/${mes}/${ano}`;
+};
+
 const gerarDados = (usuario) => {
   const usuarioNome = document.querySelector(".usuario-nome span");
   const usuarioDados = document.querySelector(".usuario-dados");
 
-  usuarioNome.innerHTML = `${usuario.nome}`;
+  usuarioNome.innerHTML = `${usuario.nome} ${usuario.sobrenome}`;
 
   usuarioDados.innerHTML = `
     <p>Email: <span>${usuario.email}</span></p>
-    <p>CPF: <span>${usuario.cpf}</span></p>
-    <p>Contato: <span>${usuario.contato}</span></p>
-    <p>Nascimento: <span>${usuario.dataNascimento}</span></p>
+    <p>CPF: <span>${formatarCpf(usuario.cpf)}</span></p>
+    <p>Contato: <span>${formatarContato(usuario.telefone)}</span></p>
+    <p>Nascimento: <span>${formatarData(usuario.dataNascimento)}</span></p>
   `;
 };
 

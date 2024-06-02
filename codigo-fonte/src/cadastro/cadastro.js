@@ -1,20 +1,20 @@
 const cadastrarUsuario = () => {
   try {
-    const email = document.getElementById("email").value;
-    const confEmail = document.getElementById("confEmail").value;
-    const senha = document.getElementById("senha").value;
-    const confSenha = document.getElementById("confSenha").value;
-    const nome = document.getElementById("nome").value;
-    const sobrenome = document.getElementById("sobrenome").value;
-    const genero = document.getElementById("genero").value;
-    const cpf = document.getElementById("cpf").value;
-    const telefone = document.getElementById("telefone").value;
-    const dataNascimento = document.getElementById("dataNascimento").value;
-    const ofertas = document.getElementById("ofertas").checked;
-    const objPrincipal = document.getElementById("objPrincipal").value;
-    const frequenciaDeUso = document.getElementById("frequenciaDeUso").value;
-    const indicacaoFinanceira = document.getElementById(
-      "indicacaoFinanceira"
+    const email = document.querySelector(".email").value;
+    const confEmail = document.querySelector(".confEmail").value;
+    const senha = document.querySelector(".senha").value;
+    const confSenha = document.querySelector(".confSenha").value;
+    const nome = document.querySelector(".nome").value;
+    const sobrenome = document.querySelector(".sobrenome").value;
+    const genero = document.querySelector(".genero").value;
+    const cpf = document.querySelector(".cpf").value;
+    const telefone = document.querySelector(".telefone").value;
+    const dataNascimento = document.querySelector(".dataNascimento").value;
+    const ofertas = document.querySelector(".ofertas").checked;
+    const objPrincipal = document.querySelector(".objPrincipal").value;
+    const frequenciaDeUso = document.querySelector(".frequenciaDeUso").value;
+    const indicacaoFinanceira = document.querySelector(
+      ".indicacaoFinanceira"
     ).value;
 
     if (
@@ -121,9 +121,9 @@ const postUsuario = (novoUsuario) => {
     body: JSON.stringify(novoUsuario),
   })
     .then((resposta) => resposta.json())
-    .then((dados) => {
-      localStorage.setItem("usuarioLogado", JSON.stringify(dados));
-      window.location.href = "../cadastro/cadastro.html";
-    })
+    .then(
+      localStorage.setItem("usuarioLogado", JSON.stringify(novoUsuario)),
+      (window.location.href = "../login/login.html")
+    )
     .catch((erro) => console.error("Erro: ", erro));
 };
