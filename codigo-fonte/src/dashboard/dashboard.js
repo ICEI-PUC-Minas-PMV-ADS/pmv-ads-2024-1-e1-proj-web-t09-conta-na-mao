@@ -89,7 +89,7 @@ const gerarItensDeInvestimentos = (investimento) => {
       conta.categoriaInvestimento
     }</span>
         </div>
-          <span class="item-valor gasto-valor">- R$ ${parseFloat(
+          <span class="item-valor investimento-valor">- R$ ${parseFloat(
             conta.valorInvestimento
           )
             .toFixed(2)

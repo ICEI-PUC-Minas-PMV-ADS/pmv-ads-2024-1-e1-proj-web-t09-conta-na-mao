@@ -17,25 +17,11 @@
   ],
   "listaDeGastos": [
     {
-      "id": "2795",
-      "nomeGasto": "Internet",
-      "categoriaGasto": "Casa",
-      "valorGasto": "120",
-      "tipo": "casa"
-    },
-    {
       "id": "4dc7",
       "nomeGasto": "Internet",
       "categoriaGasto": "Casa",
       "valorGasto": "140",
       "tipo": "casa"
-    },
-    {
-      "id": "ab74",
-      "nomeGasto": "Viagem",
-      "categoriaGasto": "Férias",
-      "valorGasto": 2400,
-      "tipo": "férias"
     },
     {
       "id": "301b",
@@ -68,5 +54,13 @@
       "tipo": "renda"
     }
   ],
-  "listaDeInvestimentos": []
+  "listaDeInvestimentos": [
+    {
+      "id": "330c",
+      "nomeInvestimento": "Investimento",
+      "categoriaInvestimento": "investimento",
+      "valorInvestimento": 400,
+      "tipo": "investimento"
+    }
+  ]
 }

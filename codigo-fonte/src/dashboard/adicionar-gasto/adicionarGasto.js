@@ -10,13 +10,25 @@ const adicionarGasto = () => {
   if (verificarCadastro) {
     valorGasto = parseFloat(valorGasto.replace("R$ ", "").replace(",", "."));
 
-    let novoGasto = {
-      nomeGasto,
-      categoriaGasto,
-      valorGasto,
-      tipo,
-    };
-    postGasto(novoGasto);
+    if (categoriaGasto == "investimento".toLowerCase()) {
+      let novoInvestimento = {
+        nomeInvestimento: nomeGasto,
+        categoriaInvestimento: categoriaGasto,
+        valorInvestimento: valorGasto,
+        tipo,
+      };
+
+      postInvestimento(novoInvestimento);
+    } else {
+      let novoGasto = {
+        nomeGasto,
+        categoriaGasto,
+        valorGasto,
+        tipo,
+      };
+
+      postGasto(novoGasto);
+    }
 
     mensagemEnvio.innerHTML = "<span>Conta adicionada com sucesso!</span>";
   } else {
@@ -46,6 +58,19 @@ const adicionarListaDeGastos = (novoGasto) => {
   localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
 };
 
+const adicionarListaDeInvestimentos = (novoInvestimento) => {
+  const listaDeInvestimentosLocalStorage = localStorage.getItem(
+    "listaDeInvestimentos"
+  );
+  const listaDeInvestimentos = JSON.parse(listaDeInvestimentosLocalStorage);
+
+  listaDeInvestimentos.investimentos.push(novoInvestimento);
+  localStorage.setItem(
+    "listaDeInvestimentos",
+    JSON.stringify(listaDeInvestimentos)
+  );
+};
+
 const postGasto = (novoGasto) => {
   fetch("http://localhost:3000/listaDeGastos", {
     method: "POST",
@@ -57,6 +82,21 @@ const postGasto = (novoGasto) => {
     .then((resposta) => resposta.json())
     .then((novoGasto) => {
       adicionarListaDeGastos(novoGasto);
+    })
+    .catch((erro) => console.error("Erro: ", erro));
+};
+
+const postInvestimento = (novoInvestimento) => {
+  fetch("http://localhost:3000/listaDeInvestimentos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(novoInvestimento),
+  })
+    .then((resposta) => resposta.json())
+    .then((novoInvestimento) => {
+      adicionarListaDeInvestimentos(novoInvestimento);
     })
     .catch((erro) => console.error("Erro: ", erro));
 };
