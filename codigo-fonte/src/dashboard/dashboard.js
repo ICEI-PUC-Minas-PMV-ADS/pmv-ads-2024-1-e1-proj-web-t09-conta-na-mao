@@ -62,7 +62,7 @@ const gerarItensDeGastos = (gasto) => {
         <div class="itens-categorias">
           <img src="./imagens/arrow-down.svg" alt="Seta para baixo" />
           <span class="item-nome">${conta.nomeGasto}</span>
-          <span class="item-categoria ${conta.tipo}">${
+          <span class="item-categoria padrao ${conta.tipo}">${
       conta.categoriaGasto
     }</span>
         </div>
@@ -85,7 +85,7 @@ const gerarItensDeInvestimentos = (investimento) => {
         <div class="itens-categorias">
           <img src="./imagens/arrow-down.svg" alt="Seta para baixo" />
           <span class="item-nome">${conta.nomeInvestimento}</span>
-          <span class="item-categoria ${conta.tipo}">${
+          <span class="item-categoria padrao ${conta.tipo}">${
       conta.categoriaInvestimento
     }</span>
         </div>

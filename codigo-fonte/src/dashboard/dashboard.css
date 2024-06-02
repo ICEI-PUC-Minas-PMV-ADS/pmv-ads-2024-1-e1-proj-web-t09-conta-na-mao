@@ -233,6 +233,10 @@ a {
   font-size: 12px;
 }
 
+.padrao {
+  background-color: rgb(243, 208, 243);
+}
+
 .item-valor {
   color: #213453;
 }
