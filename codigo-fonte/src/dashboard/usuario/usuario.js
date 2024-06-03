@@ -30,6 +30,8 @@ const getDadosDoCliente = () => {
     .catch((erro) => console.error("Erro: ", erro));
 };
 
+// FORMATAR DADOS
+
 const formatarCpf = (cpf) => {
   const cpfFormatado = cpf.replace(
     /(\d{3})(\d{3})(\d{3})(\d{2})/,
@@ -64,14 +66,25 @@ const gerarDados = (usuario) => {
   usuarioNome.innerHTML = `${usuario.nome} ${usuario.sobrenome}`;
 
   usuarioDados.innerHTML = `
-    <p>Email: <span>${usuario.email}</span></p>
-    <p>CPF: <span>${formatarCpf(usuario.cpf)}</span></p>
-    <p>Contato: <span>${formatarContato(usuario.telefone)}</span></p>
-    <p>Nascimento: <span>${formatarData(usuario.dataNascimento)}</span></p>
+  <p>Email: <span>${usuario.email}</span></p>
+  <p>CPF: <span>${formatarCpf(usuario.cpf)}</span></p>
+  <p>Contato: <span>${formatarContato(usuario.telefone)}</span></p>
+  <p>Nascimento: <span>${formatarData(usuario.dataNascimento)}</span></p>
   `;
 };
 
 getDadosDoCliente();
+
+// PEGAS DADOS DO CLIENTE NO LOCAL STORAGE
+
+const dadosDoClienteLocal = () => {
+  const usuario = localStorage.getItem("usuarioLogado");
+  const usuarioJSON = JSON.parse(usuario);
+
+  gerarDados(usuarioJSON);
+};
+
+dadosDoClienteLocal();
 
 // MUDAR SENHA
 
