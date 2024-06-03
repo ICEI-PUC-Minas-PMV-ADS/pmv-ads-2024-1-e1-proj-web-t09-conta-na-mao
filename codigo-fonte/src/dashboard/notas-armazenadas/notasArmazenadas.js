@@ -14,25 +14,34 @@ const gerarItensDeGastos = (gasto) => {
   gasto.forEach((conta) => {
     listaVariaveis.innerHTML += `
       <div class="variavel">
-        <div class="itens-categorias">
-          <img src="../imagens/arrow-down.svg" alt="Seta para baixo" />
-          <span class="item-nome">${conta.nomeGasto}</span>
-          <span class="item-categoria padrao ${conta.tipo}">${
+      <div class="itens-categorias">
+      <img src="../imagens/arrow-down.svg" alt="Seta para baixo" />
+      <span class="item-nome">${conta.nomeGasto}</span>
+      <span class="item-categoria padrao ${conta.tipo}">${
       conta.categoriaGasto
     }</span>
-        </div>
-          <span class="item-valor gasto-valor">- R$ ${parseFloat(
-            conta.valorGasto
-          )
-            .toFixed(2)
-            .replace(".", ",")}
-          </span>
       </div>
-    `;
+      <span class="item-valor gasto-valor">- R$ ${parseFloat(conta.valorGasto)
+        .toFixed(2)
+        .replace(".", ",")}
+      </span>
+      </div>
+      `;
   });
 };
 
 getListaDeGastos();
+
+// PEGAR DADOS NO LOCALSTORAGE
+
+const listaDeGastosLocal = () => {
+  const listaDeGastosLocal = localStorage.getItem("listaDeGastos");
+  const listaDeGastos = JSON.parse(listaDeGastosLocal);
+
+  gerarItensDeGastos(listaDeGastos.gastos);
+};
+
+listaDeGastosLocal();
 
 // ABRIR MENU
 
