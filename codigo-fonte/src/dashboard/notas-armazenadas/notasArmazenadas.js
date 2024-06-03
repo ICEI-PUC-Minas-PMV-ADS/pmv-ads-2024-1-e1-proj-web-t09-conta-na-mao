@@ -36,7 +36,7 @@ getListaDeGastos();
 
 const listaDeGastosLocal = () => {
   const listaDeGastosLocal = localStorage.getItem("listaDeGastos");
-  const listaDeGastos = JSON.parse(listaDeGastosLocal);
+  const listaDeGastos = JSON.parse(listaDeGastosLocal) || { gastos: [] };
 
   gerarItensDeGastos(listaDeGastos.gastos);
 };

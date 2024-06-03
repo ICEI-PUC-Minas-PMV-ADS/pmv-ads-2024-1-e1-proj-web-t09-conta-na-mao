@@ -41,7 +41,7 @@ const tratarValorInput = () => {
 
 const adicionarListaDeRendas = (novaRenda) => {
   const listaDeRendasLocalStorage = localStorage.getItem("listaDeRendas");
-  const listaDeRendas = JSON.parse(listaDeRendasLocalStorage);
+  const listaDeRendas = JSON.parse(listaDeRendasLocalStorage) || { rendas: [] };
 
   listaDeRendas.rendas.push(novaRenda);
   localStorage.setItem("listaDeRendas", JSON.stringify(listaDeRendas));

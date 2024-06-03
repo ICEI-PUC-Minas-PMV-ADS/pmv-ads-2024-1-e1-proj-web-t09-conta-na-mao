@@ -31,7 +31,7 @@ const getListaDeGastos = () => {
 
 const gerarListaDeCategorias = (categoria) => {
   const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
-  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal);
+  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal) || [];
 
   listaDeTipos.push(categoria);
   listaDeCategorias.push(categoria);

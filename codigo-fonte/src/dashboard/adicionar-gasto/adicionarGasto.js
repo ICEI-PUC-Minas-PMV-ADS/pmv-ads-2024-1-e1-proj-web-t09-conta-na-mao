@@ -57,7 +57,7 @@ const tratarValorInput = () => {
 
 const adicionarListaDeGastos = (novoGasto) => {
   const listaDeGastosLocalStorage = localStorage.getItem("listaDeGastos");
-  const listaDeGastos = JSON.parse(listaDeGastosLocalStorage);
+  const listaDeGastos = JSON.parse(listaDeGastosLocalStorage) || { gastos: [] };
 
   listaDeGastos.gastos.push(novoGasto);
   localStorage.setItem("listaDeGastos", JSON.stringify(listaDeGastos));
