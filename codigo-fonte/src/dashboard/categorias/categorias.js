@@ -55,7 +55,7 @@ const gerarTagDeCategoriasLocal = () => {
   });
 
   const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
-  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal);
+  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal) || [];
 
   listaDeCategorias.forEach((item) => {
     if (!listaDeTipos.includes(item)) {
