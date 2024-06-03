@@ -17,7 +17,7 @@ const abrirMenu = () => {
 
 // PEGAR DADOS NO BANCO DE DADOS
 
-const listaDeTipos = [];
+let listaDeTipos = [];
 
 const getListaDeGastos = () => {
   fetch("http://localhost:3000/listaDeGastos")
@@ -28,6 +28,49 @@ const getListaDeGastos = () => {
     })
     .catch((erro) => console.error("Erro: ", erro));
 };
+
+const gerarListaDeCategorias = (categoria) => {
+  const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
+  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal);
+
+  listaDeTipos.push(categoria);
+  listaDeCategorias.push(categoria);
+  localStorage.setItem("listaDeCategorias", JSON.stringify(listaDeCategorias));
+};
+
+const gerarTagDeCategoriasLocal = () => {
+  const variavelDiv = document.querySelector(".variavel");
+
+  const listaDeGastosLocal = localStorage.getItem("listaDeGastos");
+  const listaDeGastos = JSON.parse(listaDeGastosLocal).gastos;
+
+  listaDeGastos.forEach((gasto) => {
+    const itemCategoria = document.createElement("div");
+    itemCategoria.classList.add("item-categoria", "padrao", gasto.tipo);
+    itemCategoria.textContent =
+      gasto.tipo.charAt(0).toUpperCase() + gasto.tipo.slice(1);
+    variavelDiv.appendChild(itemCategoria);
+
+    listaDeTipos.push(gasto.tipo);
+  });
+
+  const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
+  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal);
+
+  listaDeCategorias.forEach((item) => {
+    if (!listaDeTipos.includes(item)) {
+      listaDeTipos.push(item);
+      const itemCategoria = document.createElement("div");
+      itemCategoria.classList.add("item-categoria", "padrao", item);
+      itemCategoria.textContent = item.charAt(0).toUpperCase() + item.slice(1);
+      variavelDiv.appendChild(itemCategoria);
+    }
+  });
+
+  localStorage.setItem("listaDeCategorias", JSON.stringify(listaDeTipos));
+};
+
+gerarTagDeCategoriasLocal();
 
 const gerarCategorias = (lista) => {
   const variavelDiv = document.querySelector(".variavel");
@@ -107,6 +150,7 @@ const adicionarCategoria = () => {
   if (!listaDeTipos.includes(categoriaInput)) {
     listaDeTipos.push(categoriaInput);
     gerarCategorias(listaDeTipos);
+    gerarListaDeCategorias(categoriaInput);
   }
 };
 
@@ -119,5 +163,23 @@ const removerCategoria = () => {
   if (index > -1) {
     listaDeTipos.splice(index, 1);
     gerarCategorias(listaDeTipos);
+    removerCategoriaLocal(categoriaInput);
   }
+};
+
+const removerCategoriaLocal = (categoriaInput) => {
+  const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
+  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal);
+
+  const index = listaDeCategorias.indexOf(categoriaInput);
+  if (index > -1) {
+    listaDeCategorias.splice(index, 1);
+    localStorage.setItem(
+      "listaDeCategorias",
+      JSON.stringify(listaDeCategorias)
+    );
+  }
+
+  const categoriaDiv = document.querySelector(`.${categoriaInput}`);
+  if (categoriaDiv) categoriaDiv.remove();
 };
