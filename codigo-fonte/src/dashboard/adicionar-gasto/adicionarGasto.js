@@ -10,7 +10,10 @@ const adicionarGasto = () => {
   if (verificarCadastro) {
     valorGasto = parseFloat(valorGasto.replace("R$ ", "").replace(",", "."));
 
-    if (categoriaGasto == "investimento".toLowerCase()) {
+    if (
+      nomeGasto == "investimento".toLowerCase() ||
+      categoriaGasto == "investimento".toLowerCase()
+    ) {
       let novoInvestimento = {
         nomeInvestimento: nomeGasto,
         categoriaInvestimento: categoriaGasto,
@@ -19,6 +22,7 @@ const adicionarGasto = () => {
       };
 
       postInvestimento(novoInvestimento);
+      adicionarListaDeInvestimentos(novoInvestimento);
     } else {
       let novoGasto = {
         nomeGasto,
@@ -28,6 +32,7 @@ const adicionarGasto = () => {
       };
 
       postGasto(novoGasto);
+      adicionarListaDeGastos(novoGasto);
     }
 
     mensagemEnvio.innerHTML = "<span>Conta adicionada com sucesso!</span>";

@@ -1,22 +1,23 @@
 const adicionarQrCode = () => {
-  let nomeConta = document.getElementById("conta").value;
-  let categoriaConta = document.getElementById("categoria").value;
-  let valorConta = document.getElementById("valor").value;
-  let tipo = categoriaConta.toLowerCase().replace(" ", "-");
+  let nomeGasto = document.getElementById("conta").value;
+  let categoriaGasto = document.getElementById("categoria").value;
+  let valorGasto = document.getElementById("valor").value;
+  let tipo = categoriaGasto.toLowerCase().replace(" ", "-");
 
-  let verificarCadastro = nomeConta && categoriaConta && valorConta;
+  let verificarCadastro = nomeGasto && categoriaGasto && valorGasto;
   let mensagemEnvio = document.getElementById("mensagemEnvio");
 
   if (verificarCadastro) {
-    valorConta = parseFloat(valorConta.replace("R$ ", "").replace(",", "."));
+    valorGasto = parseFloat(valorGasto.replace("R$ ", "").replace(",", "."));
 
     let novoGasto = {
-      nomeConta,
-      categoriaConta,
-      valorConta,
+      nomeGasto,
+      categoriaGasto,
+      valorGasto,
       tipo,
     };
     postQrCode(novoGasto);
+    adicionarListaDeGastos(novoGasto);
 
     mensagemEnvio.innerHTML = "<span>Conta adicionada com sucesso!</span>";
   } else {
