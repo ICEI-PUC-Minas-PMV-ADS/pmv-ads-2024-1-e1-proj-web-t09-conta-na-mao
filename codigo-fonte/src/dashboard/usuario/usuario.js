@@ -73,6 +73,16 @@ const gerarDados = (usuario) => {
   `;
 };
 
+const gerarMensagemErroEmTela = () => {
+  const usuarioNome = document.querySelector(".usuario-nome span");
+  const usuarioDados = document.querySelector(".usuario-dados");
+  const usuarioBotoes = document.querySelector(".usario-botoes");
+
+  usuarioNome.innerHTML = `<p>Erro</p>`;
+  usuarioDados.innerHTML = `<p>Usuário não encontrado, faça o login.</p>`;
+  usuarioBotoes.innerHTML = `<button class="botao-secundario" onclick="window.location.href = '../../index.html'">Voltar a página principal</button>`;
+};
+
 getDadosDoCliente();
 
 // PEGAS DADOS DO CLIENTE NO LOCAL STORAGE
@@ -80,6 +90,8 @@ getDadosDoCliente();
 const dadosDoClienteLocal = () => {
   const usuario = localStorage.getItem("usuarioLogado");
   const usuarioJSON = JSON.parse(usuario);
+
+  if (!usuarioJSON) gerarMensagemErroEmTela();
 
   gerarDados(usuarioJSON);
 };
