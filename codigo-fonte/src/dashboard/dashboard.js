@@ -212,7 +212,7 @@ const gerarListaDeGastosLocal = () => {
 
 const gerarListaDeInvestimentosLocal = () => {
   const listaDeInvestimentos = JSON.parse(
-    localStorage.getItem("listaDeInvestimentos")
+    localStorage.getItem("listaDeInvestimentos") || { investimentos: [] }
   );
   const investimentos = listaDeInvestimentos.investimentos;
 
