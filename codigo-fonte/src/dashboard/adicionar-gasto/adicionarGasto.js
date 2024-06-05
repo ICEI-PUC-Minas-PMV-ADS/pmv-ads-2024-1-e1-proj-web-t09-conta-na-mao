@@ -67,7 +67,9 @@ const adicionarListaDeInvestimentos = (novoInvestimento) => {
   const listaDeInvestimentosLocalStorage = localStorage.getItem(
     "listaDeInvestimentos"
   );
-  const listaDeInvestimentos = JSON.parse(listaDeInvestimentosLocalStorage);
+  const listaDeInvestimentos = JSON.parse(listaDeInvestimentosLocalStorage) || {
+    investimentos: [],
+  };
 
   listaDeInvestimentos.investimentos.push(novoInvestimento);
   localStorage.setItem(
