@@ -195,7 +195,10 @@ getListaDeInvestimentos();
 // PEGAR DADOS NO LOCAL STORAGE
 
 const gerarListaDeRendasLocal = () => {
-  const listaDeRendas = JSON.parse(localStorage.getItem("listaDeRendas"));
+  let listaDeRendas = JSON.parse(localStorage.getItem("listaDeRendas"));
+
+  if (!listaDeRendas) return (listaDeRendas = { rendas: [] });
+
   const rendas = listaDeRendas.rendas;
 
   gerarItensDeRendas(rendas);
@@ -203,7 +206,10 @@ const gerarListaDeRendasLocal = () => {
 };
 
 const gerarListaDeGastosLocal = () => {
-  const listaDeGastos = JSON.parse(localStorage.getItem("listaDeGastos"));
+  let listaDeGastos = JSON.parse(localStorage.getItem("listaDeGastos"));
+
+  if (!listaDeGastos) return (listaDeGastos = { gastos: [] });
+
   const gastos = listaDeGastos.gastos;
 
   gerarItensDeGastos(gastos);
@@ -211,9 +217,13 @@ const gerarListaDeGastosLocal = () => {
 };
 
 const gerarListaDeInvestimentosLocal = () => {
-  const listaDeInvestimentos = JSON.parse(
-    localStorage.getItem("listaDeInvestimentos") || { investimentos: [] }
+  let listaDeInvestimentos = JSON.parse(
+    localStorage.getItem("listaDeInvestimentos")
   );
+
+  if (!listaDeInvestimentos)
+    return (listaDeInvestimentos = { investimentos: [] });
+
   const investimentos = listaDeInvestimentos.investimentos;
 
   gerarItensDeInvestimentos(investimentos);
