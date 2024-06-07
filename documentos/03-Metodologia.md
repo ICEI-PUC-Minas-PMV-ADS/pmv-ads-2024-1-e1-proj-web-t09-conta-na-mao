@@ -56,14 +56,14 @@ Nosso quadro Kanban está estruturado da seguinte forma:
 ### Ferramentas
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
-| AMBIENTE                    | PLATAFORMA      | LINK DE ACESSO                                                                                             |
-| --------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------- |
-| Repositório de código fonte | GitHub          | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/teams/conta-na-mao                                          |
-| Documentos do projeto       | GitHub          | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/tree/main/documentos |
-| Projeto de Interface        | Figma           | https://www.figma.com/files/team/1359205780990473554/Conta-na-m%C3%A3o?fuid=1360995305894869996            |
-| Gerenciamento do Projeto    | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1059                                               |
-| Hospedagem                  | GitHub Pages    | http://....                                                                                                |
+| AMBIENTE                    | PLATAFORMA      | LINK DE ACESSO                                                                                                   |
+| --------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Repositório de código fonte | GitHub          | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/teams/conta-na-mao                                                |
+| Documentos do projeto       | GitHub          | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/tree/main/documentos       |
+| Projeto de Interface        | Figma           | https://www.figma.com/files/team/1359205780990473554/Conta-na-m%C3%A3o?fuid=1360995305894869996                  |
+| Gerenciamento do Projeto    | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1059                                                     |
+| Hospedagem                  | GitHub Pages    | https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/codigo-fonte/src/index.html |
 
 ### Estratégia de Organização de Codificação
 
-Todos os artefatos relacionados a implementação e visualização dos conteúdos do projeto do site deverão ser inseridos na pasta [codigo-fonte](http://https://github.com/ICEI-PUC-Minas-PMV-ADS/WebApplicationProject-Template-v2/tree/main/codigo-fonte). Consulte também a nossa sugestão referente a estratégia de organização de codificação a ser adotada pela equipe de desenvolvimento do projeto.
+Todos os artefatos relacionados a implementação e visualização dos conteúdos do projeto do site deverão ser inseridos na pasta [codigo-fonte](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/tree/main/codigo-fonte). Consulte também a nossa sugestão referente a estratégia de organização de codificação a ser adotada pela equipe de desenvolvimento do projeto.
