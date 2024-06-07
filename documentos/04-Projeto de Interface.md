@@ -121,12 +121,13 @@ A tela de categorias apresenta um breve formulário com filtro, adição e subtr
 
 ### Página de Usuário
 
-A tela de usuário apresenta uma breve informação da conta do usuário logada, possibilitando a troca de senha ou exclusão de usuário.
+A tela de usuário apresenta um breve resumo mensal do usuário e uma breve informação da conta do usuário logada, possibilitando a troca de senha ou exclusão de usuário.
 
-![Protótipo da página de usuário da versão Desktop da Conta na mão](./img/prototypes/usuario.png)
+![Protótipo da página de usuário, na aba de Resumo mensal, da versão Desktop da Conta na mão](./img/prototypes/usuario-resumo-mensal.png)
+![Protótipo da página de usuário, na aba de Informações, da versão Desktop da Conta na mão](./img/prototypes/usuario-informacoes.png)
 
 <figure> 
-    <figcaption>Figura 13 - Protótipo da página usuário da versão Desktop
+    <figcaption>Figura 13.1 e 13.2 - Protótipo da página usuário da versão Desktop
 </figure>
 
 ### Página de Notas
