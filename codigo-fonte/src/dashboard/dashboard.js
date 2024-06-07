@@ -36,7 +36,7 @@ const isJSONServerAvailable = async () => {
     const response = await fetch("http://localhost:3000");
     return response.ok;
   } catch (error) {
-    console.error("Erro ao verificar a disponibilidade do JSON Server:", error);
+    console.error("JSON Server desconectado", error);
     return false;
   }
 };
@@ -51,6 +51,7 @@ const usarJSONServer = async () => {
     gerarListaDeRendasLocal();
     gerarListaDeGastosLocal();
     gerarListaDeInvestimentosLocal();
+    atualizarSaldoTotal();
   }
 };
 
