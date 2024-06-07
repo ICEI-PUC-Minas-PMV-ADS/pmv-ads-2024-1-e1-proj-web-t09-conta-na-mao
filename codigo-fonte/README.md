@@ -5,7 +5,7 @@
 Nesse primeiro eixo do curso, para simplificar a utilização do Git e a organização das pastas e artefatos de implementação no sistema de arquivos, sugerimos que o projeto seja estruturado de modo que cada aluno trabalhe com seus arquivos nas suas respectivas pastas, identificadas por nomes das suas respectivas telas. Por exemplo:
 
 - Pasta src (root do projeto): index.html, index.css, index.js - Desenvolvedora responsável: Karina Nunes.
-- Pasta src\dashboard: dashboard.html, dashboard.css, dashboard.js - Desenvolvedor responsável: Karina Nunes.
+- Pasta src\dashboard: dashboard.html, dashboard.css, dashboard.js - Desenvolvedora responsável: Karina Nunes.
 - Pasta src\cadastro: cadastro.html, cadastro.css, cadastro.js - Desenvolvedor responsável: Aluno Railan.
 - Pasta src\entrar: entrar.html, entrar.css, entrar.js - Desenvolvedor responsável: Aluno Angelo.
 
@@ -13,6 +13,27 @@ Nesse primeiro eixo do curso, para simplificar a utilização do Git e a organiz
 
 O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um servidor web de sua preferência. Existem diversos servidores web gratuitos que podem ser utilizados, tal como GitHub Pages (GitHub.IO), Vercel, Render, Netlify, Surge.sh, entre outros. Nesse primeiro eixo, recomenda-se inclusive a utilização do GitHub Pages.
 [Acesse aqui](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/codigo-fonte/src/index.html)
+
+## Execução do projeto
+
+### Utilizando LocalStorage
+
+1. Abrir repositório
+2. Abrir com o Liver Server o arquivo `index.html`
+3. Entrar na página de cadastro
+4. Se cadastrar
+5. Fazer o login
+6. Cadastrar suas rendas, gastos e investimentos normalmente.
+
+### Utilizando JSON Server
+
+1. Abrir repositório
+2. Abrir o terminal e digitar `npx json-server --watch codigo-fonte/src/db.json`
+3. Abrir local host na página `http://localhost:3000/`
+4. Entrar na página de cadastro
+5. Se cadastrar
+6. Fazer o login
+7. Cadastrar suas rendas, gastos e investimentos normalmente.
 
 ## Histórico de versões
 
