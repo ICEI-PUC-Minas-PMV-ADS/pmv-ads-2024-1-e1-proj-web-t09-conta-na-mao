@@ -242,7 +242,7 @@ const mesAtualDoUsuario = () => {
 const verificarMesDoObjeto = (dataObjeto) => {
   const mesAtual = mesAtualDoUsuario();
   const partesData = dataObjeto.split("/");
-  const mesObjeto = parseInt(partesData[1], 10); // Converter para número inteiro
+  const mesObjeto = parseInt(partesData[1], 10);
   return mesObjeto === mesAtual;
 };
 

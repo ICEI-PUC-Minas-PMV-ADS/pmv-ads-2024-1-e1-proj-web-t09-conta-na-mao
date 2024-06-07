@@ -1,28 +1,14 @@
 {
   "usuarios": [
     {
-      "id": "4a13",
+      "id": "2ca8",
       "email": "karina.nuunes@yahoo.com.br",
-      "senha": "123",
+      "senha": "123456",
       "nome": "Karina",
       "sobrenome": "Nunes",
       "genero": "feminino",
-      "cpf": "12312312312",
-      "telefone": "21911112222",
-      "dataNascimento": "1996-10-11",
-      "objPrincipal": "option1",
-      "frequenciaDeUso": "alta",
-      "indicacaoFinanceira": "sim"
-    },
-    {
-      "id": "8556",
-      "email": "karina.nuunes@yahoo.com.br",
-      "senha": "123",
-      "nome": "Karina",
-      "sobrenome": "Nunes",
-      "genero": "feminino",
-      "cpf": "12312312312",
-      "telefone": "21999999999",
+      "cpf": "123.456.789-12",
+      "telefone": "(21) 99999-9999",
       "dataNascimento": "1996-10-11",
       "objPrincipal": "option1",
       "frequenciaDeUso": "alta",
