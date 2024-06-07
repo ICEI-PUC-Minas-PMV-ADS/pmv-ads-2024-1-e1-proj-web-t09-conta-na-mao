@@ -1,3 +1,17 @@
+// ACESSO RESTRITO
+
+const verificarContaLogada = () => {
+  const usuarioLogado = localStorage.getItem("usuarioLogado");
+  if (!usuarioLogado || usuarioLogado === "{}") {
+    alert(
+      "Acesso restrito! Você precisa estar logado para acessar essa página!"
+    );
+    window.location.href = "../../login/login.html";
+  }
+};
+
+verificarContaLogada();
+
 const adicionarQrCode = () => {
   let nomeGasto = document.getElementById("conta").value;
   let categoriaGasto = document.getElementById("categoria").value;
