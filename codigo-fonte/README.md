@@ -6,12 +6,13 @@ Nesse primeiro eixo do curso, para simplificar a utilização do Git e a organiz
 
 - Pasta src (root do projeto): index.html, index.css, index.js - Desenvolvedora responsável: Karina Nunes.
 - Pasta src\dashboard: dashboard.html, dashboard.css, dashboard.js - Desenvolvedor responsável: Karina Nunes.
-- Pasta src\cadastro: cadastro.html, cadastro.css, cadastro.js - Desenvolvedora responsável: Aluna Railan.
-- Pasta src\entrar: entrar.html, entrar.css, entrar.js - Desenvolvedora responsável: Aluna Angelo.
+- Pasta src\cadastro: cadastro.html, cadastro.css, cadastro.js - Desenvolvedor responsável: Aluno Railan.
+- Pasta src\entrar: entrar.html, entrar.css, entrar.js - Desenvolvedor responsável: Aluno Angelo.
 
 ## Instalação do Site
 
-O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um servidor web de sua preferência. Existem diversos servidores web gratuitos que podem ser utilizados, tal como GitHub Pages (GitHub.IO), Vercel, Render, Netlify, Surge.sh, entre outros. Nesse primeiro eixo, recomenda-se inclusive a utilização do GitHub Pages. [Insira o endereço eletrônico público para acessá-lo.]
+O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um servidor web de sua preferência. Existem diversos servidores web gratuitos que podem ser utilizados, tal como GitHub Pages (GitHub.IO), Vercel, Render, Netlify, Surge.sh, entre outros. Nesse primeiro eixo, recomenda-se inclusive a utilização do GitHub Pages.
+[Acesse aqui](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/codigo-fonte/src/index.html)
 
 ## Histórico de versões
 
@@ -49,3 +50,134 @@ O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um
 #### Adicionado
 
 - Categorias: Arquivo HTML e CSS.
+
+### [0.1.5] - 12/05/2024
+
+### Atualizado
+
+- Resgister Page: Arquivo HTML e CSS.
+
+### [0.1.6] - 21/05/2024
+
+### Atualizado
+
+- Dashboard Page: Arquivo HTML e CSS.
+  - Adicionar renda: Arquivo HTML.
+  - Adicionar gasto: Arquivo HTML.
+  - Ler QR Code: Arquivo HTML.
+
+### Adicionado
+
+- Dashboard Page: Arquivo JS.
+  - Adicionar renda: Arquivo JS.
+  - Adicionar gasto: Arquivo JS.
+  - Ler QR Code: Arquivo JS.
+
+### [0.1.7] - 22/05/2024
+
+### Atualizado
+
+- Login Page: Arquivo HTML e CSS.
+
+### [0.1.8] - 24/05/2024
+
+### Atualizado
+
+- Register Page: Arquivo HTML.
+
+### Adicionado
+
+- Register Page: Arquivo JS.
+
+### [0.1.9] - 25/05/2024
+
+### Atualizado
+
+- Register Page: Arquivo HTML e JS.
+- Dashboard Page: Arquivo HTML.
+- Login Page: Arquivo HTML.
+
+### Adicionado
+
+- db.json: Arquivo JSON.
+- Login Page: Arquivo JS.
+
+### [0.2.0] - 31/05/2024
+
+### Atualizado
+
+- Dashboard Page: Arquivo HTML, CSS e JS.
+  - Ler Qr Code: Arquivo HTML e JS.
+  - Adicionar gasto: Arquivo HTML e JS.
+  - Adicionar renda: Arquivo HTML e JS.
+
+### [0.2.1] - 01/06/2024
+
+### Atualizado
+
+- Home Page: Arquivo CSS.
+- Dashboard Page: Arquivo HTML, CSS e JS.
+  - Ler QR Code: Arquivo HTML, CSS e JS.
+  - Adicionar gasto: Arquivo HTML, CSS e JS.
+  - Adicionar renda: Arquivo HTML, CSS e JS.
+  - Categorias: Arquivo HTML e CSS.
+  - Nota armazenadas: Arquivo HTML e CSS.
+  - Usuário: Arquivo HTML e CSS.
+
+### Adicionado
+
+- Dashboard Page:
+  - Categorias: Arquivo JS.
+  - Notas armazenadas: Arquivo JS.
+  - Usuário: Arquivo JS.
+
+### [0.2.2] - 02/06/2024
+
+### Atualizado
+
+- Home Page: Arquivo HTML e CSS.
+- Dashboard Page: Arquivo CSS e JS.
+  - Ler QR Code: Aquivo HTML.
+  - Adicionar gasto: Arquivo JS.
+  - Adicionar renda: Arquivo HTML e JS.
+  - Categorias: Arquivo HTML e JS.
+  - Notas armazenadas: Arquivo HTML e JS.
+  - Usuário: Arquivo HTML e JS.
+- Register Page: Arquivo HTML e JS.
+- Login Page: Arquivo HTML e JS.
+
+### Adicionado
+
+- Home Page: Arquivo JS.
+
+### [0.2.3] - 03/06/2024
+
+### Atualizado
+
+- Login Page: Arquivo JS.
+- Dashboard Page: Arquivo JS.
+  - Ler QR Code: Arquivo JS.
+  - Adicionar gasto: Arquivo JS.
+  - Adicionar renda: Arquivo JS.
+  - Categorias: Arquivo JS.
+  - Notas armazenadas: Arquivo JS.
+
+### [0.2.4] - 05/06/2024
+
+### Atualizado
+
+- Dashboard Page: Arquivo JS.
+  - Adicionar gasto: Arquivo JS.
+  - Usuário: Arquivo JS.
+
+### [0.2.5] - 07/06/2024
+
+### Atualizado
+
+- Dashboard Page: Arquivo JS.
+  - Ler QR Code: Arquivo JS.
+  - Adicionar gasto: Arquivo JS.
+  - Adicionar renda: Arquivo JS.
+  - Categorias: Arquivo JS.
+  - Notas armazenadas: Arquivo JS.
+  - Usuários: Arquivo HTML, CSS e JS.
