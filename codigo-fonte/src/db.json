@@ -13,54 +13,74 @@
       "objPrincipal": "option1",
       "frequenciaDeUso": "alta",
       "indicacaoFinanceira": "sim"
+    },
+    {
+      "id": "8556",
+      "email": "karina.nuunes@yahoo.com.br",
+      "senha": "123",
+      "nome": "Karina",
+      "sobrenome": "Nunes",
+      "genero": "feminino",
+      "cpf": "12312312312",
+      "telefone": "21999999999",
+      "dataNascimento": "1996-10-11",
+      "objPrincipal": "option1",
+      "frequenciaDeUso": "alta",
+      "indicacaoFinanceira": "sim"
     }
   ],
   "listaDeGastos": [
     {
-      "id": "4dc7",
-      "nomeGasto": "Internet",
-      "categoriaGasto": "Casa",
-      "valorGasto": "140",
-      "tipo": "casa"
+      "id": "8ab7",
+      "nomeGasto": "Faculdade",
+      "categoriaGasto": "Estudo",
+      "valorGasto": 500,
+      "tipo": "estudo",
+      "data": "07/06/2024"
     },
     {
-      "id": "301b",
-      "nomeGasto": "Aluguel",
-      "categoriaGasto": "Casa",
-      "valorGasto": 1700,
-      "tipo": "casa"
-    },
-    {
-      "id": "8fde",
-      "nomeGasto": "Mercado",
-      "categoriaGasto": "Mercado",
-      "valorGasto": 222,
-      "tipo": "mercado"
+      "id": "d23e",
+      "nomeGasto": "Shopping",
+      "categoriaGasto": "Compras",
+      "valorGasto": 149,
+      "tipo": "compras",
+      "data": "07/06/2024"
     }
   ],
   "listaDeRendas": [
     {
-      "id": "caa7",
+      "id": "625d",
       "nomeRenda": "Salário",
       "categoriaRenda": "Renda",
       "valorRenda": 1400,
-      "tipo": "renda"
+      "tipo": "renda",
+      "data": "07/06/2024"
     },
     {
-      "id": "c27e",
+      "id": "1235",
       "nomeRenda": "Freelance",
       "categoriaRenda": "Renda",
-      "valorRenda": 2000,
-      "tipo": "renda"
+      "valorRenda": 600,
+      "tipo": "renda",
+      "data": "07/06/2024"
     }
   ],
   "listaDeInvestimentos": [
     {
-      "id": "330c",
+      "id": "11bb",
       "nomeInvestimento": "Investimento",
       "categoriaInvestimento": "investimento",
       "valorInvestimento": 400,
-      "tipo": "investimento"
+      "tipo": "investimento",
+      "data": "07/06/2024"
+    },
+    {
+      "id": "1e24",
+      "nomeInvestimento": "Investimento",
+      "categoriaInvestimento": "investimento",
+      "valorInvestimento": 400,
+      "tipo": "investimento",
+      "data": "07/06/2024"
     }
   ]
 }

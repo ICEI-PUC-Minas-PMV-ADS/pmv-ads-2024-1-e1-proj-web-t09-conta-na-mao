@@ -29,6 +29,7 @@ const adicionarQrCode = () => {
       categoriaGasto,
       valorGasto,
       tipo,
+      data: new Date().toLocaleDateString(),
     };
     postQrCode(novoGasto);
     adicionarListaDeGastos(novoGasto);

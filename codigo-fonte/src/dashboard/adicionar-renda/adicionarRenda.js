@@ -29,6 +29,7 @@ const adicionarRenda = () => {
       categoriaRenda,
       valorRenda,
       tipo,
+      data: new Date().toLocaleDateString(),
     };
     postRenda(novaRenda);
     adicionarListaDeRendas(novaRenda);

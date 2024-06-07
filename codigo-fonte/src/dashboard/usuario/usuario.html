@@ -108,6 +108,17 @@
     </nav>
     <section class="visao-geral">
       <span class="titulo-pagina">Usuário</span>
+      <nav class="usario-botoes">
+        <button
+          class="nav-links resumo botaoAtivo"
+          onclick="selecionarResumo()"
+        >
+          Resumo mensal
+        </button>
+        <button class="nav-links informacoes" onclick="selecionarInformacoes()">
+          Informações
+        </button>
+      </nav>
       <div class="info-usuario">
         <div class="usuario-nome">
           <img src="../imagens/big-user.svg" alt="Ícone de usuário" />
@@ -123,6 +134,7 @@
           </button>
         </div>
       </div>
+      <div class="resumo-mensal"></div>
     </section>
   </body>
 </html>

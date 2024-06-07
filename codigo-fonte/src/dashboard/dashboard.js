@@ -29,6 +29,33 @@ const abrirMenu = () => {
   }
 };
 
+// VERIFICAR DISPONIBILIDADE DO JSON SERVER
+
+const isJSONServerAvailable = async () => {
+  try {
+    const response = await fetch("http://localhost:3000");
+    return response.ok;
+  } catch (error) {
+    console.error("Erro ao verificar a disponibilidade do JSON Server:", error);
+    return false;
+  }
+};
+
+const usarJSONServer = async () => {
+  const jsonServerDisponivel = await isJSONServerAvailable();
+  if (jsonServerDisponivel) {
+    getListaDeRendas();
+    getListaDeGastos();
+    getListaDeInvestimentos();
+  } else {
+    gerarListaDeRendasLocal();
+    gerarListaDeGastosLocal();
+    gerarListaDeInvestimentosLocal();
+  }
+};
+
+usarJSONServer();
+
 // PEGAR DADOS NO BANCO DE DADOS
 
 const getListaDeRendas = () => {
@@ -202,18 +229,30 @@ const atualizarSaldoTotal = () => {
   }
 };
 
-getListaDeRendas();
-getListaDeGastos();
-getListaDeInvestimentos();
-
 // PEGAR DADOS NO LOCAL STORAGE
+
+const mesAtualDoUsuario = () => {
+  const dataAtual = new Date();
+  const mesAtual = dataAtual.getMonth() + 1;
+
+  return mesAtual;
+};
+
+const verificarMesDoObjeto = (dataObjeto) => {
+  const mesAtual = mesAtualDoUsuario();
+  const partesData = dataObjeto.split("/");
+  const mesObjeto = parseInt(partesData[1], 10); // Converter para número inteiro
+  return mesObjeto === mesAtual;
+};
 
 const gerarListaDeRendasLocal = () => {
   let listaDeRendas = JSON.parse(localStorage.getItem("listaDeRendas"));
 
   if (!listaDeRendas) return (listaDeRendas = { rendas: [] });
 
-  const rendas = listaDeRendas.rendas;
+  const rendas = listaDeRendas.rendas.filter((renda) => {
+    return verificarMesDoObjeto(renda.data);
+  });
 
   gerarItensDeRendas(rendas);
   atualizarRendaTotal();
@@ -224,7 +263,9 @@ const gerarListaDeGastosLocal = () => {
 
   if (!listaDeGastos) return (listaDeGastos = { gastos: [] });
 
-  const gastos = listaDeGastos.gastos;
+  const gastos = listaDeGastos.gastos.filter((gasto) => {
+    return verificarMesDoObjeto(gasto.data);
+  });
 
   gerarItensDeGastos(gastos);
   atualizarGastoTotal();
@@ -235,18 +276,18 @@ const gerarListaDeInvestimentosLocal = () => {
     localStorage.getItem("listaDeInvestimentos")
   );
 
-  if (!listaDeInvestimentos)
-    return (listaDeInvestimentos = { investimentos: [] });
+  if (!listaDeInvestimentos) return { investimentos: [] };
 
-  const investimentos = listaDeInvestimentos.investimentos;
+  const investimentos = listaDeInvestimentos.investimentos.filter(
+    (investimento) => {
+      return verificarMesDoObjeto(investimento.data);
+    }
+  );
 
   gerarItensDeInvestimentos(investimentos);
   atualizarInvestimentoTotal();
 };
 
-gerarListaDeRendasLocal();
-gerarListaDeGastosLocal();
-gerarListaDeInvestimentosLocal();
 atualizarSaldoTotal();
 
 // FILTRO

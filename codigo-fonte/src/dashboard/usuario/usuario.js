@@ -12,6 +12,21 @@ const verificarContaLogada = () => {
 
 verificarContaLogada();
 
+// PEGAR DADOS DO CLIENTE
+
+const getDadosDoCliente = () => {
+  fetch("http://localhost:3000/usuarios")
+    .then((resposta) => resposta.json())
+    .then((usuario) => {
+      const usuarioLocal = localStorage.getItem("usuarioLogado");
+      const usuarioJSON = JSON.parse(usuarioLocal);
+      const idDoUsuario = usuarioJSON.id;
+      const usuarioBanco = usuario[0].id;
+      if (idDoUsuario === usuarioBanco) gerarDados(usuario[0]);
+    })
+    .catch((erro) => console.error("Erro: ", erro));
+};
+
 // ABRIR MENU
 
 const abrirMenu = () => {
@@ -29,20 +44,231 @@ const abrirMenu = () => {
   }
 };
 
-// PEGAR DADOS DO CLIENTE
+// SELECIONAR OPÇÕES
 
-const getDadosDoCliente = () => {
-  fetch("http://localhost:3000/usuarios")
-    .then((resposta) => resposta.json())
-    .then((usuario) => {
-      const usuarioLocal = localStorage.getItem("usuarioLogado");
-      const usuarioJSON = JSON.parse(usuarioLocal);
-      const idDoUsuario = usuarioJSON.id;
-      const usuarioBanco = usuario[0].id;
-      if (idDoUsuario === usuarioBanco) gerarDados(usuario[0]);
-    })
-    .catch((erro) => console.error("Erro: ", erro));
+const buttons = document.querySelectorAll(".nav-links");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttons.forEach((btn) => btn.classList.remove("botaoAtivo"));
+    button.classList.add("botaoAtivo");
+  });
+});
+
+const infoUsuario = document.querySelector(".info-usuario");
+const resumo = document.querySelector(".resumo-mensal");
+
+const selecionarInformacoes = () => {
+  infoUsuario.style.display = "flex";
+  resumo.style.display = "none";
 };
+
+const selecionarResumo = () => {
+  infoUsuario.style.display = "none";
+  resumo.style.display = "flex";
+
+  mostrarOpcaoMes();
+  somarTotalAno();
+};
+
+const somarRendasMes = () => {
+  const select = document.querySelector("#meses");
+  const mesSelecionado = select.options[select.selectedIndex].value.padStart(
+    2,
+    "0"
+  );
+  const rendas = localStorage.getItem("listaDeRendas");
+  const rendasJSON = JSON.parse(rendas);
+
+  if (!rendas) return 0;
+  if (!rendasJSON || !rendasJSON.rendas) return 0;
+
+  const rendasMes = rendasJSON.rendas.filter(
+    (renda) => renda.data.split("/")[1] === mesSelecionado
+  );
+
+  const totalRendas = rendasMes.reduce(
+    (acc, renda) => acc + renda.valorRenda,
+    0
+  );
+
+  return totalRendas.toFixed(2).replace(".", ",");
+};
+
+const somarGastosMes = () => {
+  const select = document.querySelector("#meses");
+  const mesSelecionado = select.options[select.selectedIndex].value.padStart(
+    2,
+    "0"
+  );
+  const gastos = localStorage.getItem("listaDeGastos");
+  const gastosJSON = JSON.parse(gastos);
+
+  if (!gastos) return 0;
+  if (!gastosJSON || !gastosJSON.gastos) return 0;
+
+  const gastosMes = gastosJSON.gastos.filter(
+    (gasto) => gasto.data.split("/")[1] === mesSelecionado
+  );
+  const totalGastos = gastosMes.reduce(
+    (acc, gasto) => acc + gasto.valorGasto,
+    0
+  );
+
+  return totalGastos.toFixed(2).replace(".", ",");
+};
+
+const somarInvestimentosMes = () => {
+  const select = document.querySelector("#meses");
+  const mesSelecionado = select.options[select.selectedIndex].value.padStart(
+    2,
+    "0"
+  );
+  const investimentos = localStorage.getItem("listaDeInvestimentos");
+  const investimentosJSON = JSON.parse(investimentos);
+
+  if (!investimentos) return 0;
+  if (!investimentosJSON || !investimentosJSON.investimentos) return 0;
+
+  const investimentosMes = investimentosJSON.investimentos.filter(
+    (investimento) => investimento.data.split("/")[1] === mesSelecionado
+  );
+  const totalInvestimentos = investimentosMes.reduce(
+    (acc, investimento) => acc + investimento.valorInvestimento,
+    0
+  );
+
+  return totalInvestimentos.toFixed(2).replace(".", ",");
+};
+
+const somarTotalMes = () => {
+  const totalRendas = somarRendasMes();
+  const totalGastos = somarGastosMes();
+  const totalInvestimentos = somarInvestimentosMes();
+
+  const total = parseFloat(totalRendas) - parseFloat(totalGastos);
+  const totalDisponivel = total - parseFloat(totalInvestimentos);
+
+  return totalDisponivel.toFixed(2).replace(".", ",");
+};
+
+const mostrarOpcaoMes = () => {
+  const resumo = document.querySelector(".resumo-mensal");
+  const meses = [
+    { nome: "Janeiro", numero: 1 },
+    { nome: "Fevereiro", numero: 2 },
+    { nome: "Março", numero: 3 },
+    { nome: "Abril", numero: 4 },
+    { nome: "Maio", numero: 5 },
+    { nome: "Junho", numero: 6 },
+    { nome: "Julho", numero: 7 },
+    { nome: "Agosto", numero: 8 },
+    { nome: "Setembro", numero: 9 },
+    { nome: "Outubro", numero: 10 },
+    { nome: "Novembro", numero: 11 },
+    { nome: "Dezembro", numero: 12 },
+  ];
+
+  let options = `<option value="0">Total</option>`;
+  meses.forEach((mes) => {
+    options += `<option value="${mes.numero}">${mes.nome}</option>`;
+  });
+
+  resumo.innerHTML = `
+    <span>Selecione o mês desejado:</span>
+    <select name="meses" id="meses">
+      ${options}
+    </select>
+    <div class="info-geral">
+      <div class="info" id="rendas">
+        <p>Total de rendas:</p>
+        <h4></h4>
+      </div>
+      <div class="info" id="gastos">
+        <p>Total de gastos:</p>
+        <h4></h4>
+      </div>
+      <div class="info" id="investimentos">
+        <p>Investimentos:</p>
+        <h4></h4>
+      </div>
+      <div class="info result" id="total">
+        <p>Disponível:</p>
+        <h4></h4>
+      </div>
+    </div>
+  `;
+
+  const select = document.querySelector("#meses");
+  select.addEventListener("change", selecionarOpcaoMes);
+};
+
+const selecionarOpcaoMes = () => {
+  const select = document.querySelector("#meses");
+  const mesSelecionado = select.options[select.selectedIndex].value;
+
+  if (mesSelecionado !== "0") {
+    const infoRendas = document.querySelector("#rendas h4");
+    infoRendas.innerHTML = `R$ ${somarRendasMes()}`;
+
+    const infoGastos = document.querySelector("#gastos h4");
+    infoGastos.innerHTML = `R$ ${somarGastosMes()}`;
+
+    const infoInvestimentos = document.querySelector("#investimentos h4");
+    infoInvestimentos.innerHTML = `R$ ${somarInvestimentosMes()}`;
+
+    const infoToral = document.querySelector("#total h4");
+    infoToral.innerHTML = `R$ ${somarTotalMes()}`;
+  } else {
+    somarTotalAno();
+  }
+};
+
+const somarTotalAno = () => {
+  const rendas = localStorage.getItem("listaDeRendas");
+  const gastos = localStorage.getItem("listaDeGastos");
+  const investimentos = localStorage.getItem("listaDeInvestimentos");
+
+  if (!rendas || !gastos || !investimentos) return;
+
+  const rendasJSON = JSON.parse(rendas);
+  const gastosJSON = JSON.parse(gastos);
+  const investimentosJSON = JSON.parse(investimentos);
+
+  const rendasTotais = rendasJSON.rendas.reduce(
+    (acc, renda) => acc + renda.valorRenda,
+    0
+  );
+
+  const gastosTotais = gastosJSON.gastos.reduce(
+    (acc, gasto) => acc + gasto.valorGasto,
+    0
+  );
+
+  const investimentosTotais = investimentosJSON.investimentos.reduce(
+    (acc, gasto) => acc + gasto.valorInvestimento,
+    0
+  );
+
+  const totalDisponivel = rendasTotais - gastosTotais - investimentosTotais;
+
+  const returnTotalDisponivel = totalDisponivel.toFixed(2).replace(".", ",");
+
+  const infoRendas = document.querySelector("#rendas h4");
+  infoRendas.innerHTML = `R$ ${rendasTotais}`;
+
+  const infoGastos = document.querySelector("#gastos h4");
+  infoGastos.innerHTML = `R$ ${gastosTotais}`;
+
+  const infoInvestimentos = document.querySelector("#investimentos h4");
+  infoInvestimentos.innerHTML = `R$ ${investimentosTotais}`;
+
+  const infoTotal = document.querySelector("#total h4");
+  infoTotal.innerHTML = `R$ ${returnTotalDisponivel}`;
+};
+
+selecionarResumo();
+somarTotalAno();
 
 // FORMATAR DADOS
 

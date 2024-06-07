@@ -33,6 +33,7 @@ const adicionarGasto = () => {
         categoriaInvestimento: categoriaGasto,
         valorInvestimento: valorGasto,
         tipo,
+        data: new Date().toLocaleDateString(),
       };
 
       postInvestimento(novoInvestimento);
@@ -43,6 +44,7 @@ const adicionarGasto = () => {
         categoriaGasto,
         valorGasto,
         tipo,
+        data: new Date().toLocaleDateString(),
       };
 
       postGasto(novoGasto);
