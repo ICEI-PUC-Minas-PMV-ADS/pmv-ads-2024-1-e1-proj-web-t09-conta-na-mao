@@ -89,6 +89,8 @@
               name="senha"
               id="senha"
               class="inputUser senha"
+              minlength="6"
+              onchange="validarTamanhoSenha()"
               required
             />
             <input
@@ -96,6 +98,7 @@
               name="confSenha"
               id="confSenha"
               class="inputUser confSenha"
+              minlength="6"
               required
             />
           </div>
@@ -137,17 +140,20 @@
               <option value="outro">Outro</option>
             </select>
             <input
-              type="number"
+              type="text"
               name="cpf"
               id="cpf"
               class="inputUser cpf"
+              oninput="validarCPF()"
               required
             />
             <input
-              type="tel"
+              type="text"
               name="telefone"
               id="tel"
               class="inputUser telefone"
+              maxlength="15"
+              oninput="validarTelefone()"
               required
             />
             <input

@@ -128,6 +128,38 @@ const postUsuario = (novoUsuario) => {
     .catch((erro) => console.error("Erro: ", erro));
 };
 
+const validarTamanhoSenha = () => {
+  const senha = document.querySelector(".senha").value;
+
+  if (senha.length < 6) {
+    alert("A senha deve ter no mínimo 6 caracteres");
+    document.querySelector(".senha").value = "";
+    document.querySelector(".confSenha").value = "";
+  }
+};
+
+const validarTelefone = () => {
+  let telefone = document.querySelector(".telefone").value.replace(/\D/g, "");
+
+  if (telefone.length > 0) telefone = "(" + telefone;
+  if (telefone.length > 3)
+    telefone = telefone.substring(0, 3) + ") " + telefone.substring(3);
+  if (telefone.length > 9)
+    telefone = telefone.substring(0, 10) + "-" + telefone.substring(10);
+
+  document.querySelector(".telefone").value = telefone.substring(0, 15);
+};
+
+const validarCPF = () => {
+  let cpf = document.querySelector(".cpf").value.replace(/\D/g, "");
+
+  if (cpf.length > 3) cpf = cpf.substring(0, 3) + "." + cpf.substring(3);
+  if (cpf.length > 7) cpf = cpf.substring(0, 7) + "." + cpf.substring(7);
+  if (cpf.length > 11) cpf = cpf.substring(0, 11) + "-" + cpf.substring(11);
+
+  document.querySelector(".cpf").value = cpf.substring(0, 14);
+};
+
 // ABRIR MENU
 
 const abrirMenu = () => {
