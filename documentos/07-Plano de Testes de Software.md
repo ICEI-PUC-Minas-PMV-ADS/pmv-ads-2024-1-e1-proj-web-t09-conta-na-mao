@@ -54,7 +54,7 @@
 | Responsável pela elaborar do caso de Teste | Angelo A. A. Oliveira|
 
 
-|Caso de Teste    | CT-05- Informações pessoas|
+|Caso de Teste    | CT-05- Informações pessoais|
 |:---|:---|
 | Requisitos Associados | RF- 05 |
 | Objetivo do Teste | Os usuários devem ter uma seção dedicada para editar as informações pessoais que inseriram. |
