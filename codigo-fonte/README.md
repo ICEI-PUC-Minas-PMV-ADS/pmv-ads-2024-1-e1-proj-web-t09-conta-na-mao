@@ -29,7 +29,7 @@ O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um
 
 1. Abrir repositório
 2. Abrir o terminal e digitar `npx json-server --watch codigo-fonte/src/db.json`
-3. Abrir local host na página `http://localhost:3000/`
+3. Abrir com o Liver Server o arquivo `index.html`
 4. Entrar na página de cadastro
 5. Se cadastrar
 6. Fazer o login
