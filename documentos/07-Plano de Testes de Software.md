@@ -1,15 +1,11 @@
 # Plano de Testes de Software
 
-# Plano de Testes de Software
-
 Pré-requisitos: [Especificação do Projeto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/blob/main/documentos/02-Especifica%C3%A7%C3%A3o%20do%20Projeto.md) e [Projeto de Interface](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao/blob/main/documentos/04-Projeto%20de%20Interface.md).
 
 Os requisitos para realização dos testes de software são:
 
 - Site publicado na internet;
 - Navegador da internet: Chrome, Firefox ou Edge.
-
----
 
 ---
 
@@ -23,8 +19,6 @@ Os requisitos para realização dos testes de software são:
 
 ---
 
----
-
 | Caso de Teste                                | CT-02: Verificar o acesso da página Dashboard                                                                                                                        |
 | :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Requisitos Associados                        | RF-002: Os usuários só poderão acessar as informações após efetuarem o login na plataforma.                                                                          |
@@ -32,8 +26,6 @@ Os requisitos para realização dos testes de software são:
 | Passos                                       | 1. Acessar o navegador <br> 2. Informar o endereço do site. <br> 3. Acessar a página Dashboard. <br> 4. Ser redirecionado para a página Login.                       |
 | Critérios de êxito                           | - O usuário deve visualizar uma mensagem de erro indicando que o login é necessário. <br> - O usuário deve ser redirecionado automaticamente para a página de login. |
 | Responsável pela elaboração do caso de Teste | Karina Nunes                                                                                                                                                         |
-
----
 
 ---
 
@@ -47,8 +39,6 @@ Os requisitos para realização dos testes de software são:
 
 ---
 
----
-
 | Caso de Teste                                | CT-04: Categorização de Cupons                                                                                                                                                                                                                                                                         |
 | :------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Requisitos Associados                        | RF-004: Os usuários devem ter a capacidade de categorizar seus cupons conforme desejaram.                                                                                                                                                                                                              |
@@ -56,8 +46,6 @@ Os requisitos para realização dos testes de software são:
 | Passos                                       | 1. Acessar o navegador. <br> 2. Informar o endereço do site. <br> 3. Visualizar a página Ler QR Code. <br> 4. Atribuir uma categoria ao cupom. <br> 5. Verificar se o cupom é armazenado com sucesso. <br> 6. Acessar a página Categoria. <br> 7. Verificar se a categoria foi armazenada com sucesso. |
 | Critérios de êxito                           | - O usuário deve conseguir atribuir categorias aos seus cupons fiscais. <br> - O sistema deve armazenar e exibir as categorias.                                                                                                                                                                        |
 | Responsável pela elaboração do caso de Teste | Karina Nunes                                                                                                                                                                                                                                                                                           |
-
----
 
 ---
 
@@ -71,8 +59,6 @@ Os requisitos para realização dos testes de software são:
 
 ---
 
----
-
 | Caso de Teste                                | CT-06: Visualização de Maiores Gastos                                                                                                                                                                    |
 | :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Requisitos Associados                        | RF-06: Os usuários poderão visualizar onde ocorreram seus maiores gastos.                                                                                                                                |
@@ -80,8 +66,6 @@ Os requisitos para realização dos testes de software são:
 | Passos                                       | 1. Acessar o navegador. <br> 2. Informar o endereço do site. <br> 3. Visualizar a página Dashboard. <br> 4. Selecionar o mês desejado. <br> 5. Verificar se os maiores gastos são exibidos corretamente. |
 | Critérios de êxito                           | - O sistema deve exibir corretamente os gastos do usuário. <br> - Os dados exibidos devem estar corretos e atualizados de acordo com as transações dos usuários.                                         |
 | Responsável pela elaboração do caso de Teste | Karina Nunes                                                                                                                                                                                             |
-
----
 
 ---
 
