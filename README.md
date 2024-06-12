@@ -11,7 +11,6 @@ Nosso projeto tem como objetivo criar uma plataforma em que jovens adultos possa
 ## Integrantes
 
 - Angelo Alvares de Abreu Oliveira
-- Bruno Silvério MAdureira
 - Karina Nunes de Freitas
 - Railan da Silva Leão
 
