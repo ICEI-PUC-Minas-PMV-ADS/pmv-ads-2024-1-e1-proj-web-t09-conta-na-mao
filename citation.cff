@@ -1,0 +1,19 @@
+message: Please cite this software using these metadata.
+title: Conta na mão
+authors:
+  - family-names: Nunes de Freitas
+    given-names: Karina
+  - family-names: Alvares de Abreu Oliveira
+    given-names: Angelo
+  - family-names: da Silva Leão
+    given-names: Railan
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Azevedo Nigiri do Carmo
+    given-names: Humberto
+keywords:
+  - Gerenciamento financeiro
+  - Controle de gastos
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t09-conta-na-mao
+version: 1.0.0
+date-released: 2024-04-04
