@@ -291,13 +291,15 @@ const somarTotalAno = () => {
   const returnTotalDisponivel = totalDisponivel.toFixed(2).replace(".", ",");
 
   const infoRendas = document.querySelector("#rendas h4");
-  infoRendas.innerHTML = `R$ ${rendasTotais}`;
+  infoRendas.innerHTML = `R$ ${rendasTotais.toFixed(2).replace(".", ",")}`;
 
   const infoGastos = document.querySelector("#gastos h4");
-  infoGastos.innerHTML = `R$ ${gastosTotais}`;
+  infoGastos.innerHTML = `R$ ${gastosTotais.toFixed(2).replace(".", ",")}`;
 
   const infoInvestimentos = document.querySelector("#investimentos h4");
-  infoInvestimentos.innerHTML = `R$ ${investimentosTotais}`;
+  infoInvestimentos.innerHTML = `R$ ${investimentosTotais
+    .toFixed(2)
+    .replace(".", ",")}`;
 
   const infoTotal = document.querySelector("#total h4");
   infoTotal.innerHTML = `R$ ${returnTotalDisponivel}`;
