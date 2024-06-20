@@ -12,9 +12,46 @@ const verificarContaLogada = () => {
 
 verificarContaLogada();
 
-// PEGAR DADOS DO CLIENTE
+// VERIFICAR DISPONIBILIDADE DO JSON SERVER
 
-const getDadosDoCliente = () => {
+const isJSONServerAvailable = async () => {
+  try {
+    const response = await fetch("http://localhost:3000");
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+};
+
+const usarJSONServer = async () => {
+  const jsonServerDisponivel = await isJSONServerAvailable();
+  if (jsonServerDisponivel) {
+    getDadosDoClienteJSON();
+    selecionarResumo();
+  } else {
+    const usuarioLocal = localStorage.getItem("usuarioLogado");
+    const usuarioJSON = JSON.parse(usuarioLocal);
+    gerarDados(usuarioJSON);
+    getDadosDoClienteLocal();
+    selecionarResumo();
+  }
+};
+
+usarJSONServer();
+
+// PEGAS DADOS DO CLIENTE NO LOCAL STORAGE
+
+const getDadosDoClienteLocal = () => {
+  const usuario = localStorage.getItem("usuarioLogado");
+  const usuarioJSON = JSON.parse(usuario);
+  if (!usuarioJSON) gerarMensagemErroEmTela();
+
+  gerarDados(usuarioJSON);
+};
+
+// PEGAR DADOS DO CLIENTE JSON
+
+const getDadosDoClienteJSON = () => {
   fetch("http://localhost:3000/usuarios")
     .then((resposta) => resposta.json())
     .then((usuario) => {
@@ -80,9 +117,6 @@ const somarRendasMes = () => {
   const rendas = localStorage.getItem("listaDeRendas");
   const rendasJSON = JSON.parse(rendas);
 
-  if (!rendas) return 0;
-  if (!rendasJSON || !rendasJSON.rendas) return 0;
-
   const rendasMes = rendasJSON.rendas.filter(
     (renda) => renda.data.split("/")[1] === mesSelecionado
   );
@@ -104,9 +138,6 @@ const somarGastosMes = () => {
   const gastos = localStorage.getItem("listaDeGastos");
   const gastosJSON = JSON.parse(gastos);
 
-  if (!gastos) return 0;
-  if (!gastosJSON || !gastosJSON.gastos) return 0;
-
   const gastosMes = gastosJSON.gastos.filter(
     (gasto) => gasto.data.split("/")[1] === mesSelecionado
   );
@@ -126,9 +157,6 @@ const somarInvestimentosMes = () => {
   );
   const investimentos = localStorage.getItem("listaDeInvestimentos");
   const investimentosJSON = JSON.parse(investimentos);
-
-  if (!investimentos) return 0;
-  if (!investimentosJSON || !investimentosJSON.investimentos) return 0;
 
   const investimentosMes = investimentosJSON.investimentos.filter(
     (investimento) => investimento.data.split("/")[1] === mesSelecionado
@@ -225,11 +253,19 @@ const selecionarOpcaoMes = () => {
 };
 
 const somarTotalAno = () => {
-  const rendas = localStorage.getItem("listaDeRendas");
-  const gastos = localStorage.getItem("listaDeGastos");
-  const investimentos = localStorage.getItem("listaDeInvestimentos");
+  let rendas = localStorage.getItem("listaDeRendas");
+  let gastos = localStorage.getItem("listaDeGastos");
+  let investimentos = localStorage.getItem("listaDeInvestimentos");
 
-  if (!rendas || !gastos || !investimentos) return;
+  if (!rendas)
+    localStorage.setItem("listaDeRendas", JSON.stringify({ rendas: [] }));
+  if (!gastos)
+    localStorage.setItem("listaDeGastos", JSON.stringify({ gastos: [] }));
+  if (!investimentos)
+    localStorage.setItem(
+      "listaDeInvestimentos",
+      JSON.stringify({ investimentos: [] })
+    );
 
   const rendasJSON = JSON.parse(rendas);
   const gastosJSON = JSON.parse(gastos);
@@ -267,9 +303,6 @@ const somarTotalAno = () => {
   infoTotal.innerHTML = `R$ ${returnTotalDisponivel}`;
 };
 
-selecionarResumo();
-somarTotalAno();
-
 // FORMATAR DADOS
 
 const formatarData = (data) => {
@@ -305,21 +338,6 @@ const gerarMensagemErroEmTela = () => {
   usuarioBotoes.innerHTML = `<button class="botao-secundario" onclick="window.location.href = '../../index.html'">Voltar a página principal</button>`;
 };
 
-getDadosDoCliente();
-
-// PEGAS DADOS DO CLIENTE NO LOCAL STORAGE
-
-const dadosDoClienteLocal = () => {
-  const usuario = localStorage.getItem("usuarioLogado");
-  const usuarioJSON = JSON.parse(usuario);
-
-  if (!usuarioJSON) gerarMensagemErroEmTela();
-
-  gerarDados(usuarioJSON);
-};
-
-dadosDoClienteLocal();
-
 // MUDAR SENHA
 
 const mudarSenha = () => {
@@ -348,3 +366,5 @@ const excluirUsuarioDoBanco = (id) => {
     .then(console.log("Usuário excluído."))
     .catch((erro) => console.error("Erro: ", erro));
 };
+
+somarTotalAno();
