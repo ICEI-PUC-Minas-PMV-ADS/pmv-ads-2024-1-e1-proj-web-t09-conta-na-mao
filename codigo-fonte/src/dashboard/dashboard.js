@@ -1,49 +1,18 @@
-// ACESSO RESTRITO
-
-const verificarContaLogada = () => {
-  const usuarioLogado = localStorage.getItem("usuarioLogado");
-  if (!usuarioLogado || usuarioLogado === "{}") {
-    alert(
-      "Acesso restrito! Você precisa estar logado para acessar essa página!"
-    );
-    window.location.href = "../login/login.html";
-  }
-};
-
-verificarContaLogada();
-
-// ABRIR MENU
-
-const abrirMenu = () => {
-  const menuLateral = document.querySelector(".menu-lateral");
-  const menuIcone = document.querySelector(".icon-menu-principal");
-
-  if (menuLateral.classList.contains("menu-aberto")) {
-    menuLateral.classList.remove("menu-aberto");
-    menuLateral.classList.add("menu-fechado");
-    menuIcone.style.display = "block";
-  } else {
-    menuLateral.classList.remove("menu-fechado");
-    menuLateral.classList.add("menu-aberto");
-    menuIcone.style.display = "none";
-  }
-};
-
 // VERIFICAR DISPONIBILIDADE DO JSON SERVER
 
-const isJSONServerAvailable = async () => {
+const verificarDisponibilidadeDoJSONServer = async () => {
   try {
     const response = await fetch("http://localhost:3000");
     return response.ok;
   } catch (error) {
-    console.error("JSON Server desconectado", error);
+    console.error("JSON Server desconectado");
     return false;
   }
 };
 
-const usarJSONServer = async () => {
-  const jsonServerDisponivel = await isJSONServerAvailable();
-  if (jsonServerDisponivel) {
+const verificarJSONServer = async () => {
+  const JSONServerDisponivel = await verificarDisponibilidadeDoJSONServer();
+  if (JSONServerDisponivel) {
     getListaDeRendas();
     getListaDeGastos();
     getListaDeInvestimentos();
@@ -55,9 +24,9 @@ const usarJSONServer = async () => {
   }
 };
 
-usarJSONServer();
+verificarJSONServer();
 
-// PEGAR DADOS NO BANCO DE DADOS
+// PEGAR DADOS NO JSON
 
 const getListaDeRendas = () => {
   fetch("http://localhost:3000/listaDeRendas")
@@ -105,9 +74,8 @@ const gerarItensDeRendas = (renda) => {
       conta.categoriaRenda
     }</span>
         </div>
-        <span class="item-valor renda-valor">R$ ${parseFloat(conta.valorRenda)
-          .toFixed(2)
-          .replace(".", ",")}</span>
+        <span class="item-valor renda-valor">${formatarValor(conta.valorRenda)}
+        </span>
       </div>
     `;
   });
@@ -125,12 +93,9 @@ const gerarItensDeGastos = (gasto) => {
       conta.categoriaGasto
     }</span>
         </div>
-          <span class="item-valor gasto-valor">- R$ ${parseFloat(
+          <span class="item-valor gasto-valor">- ${formatarValor(
             conta.valorGasto
-          )
-            .toFixed(2)
-            .replace(".", ",")}
-          </span>
+          )}
       </div>
     `;
   });
@@ -148,11 +113,9 @@ const gerarItensDeInvestimentos = (investimento) => {
       conta.categoriaInvestimento
     }</span>
         </div>
-          <span class="item-valor investimento-valor">- R$ ${parseFloat(
+          <span class="item-valor investimento-valor">- ${formatarValor(
             conta.valorInvestimento
-          )
-            .toFixed(2)
-            .replace(".", ",")}
+          )}
           </span>
       </div>
     `;
@@ -165,13 +128,11 @@ const atualizarRendaTotal = () => {
   let totalRenda = document.querySelector("#rendas h4");
 
   valoresRenda.forEach((valorRenda) => {
-    valorRenda = parseFloat(
-      valorRenda.textContent.replace("R$ ", "").replace(",", ".")
-    );
+    valorRenda = formatarValorParaJSON(valorRenda.textContent);
     saldoRendas += valorRenda;
   });
 
-  totalRenda.textContent = `R$ ${saldoRendas.toFixed(2).replace(".", ",")}`;
+  totalRenda.textContent = formatarValor(saldoRendas);
 
   return saldoRendas;
 };
@@ -182,13 +143,11 @@ const atualizarGastoTotal = () => {
   let totalGasto = document.querySelector("#gastos h4");
 
   valoresGasto.forEach((valorGasto) => {
-    valorGasto = parseFloat(
-      valorGasto.textContent.replace("- R$ ", "").replace(",", ".")
-    );
+    valorGasto = formatarValorNegativoParaJSON(valorGasto.textContent);
     saldoGastos += valorGasto;
   });
 
-  totalGasto.textContent = `R$ ${saldoGastos.toFixed(2).replace(".", ",")}`;
+  totalGasto.textContent = formatarValor(saldoGastos);
 
   return saldoGastos;
 };
@@ -199,15 +158,13 @@ const atualizarInvestimentoTotal = () => {
   let totalInvestimento = document.querySelector("#investimentos h4");
 
   valoresInvestimento.forEach((valorInvestimento) => {
-    valorInvestimento = parseFloat(
-      valorInvestimento.textContent.replace("- R$ ", "").replace(",", ".")
+    valorInvestimento = formatarValorNegativoParaJSON(
+      valorInvestimento.textContent
     );
     saldoInvestimentos += valorInvestimento;
   });
 
-  totalInvestimento.textContent = `R$ ${saldoInvestimentos
-    .toFixed(2)
-    .replace(".", ",")}`;
+  totalInvestimento.textContent = formatarValor(saldoInvestimentos);
 
   return saldoInvestimentos;
 };
@@ -219,7 +176,7 @@ const atualizarSaldoTotal = () => {
   let total = document.querySelector("#total h4");
   let saldoTotal = totalRendas - (totalGastos + totalInvestimentos);
 
-  total.innerText = `R$ ${saldoTotal.toFixed(2).replace(".", ",")}`;
+  total.innerText = formatarValor(saldoTotal);
 
   if (saldoTotal > 0) {
     total.classList.add("disponivel");
