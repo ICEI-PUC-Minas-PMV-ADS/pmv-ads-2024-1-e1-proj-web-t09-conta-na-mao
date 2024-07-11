@@ -1,17 +1,3 @@
-// ACESSO RESTRITO
-
-const verificarContaLogada = () => {
-  const usuarioLogado = localStorage.getItem("usuarioLogado");
-  if (!usuarioLogado || usuarioLogado === "{}") {
-    alert(
-      "Acesso restrito! Você precisa estar logado para acessar essa página!"
-    );
-    window.location.href = "../../login/login.html";
-  }
-};
-
-verificarContaLogada();
-
 // VERIFICAR DISPONIBILIDADE DO JSON SERVER
 
 const isJSONServerAvailable = async () => {
@@ -61,24 +47,7 @@ const getDadosDoClienteJSON = () => {
       const usuarioBanco = usuario[0].id;
       if (idDoUsuario === usuarioBanco) gerarDados(usuario[0]);
     })
-    .catch((erro) => console.error("Erro: ", erro));
-};
-
-// ABRIR MENU
-
-const abrirMenu = () => {
-  const menuLateral = document.querySelector(".menu-lateral");
-  const menuIcone = document.querySelector(".icon-menu-principal");
-
-  if (menuLateral.classList.contains("menu-aberto")) {
-    menuLateral.classList.remove("menu-aberto");
-    menuLateral.classList.add("menu-fechado");
-    menuIcone.style.display = "block";
-  } else {
-    menuLateral.classList.remove("menu-fechado");
-    menuLateral.classList.add("menu-aberto");
-    menuIcone.style.display = "none";
-  }
+    .catch((erro) => console.error("Erro ao acessar JSON Server", erro));
 };
 
 // SELECIONAR OPÇÕES
@@ -126,7 +95,7 @@ const somarRendasMes = () => {
     0
   );
 
-  return totalRendas.toFixed(2).replace(".", ",");
+  return formatarValor(totalRendas);
 };
 
 const somarGastosMes = () => {
@@ -146,7 +115,7 @@ const somarGastosMes = () => {
     0
   );
 
-  return totalGastos.toFixed(2).replace(".", ",");
+  return formatarValor(totalGastos);
 };
 
 const somarInvestimentosMes = () => {
@@ -166,7 +135,7 @@ const somarInvestimentosMes = () => {
     0
   );
 
-  return totalInvestimentos.toFixed(2).replace(".", ",");
+  return formatarValor(totalInvestimentos);
 };
 
 const somarTotalMes = () => {
@@ -174,10 +143,11 @@ const somarTotalMes = () => {
   const totalGastos = somarGastosMes();
   const totalInvestimentos = somarInvestimentosMes();
 
-  const total = parseFloat(totalRendas) - parseFloat(totalGastos);
-  const totalDisponivel = total - parseFloat(totalInvestimentos);
+  const total =
+    formatarValorParaJSON(totalRendas) - formatarValorParaJSON(totalGastos);
+  const totalDisponivel = total - formatarValorParaJSON(totalInvestimentos);
 
-  return totalDisponivel.toFixed(2).replace(".", ",");
+  return formatarValor(totalDisponivel);
 };
 
 const mostrarOpcaoMes = () => {
@@ -237,16 +207,16 @@ const selecionarOpcaoMes = () => {
 
   if (mesSelecionado !== "0") {
     const infoRendas = document.querySelector("#rendas h4");
-    infoRendas.innerHTML = `R$ ${somarRendasMes()}`;
+    infoRendas.innerHTML = somarRendasMes();
 
     const infoGastos = document.querySelector("#gastos h4");
-    infoGastos.innerHTML = `R$ ${somarGastosMes()}`;
+    infoGastos.innerHTML = somarGastosMes();
 
     const infoInvestimentos = document.querySelector("#investimentos h4");
-    infoInvestimentos.innerHTML = `R$ ${somarInvestimentosMes()}`;
+    infoInvestimentos.innerHTML = somarInvestimentosMes();
 
     const infoToral = document.querySelector("#total h4");
-    infoToral.innerHTML = `R$ ${somarTotalMes()}`;
+    infoToral.innerHTML = somarTotalMes();
   } else {
     somarTotalAno();
   }
@@ -291,18 +261,16 @@ const somarTotalAno = () => {
   const returnTotalDisponivel = totalDisponivel.toFixed(2).replace(".", ",");
 
   const infoRendas = document.querySelector("#rendas h4");
-  infoRendas.innerHTML = `R$ ${rendasTotais.toFixed(2).replace(".", ",")}`;
+  infoRendas.innerHTML = formatarValor(rendasTotais);
 
   const infoGastos = document.querySelector("#gastos h4");
-  infoGastos.innerHTML = `R$ ${gastosTotais.toFixed(2).replace(".", ",")}`;
+  infoGastos.innerHTML = formatarValor(gastosTotais);
 
   const infoInvestimentos = document.querySelector("#investimentos h4");
-  infoInvestimentos.innerHTML = `R$ ${investimentosTotais
-    .toFixed(2)
-    .replace(".", ",")}`;
+  infoInvestimentos.innerHTML = formatarValor(investimentosTotais);
 
   const infoTotal = document.querySelector("#total h4");
-  infoTotal.innerHTML = `R$ ${returnTotalDisponivel}`;
+  infoTotal.innerHTML = formatarValor(returnTotalDisponivel);
 };
 
 // FORMATAR DADOS

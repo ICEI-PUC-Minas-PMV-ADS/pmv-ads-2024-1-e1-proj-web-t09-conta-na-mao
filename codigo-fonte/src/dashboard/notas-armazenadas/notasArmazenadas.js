@@ -1,34 +1,3 @@
-// ACESSO RESTRITO
-
-const verificarContaLogada = () => {
-  const usuarioLogado = localStorage.getItem("usuarioLogado");
-  if (!usuarioLogado || usuarioLogado === "{}") {
-    alert(
-      "Acesso restrito! Você precisa estar logado para acessar essa página!"
-    );
-    window.location.href = "../../login/login.html";
-  }
-};
-
-verificarContaLogada();
-
-// ABRIR MENU
-
-const abrirMenu = () => {
-  const menuLateral = document.querySelector(".menu-lateral");
-  const menuIcone = document.querySelector(".icon-menu-principal");
-
-  if (menuLateral.classList.contains("menu-aberto")) {
-    menuLateral.classList.remove("menu-aberto");
-    menuLateral.classList.add("menu-fechado");
-    menuIcone.style.display = "block";
-  } else {
-    menuLateral.classList.remove("menu-fechado");
-    menuLateral.classList.add("menu-aberto");
-    menuIcone.style.display = "none";
-  }
-};
-
 // PEGAR DADOS NO BANCO DE DADOS
 
 const getListaDeGastos = () => {
@@ -37,7 +6,7 @@ const getListaDeGastos = () => {
     .then((gasto) => {
       gerarItensDeGastos(gasto);
     })
-    .catch((erro) => console.error("Erro: ", erro));
+    .catch((erro) => console.error("Erro ao acessar JSON Server", erro));
 };
 
 const gerarItensDeGastos = (gasto) => {
@@ -52,9 +21,7 @@ const gerarItensDeGastos = (gasto) => {
       conta.categoriaGasto
     }</span>
       </div>
-      <span class="item-valor gasto-valor">- R$ ${parseFloat(conta.valorGasto)
-        .toFixed(2)
-        .replace(".", ",")}
+      <span class="item-valor gasto-valor">- ${formatarValor(conta.valorGasto)}
       </span>
       </div>
       `;
@@ -83,8 +50,12 @@ const semResultado = document.querySelector(".sem-resultado");
 const filtrarCategoria = (categoria) => {
   const variaveis = document.querySelectorAll(".variavel");
   let categoriaEncontrada = false;
+  const mostrarTodasCategorias =
+    categoria === "" ||
+    categoria.toLowerCase() === "todos" ||
+    categoria.toLowerCase() === "todas";
 
-  if (categoria === "" || categoria === "Todos") {
+  if (mostrarTodasCategorias) {
     variaveis.forEach((variavel) => {
       variavel.style.display = "flex";
     });
@@ -102,6 +73,7 @@ const filtrarCategoria = (categoria) => {
     }
   });
 
+  filtro.value = "";
   return categoriaEncontrada;
 };
 

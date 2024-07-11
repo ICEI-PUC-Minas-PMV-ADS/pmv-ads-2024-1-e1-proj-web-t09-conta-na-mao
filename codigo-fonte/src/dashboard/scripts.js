@@ -40,7 +40,7 @@ const formatarValor = (valor) => {
 };
 
 const formatarValorParaJSON = (valor) => {
-  return `${parseFloat(valor.replace("R$ ", "").replace(",", "."))}`;
+  return parseFloat(valor.replace("R$ ", "").replace(",", "."));
 };
 
 const formatarValorNegativoParaJSON = (valor) => {

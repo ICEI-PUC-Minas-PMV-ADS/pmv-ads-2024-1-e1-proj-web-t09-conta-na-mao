@@ -257,8 +257,12 @@ const semResultado = document.querySelector(".sem-resultado");
 const filtrarCategoria = (categoria) => {
   const variaveis = document.querySelectorAll(".variavel");
   let categoriaEncontrada = false;
+  const mostrarTodasCategorias =
+    categoria === "" ||
+    categoria.toLowerCase() === "todos" ||
+    categoria.toLowerCase() === "todas";
 
-  if (categoria === "" || categoria === "Todos") {
+  if (mostrarTodasCategorias) {
     variaveis.forEach((variavel) => {
       variavel.style.display = "flex";
     });
@@ -276,6 +280,7 @@ const filtrarCategoria = (categoria) => {
     }
   });
 
+  filtro.value = "";
   return categoriaEncontrada;
 };
 

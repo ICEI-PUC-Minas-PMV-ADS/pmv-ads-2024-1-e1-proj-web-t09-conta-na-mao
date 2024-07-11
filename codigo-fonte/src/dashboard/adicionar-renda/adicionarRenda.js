@@ -1,17 +1,3 @@
-// ACESSO RESTRITO
-
-const verificarContaLogada = () => {
-  const usuarioLogado = localStorage.getItem("usuarioLogado");
-  if (!usuarioLogado || usuarioLogado === "{}") {
-    alert(
-      "Acesso restrito! Você precisa estar logado para acessar essa página!"
-    );
-    window.location.href = "../../login/login.html";
-  }
-};
-
-verificarContaLogada();
-
 const adicionarRenda = () => {
   let nomeRenda = document.getElementById("renda").value;
   let categoriaRenda = document.getElementById("categoria").value;
@@ -22,7 +8,7 @@ const adicionarRenda = () => {
   let mensagemEnvio = document.getElementById("mensagemEnvio");
 
   if (verificarCadastro) {
-    valorRenda = parseFloat(valorRenda.replace("R$ ", "").replace(",", "."));
+    valorRenda = formatarValorParaJSON(valorRenda);
 
     let novaRenda = {
       nomeRenda,
@@ -48,8 +34,7 @@ const tratarValorInput = () => {
     if (input.value === "" || input.value === "R$ ") {
       input.value = "R$ ";
     } else {
-      let valor = parseFloat(input.value.replace("R$ ", ""));
-      input.value = "R$ " + valor.toFixed(2).replace(".", ",");
+      input.value = formatarValor(input.value);
     }
   });
 };
@@ -74,24 +59,7 @@ const postRenda = (novaRenda) => {
     .then((novaRenda) => {
       adicionarListaDeRendas(novaRenda);
     })
-    .catch((erro) => console.error("Erro: ", erro));
+    .catch((erro) => console.error("Erro ao enviar para JSON Server", erro));
 };
 
 tratarValorInput();
-
-// ABRIR MENU
-
-const abrirMenu = () => {
-  const menuLateral = document.querySelector(".menu-lateral");
-  const menuIcone = document.querySelector(".icon-menu-principal");
-
-  if (menuLateral.classList.contains("menu-aberto")) {
-    menuLateral.classList.remove("menu-aberto");
-    menuLateral.classList.add("menu-fechado");
-    menuIcone.style.display = "block";
-  } else {
-    menuLateral.classList.remove("menu-fechado");
-    menuLateral.classList.add("menu-aberto");
-    menuIcone.style.display = "none";
-  }
-};

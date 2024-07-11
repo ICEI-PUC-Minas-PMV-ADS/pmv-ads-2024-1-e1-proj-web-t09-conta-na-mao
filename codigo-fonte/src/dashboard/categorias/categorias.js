@@ -1,37 +1,6 @@
-// ACESSO RESTRITO
-
-const verificarContaLogada = () => {
-  const usuarioLogado = localStorage.getItem("usuarioLogado");
-  if (!usuarioLogado || usuarioLogado === "{}") {
-    alert(
-      "Acesso restrito! Você precisa estar logado para acessar essa página!"
-    );
-    window.location.href = "../../login/login.html";
-  }
-};
-
-verificarContaLogada();
-
-// ABRIR MENU
-
-const abrirMenu = () => {
-  const menuLateral = document.querySelector(".menu-lateral");
-  const menuIcone = document.querySelector(".icon-menu-principal");
-
-  if (menuLateral.classList.contains("menu-aberto")) {
-    menuLateral.classList.remove("menu-aberto");
-    menuLateral.classList.add("menu-fechado");
-    menuIcone.style.display = "block";
-  } else {
-    menuLateral.classList.remove("menu-fechado");
-    menuLateral.classList.add("menu-aberto");
-    menuIcone.style.display = "none";
-  }
-};
-
-// PEGAR DADOS NO BANCO DE DADOS
-
 let listaDeTipos = [];
+const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
+const listaDeCategorias = JSON.parse(listaDeCategoriasLocal) || [];
 
 const getListaDeGastos = () => {
   fetch("http://localhost:3000/listaDeGastos")
@@ -40,13 +9,10 @@ const getListaDeGastos = () => {
       lista.forEach((item) => listaDeTipos.push(item.tipo));
       gerarCategorias(listaDeTipos);
     })
-    .catch((erro) => console.error("Erro: ", erro));
+    .catch((erro) => console.error("Erro ao accesar JSON Server", erro));
 };
 
 const gerarListaDeCategorias = (categoria) => {
-  const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
-  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal) || [];
-
   listaDeTipos.push(categoria);
   listaDeCategorias.push(categoria);
   localStorage.setItem("listaDeCategorias", JSON.stringify(listaDeCategorias));
@@ -67,9 +33,6 @@ const gerarTagDeCategoriasLocal = () => {
 
     listaDeTipos.push(gasto.tipo);
   });
-
-  const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
-  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal) || [];
 
   listaDeCategorias.forEach((item) => {
     if (!listaDeTipos.includes(item)) {
@@ -112,12 +75,12 @@ const semResultado = document.querySelector(".sem-resultado");
 const filtrarCategoria = (categoria) => {
   const itemCategoria = document.querySelectorAll(".item-categoria");
   let categoriaEncontrada = false;
-
-  if (
+  const mostrarTodasCategorias =
     categoria === "" ||
     categoria.toLowerCase() === "todos" ||
-    categoria.toLowerCase() === "todas"
-  ) {
+    categoria.toLowerCase() === "todas";
+
+  if (mostrarTodasCategorias) {
     itemCategoria.forEach((variavel) => {
       variavel.style.display = "flex";
     });
@@ -154,37 +117,42 @@ const verificarCategoria = (event) => {
   } else {
     semResultado.style.display = "none";
   }
+
+  filtro.value = "";
 };
 
 // ADICIONAR CATEGORIA
 
 const adicionarCategoria = () => {
   event.preventDefault();
-  const categoriaInput = document.querySelector(".input-adicionar").value;
-  if (!listaDeTipos.includes(categoriaInput)) {
-    listaDeTipos.push(categoriaInput);
+  const categoriaInput = document.querySelector(".input-adicionar");
+  const categoriaValor = categoriaInput.value;
+
+  if (!listaDeTipos.includes(categoriaValor)) {
+    listaDeTipos.push(categoriaValor);
     gerarCategorias(listaDeTipos);
-    gerarListaDeCategorias(categoriaInput);
+    gerarListaDeCategorias(categoriaValor);
   }
+  categoriaInput.value = "";
 };
 
 // REMOVER CATEGORIA
 
 const removerCategoria = () => {
   event.preventDefault();
-  const categoriaInput = document.querySelector(".input-remover").value;
-  const index = listaDeTipos.indexOf(categoriaInput);
+  const categoriaInput = document.querySelector(".input-remover");
+  const categoriaValor = categoriaInput.value;
+  const index = listaDeTipos.indexOf(categoriaValor);
+
   if (index > -1) {
     listaDeTipos.splice(index, 1);
     gerarCategorias(listaDeTipos);
-    removerCategoriaLocal(categoriaInput);
+    removerCategoriaLocal(categoriaValor);
   }
+  categoriaInput.value = "";
 };
 
 const removerCategoriaLocal = (categoriaInput) => {
-  const listaDeCategoriasLocal = localStorage.getItem("listaDeCategorias");
-  const listaDeCategorias = JSON.parse(listaDeCategoriasLocal);
-
   const index = listaDeCategorias.indexOf(categoriaInput);
   if (index > -1) {
     listaDeCategorias.splice(index, 1);
