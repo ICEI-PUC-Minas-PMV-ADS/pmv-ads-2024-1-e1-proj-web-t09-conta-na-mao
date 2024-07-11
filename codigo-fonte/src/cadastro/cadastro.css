@@ -20,30 +20,16 @@ html {
   font-size: 16px;
   color: #1e1f24;
 }
-main {
-  padding: 2rem;
-}
+
 .menu {
   background: #f6f9fd;
   width: 100%;
 }
 
-nav {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-ul {
-  list-style: none;
-}
-.logo {
-  font-weight: 700px;
-  font-size: 2rem;
-  line-height: 48px;
+h2 {
   color: #213453;
 }
+
 .menuopcions {
   display: flex;
   flex-direction: row;
@@ -59,87 +45,119 @@ ul {
   align-items: center;
   gap: 1.5rem;
 }
-.hero {
-  width: 100%;
-  background: #f6f9fd;
-  border-radius: 16px;
-  align-items: center;
+
+main {
+  max-width: 1280px;
+  width: 90%;
+  margin-bottom: 60px;
 }
 
 .inputUser {
   border-radius: 0.5rem;
-  max-width: 260px;
+  width: 260px;
   height: 1.5rem;
-  border-color: #88a9dc;
-}
-.primeiraparte {
-  display: flex;
-  gap: 1rem;
-  padding: 2rem;
+  border: 1px solid #88a9dc;
+  padding-left: 6px;
+  outline: none;
 }
 
-.teste {
+.hero {
+  background: #f6f9fd;
+  border-radius: 16px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
-  align-items: end;
-  gap: 0.5rem;
+  gap: 60px;
+  margin-top: 18px;
 }
-.inputbox {
+
+.dados-principais {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
 }
-.segundaparte {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 2rem;
-}
-.teste2 {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 0.5rem;
-}
-.questionario {
+
+.dados-email,
+.dados-senha {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 5px;
+  gap: 18px;
+  max-width: 426px;
+  width: 100%;
 }
+
+.input-label {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.genero,
+.cpf,
+.telefone,
+.dataNascimento,
+.selectOption {
+  width: 174px;
+  padding-left: 6px;
+  outline: none;
+}
+
+.input-select {
+  display: flex;
+  justify-content: right;
+  margin-right: calc(426px - 340px);
+  gap: 20px;
+}
+
+.dados-diversos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.dados-cadastrais {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 430px;
+}
+
+.dados-cadastrais p,
+.area-interesse p {
+  font-size: 18px;
+}
+
+.area-interesse {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 430px;
+}
+
+i {
+  color: #8c3144;
+}
+
+.ofertas {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+}
+
 .selectOption {
   border-radius: 0.5rem;
   width: 10.9rem;
   height: 1.5rem;
   border-color: #88a9dc;
 }
-#data_nascimento {
-  width: 10.9rem;
-}
-.ofertas {
-  font-size: 11px;
-  line-height: 15px;
-}
-#ofertas {
-  width: 11px;
-  height: 11px;
-  border: 1px;
-}
-.description {
-  font-size: 18px;
-  line-height: 27px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 0rem 4rem;
-  gap: 10rem;
-}
 .button {
   display: flex;
   justify-content: flex-end;
-  padding: 1rem 2rem;
 }
 
 .enviar {
@@ -164,38 +182,57 @@ footer {
   gap: 6rem;
   padding: 2rem;
 }
-.sobre {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-}
-.suporte {
-  font-size: 12px;
-}
-.imgdownload {
-  max-width: 15%;
-  align-items: flex-start;
-}
-.imgdownload > figure > img {
-  width: 100px;
-  border-radius: 0.5rem;
-}
-.socialmidia {
-  display: flex;
-  max-width: 10vh;
-  gap: 0.5rem;
-}
-.socialmidia > figure > img {
-  width: 30px;
-  border-radius: 1rem;
+
+@media (max-width: 1120px) {
+  .dados-diversos {
+    flex-direction: column;
+  }
+
+  .dados-principais,
+  .dados-diversos,
+  .dados-cadastrais,
+  .area-interesse {
+    flex-direction: column;
+    align-content: center;
+  }
 }
 
-a,
-a:hover {
-  color: #1e1f24;
+@media (max-width: 620px) {
+  .hero {
+    background-color: transparent;
+    padding: 30px;
+  }
+
+  .input-label,
+  .input-select {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .dados-cadastrais {
+    max-width: 351px;
+  }
+
+  .inputUser {
+    width: 322px;
+  }
+
+  main h2 {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .selectOption {
+    width: 322px;
+  }
 }
 
-.enviar a,
-.enviar a:hover {
-  color: #ffffff;
+@media (max-width: 480px) {
+  .hero {
+    padding: 0;
+  }
+
+  .dados-cadastrais {
+    max-width: 322px;
+  }
 }

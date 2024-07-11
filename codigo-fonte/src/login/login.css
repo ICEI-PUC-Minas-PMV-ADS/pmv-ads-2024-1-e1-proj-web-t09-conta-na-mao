@@ -18,29 +18,27 @@ body {
   align-items: center;
 }
 main {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin: 45px auto 90px auto;
+}
+
+p,
+span {
+  color: #1e1f24;
+  font-size: 12px;
 }
 
 .menu {
   background: #f6f9fd;
   width: 100%;
 }
-nav {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
+
 ul {
   list-style: none;
 }
-.logo {
-  font-weight: 700px;
-  font-size: 2rem;
-  line-height: 48px;
-  color: #213453;
-}
+
 .menuopcions {
   display: flex;
   flex-direction: row;
@@ -59,7 +57,8 @@ ul {
 
 .button {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  width: 100%;
   padding: 1rem 2rem;
 }
 .enviar {
@@ -78,16 +77,23 @@ ul {
 }
 
 .hero {
-  width: 100%;
   background: #f6f9fd;
-  justify-content: center;
+  max-width: 1191px;
+  width: 70vw;
+  border-radius: 16px;
 }
 .herologin {
   display: flex;
+  justify-content: space-around;
 }
 
 .imagem-login {
   max-width: 100%;
+}
+
+h2 {
+  font-size: 24px;
+  color: #213453;
 }
 
 .imagem-login > figure > img {
@@ -104,9 +110,11 @@ ul {
 
 .inputUser {
   border-radius: 0.5rem;
-  max-width: 300px;
-  height: 2rem;
-  border-color: #88a9dc;
+  width: 300px;
+  height: 48px;
+  border: 1px solid #88a9dc;
+  padding-left: 12px;
+  outline: none;
 }
 p {
   font-size: 12px;
@@ -145,19 +153,22 @@ footer {
   border-radius: 1rem;
 }
 
-a,
-a:hover {
-  text-decoration: none;
-  color: #1e1f24;
+@media (max-width: 1040px) {
+  .imagem-login {
+    display: none;
+  }
+
+  .hero {
+    background-color: transparent;
+  }
 }
 
-.enviar a,
-.enviar a:hover {
-  color: #ffffffff;
-}
+@media (max-width: 480px) {
+  main {
+    margin: auto;
+  }
 
-a{
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
+  .formscadastro {
+    padding: 0 0 40px 0;
+  }
 }

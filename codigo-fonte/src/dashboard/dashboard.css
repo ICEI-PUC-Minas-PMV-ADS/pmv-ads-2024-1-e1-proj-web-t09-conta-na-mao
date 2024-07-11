@@ -427,13 +427,14 @@ a {
     font-size: 20px;
   }
 
-  .visao-geral,
+  /* .visao-geral, */
   .menu {
     padding-left: 30px;
   }
 
   .visao-geral {
     min-width: 405px;
+    padding: 40px;
   }
 
   .titulo-pagina {
@@ -451,9 +452,18 @@ a {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 424px) {
   .visao-geral {
     min-width: 395px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .visao-geral {
+    min-width: 365px;
+    padding: 30px;
+    padding-left: 20px;
   }
 }
 

@@ -58,111 +58,122 @@
     <main>
       <h2>Área de Cadastro</h2>
       <section class="hero">
-        <section class="primeiraparte">
-          <div class="teste">
-            <label for="email">E-mail </label>
-            <label for="confEmail">Repetir e-mail</label>
+        <div class="dados-principais">
+          <div class="dados-email">
+            <div class="input-label">
+              <label for="email">E-mail <i>*</i></label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="inputUser email"
+                required
+              />
+            </div>
+            <div class="input-label">
+              <label for="confEmail">Repetir e-mail <i>*</i></label>
+              <input
+                type="email"
+                name="confEmail"
+                id="confEmail"
+                class="inputUser confEmail"
+                required
+              />
+            </div>
           </div>
-          <div class="inputbox">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="inputUser email"
-              required
-            />
-            <input
-              type="email"
-              name="confEmail"
-              id="confEmail"
-              class="inputUser confEmail"
-              required
-            />
+          <div class="dados-senha">
+            <div class="input-label">
+              <label for="senha">Crie uma senha <i>*</i></label>
+              <input
+                type="password"
+                name="senha"
+                id="senha"
+                class="inputUser senha"
+                minlength="6"
+                onchange="validarTamanhoSenha()"
+                required
+              />
+            </div>
+            <div class="input-label">
+              <label for="confSenha">Repetir senha <i>*</i></label>
+              <input
+                type="password"
+                name="confSenha"
+                id="confSenha"
+                class="inputUser confSenha"
+                minlength="6"
+                required
+              />
+            </div>
           </div>
-          <div class="teste">
-            <label for="senha">Crie uma senha</label>
-            <label for="confSenha">Repetir senha</label>
-          </div>
-          <div class="inputbox">
-            <input
-              type="password"
-              name="senha"
-              id="senha"
-              class="inputUser senha"
-              minlength="6"
-              onchange="validarTamanhoSenha()"
-              required
-            />
-            <input
-              type="password"
-              name="confSenha"
-              id="confSenha"
-              class="inputUser confSenha"
-              minlength="6"
-              required
-            />
-          </div>
-        </section>
-        <section>
-          <div class="description">
-            <span><strong>Dados Cadastrais</strong></span>
-            <span><strong>Área de Interesse</strong></span>
-          </div>
-        </section>
-        <section class="segundaparte">
-          <div class="teste2">
-            <label for="nome" id="nome">Nome</label>
-            <label for="sobrenome" id="sobrenome">Sobrenome</label>
-            <label for="genero" id="genero">Gênero</label>
-            <label for="cpf" id="cpf">CPF</label>
-            <label for="tel" id="telefone">Celular</label>
-            <label for="data_nascimento" id="dataNascimento">Nascimento</label>
-          </div>
-          <div class="inputbox">
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              class="inputUser nome"
-              required
-            />
-            <input
-              type="text"
-              name="sobrenome"
-              id="sobrenome"
-              class="inputUser sobrenome"
-              required
-            />
-            <select id="genero" name="genero" class="selectOption genero">
-              <option value="Selecione">Selecione</option>
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-              <option value="outro">Outro</option>
-            </select>
-            <input
-              type="text"
-              name="cpf"
-              id="cpf"
-              class="inputUser cpf"
-              oninput="validarCPF()"
-              required
-            />
-            <input
-              type="text"
-              name="telefone"
-              id="tel"
-              class="inputUser telefone"
-              maxlength="15"
-              oninput="validarTelefone()"
-              required
-            />
-            <input
-              type="date"
-              name="data_nascimento"
-              id="data_nascimento"
-              class="inputUser dataNascimento"
-              required
-            />
+        </div>
+        <div class="dados-diversos">
+          <div class="dados-cadastrais">
+            <p>Dados Cadastrais</p>
+            <div class="input-label">
+              <label for="nome" id="nome">Nome <i>*</i></label>
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                class="inputUser nome"
+                required
+              />
+            </div>
+            <div class="input-label">
+              <label for="sobrenome" id="sobrenome">Sobrenome <i>*</i></label>
+              <input
+                type="text"
+                name="sobrenome"
+                id="sobrenome"
+                class="inputUser sobrenome"
+                required
+              />
+            </div>
+            <div class="input-select">
+              <label for="genero" id="genero">Gênero <i>*</i></label>
+              <select id="genero" name="genero" class="selectOption genero">
+                <option value="Selecione">Selecione</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="input-label">
+              <label for="cpf" id="cpf">CPF <i>*</i></label>
+              <input
+                type="text"
+                name="cpf"
+                id="cpf"
+                class="inputUser cpf input-select"
+                oninput="validarCPF()"
+                required
+              />
+            </div>
+            <div class="input-label">
+              <label for="tel" id="telefone">Celular <i>*</i></label>
+              <input
+                type="text"
+                name="telefone"
+                id="tel"
+                class="inputUser telefone input-select"
+                maxlength="15"
+                oninput="validarTelefone()"
+                required
+              />
+            </div>
+            <div class="input-select">
+              <label for="data_nascimento" id="dataNascimento"
+                >Nascimento <i>*</i></label
+              >
+              <input
+                type="date"
+                name="data_nascimento"
+                id="data_nascimento"
+                class="inputUser dataNascimento"
+                required
+              />
+            </div>
             <div class="ofertas">
               <input type="checkbox" name="ofertas" id="ofertas" />
               <label for="ofertas"
@@ -170,62 +181,57 @@
               >
             </div>
           </div>
-          <div class="questionario">
-            <div class="questionario">
-              <label for="objPrincipal"
-                >Qual é o seu objetivo principal ao usar nosso site?</label
-              >
-              <select
-                id="objPrincipal"
-                name="objPrincipal"
-                class="selectOption objPrincipal"
-              >
-                <option value="Selecione">Selecione</option>
-                <option value="option1">Economizar dinheiro</option>
-                <option value="option2">Estabelecer metas financeiras</option>
-                <option value="option3">
-                  Melhorar a gestão financeira pessoal
-                </option>
-                <option value="option4">
-                  Alcançar a independência financeira
-                </option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-            <div class="questionario">
-              <label for="frequenciaDeUso"
-                >Com que frequência pretende usar o site<br />para monitorar
-                suas finanças?</label
-              >
-              <select
-                id="frequenciaDeUso"
-                name="frequenciaDeUso"
-                class="selectOption frequenciaDeUso"
-              >
-                <option value="Selecione">Selecione</option>
-                <option value="alta">Alta</option>
-                <option value="medio">Médio</option>
-                <option value="baixo">Baixa</option>
-                <option value="outro">Não sei responder</option>
-              </select>
-            </div>
-            <div class="questionario">
-              <label for="indicacaoFinanceira"
-                >Você gostaria de receber dicas de educação financeira<br />através
-                do nosso site?</label
-              >
-              <select
-                id="indicacaoFinanceira"
-                name="indicacaoFinanceira"
-                class="selectOption indicacaoFinanceira"
-              >
-                <option value="Selecione">Selecione</option>
-                <option value="sim">SIM</option>
-                <option value="nao">NÃO</option>
-              </select>
-            </div>
+          <div class="area-interesse">
+            <p>Área de interesse</p>
+            <label for="objPrincipal"
+              >Qual é o seu objetivo principal ao usar nosso site?</label
+            >
+            <select
+              id="objPrincipal"
+              name="objPrincipal"
+              class="selectOption objPrincipal"
+            >
+              <option value="Selecione">Selecione</option>
+              <option value="option1">Economizar dinheiro</option>
+              <option value="option2">Estabelecer metas financeiras</option>
+              <option value="option3">
+                Melhorar a gestão financeira pessoal
+              </option>
+              <option value="option4">
+                Alcançar a independência financeira
+              </option>
+              <option value="outro">Outro</option>
+            </select>
+            <label for="frequenciaDeUso"
+              >Com que frequência pretende usar o site<br />para monitorar suas
+              finanças?</label
+            >
+            <select
+              id="frequenciaDeUso"
+              name="frequenciaDeUso"
+              class="selectOption frequenciaDeUso"
+            >
+              <option value="Selecione">Selecione</option>
+              <option value="alta">Alta</option>
+              <option value="medio">Médio</option>
+              <option value="baixo">Baixa</option>
+              <option value="outro">Não sei responder</option>
+            </select>
+            <label for="indicacaoFinanceira"
+              >Você gostaria de receber dicas de educação financeira<br />através
+              do nosso site?</label
+            >
+            <select
+              id="indicacaoFinanceira"
+              name="indicacaoFinanceira"
+              class="selectOption indicacaoFinanceira"
+            >
+              <option value="Selecione">Selecione</option>
+              <option value="sim">SIM</option>
+              <option value="nao">NÃO</option>
+            </select>
           </div>
-        </section>
+        </div>
         <div class="button">
           <button class="enviar" onclick="cadastrarUsuario()">Enviar</button>
         </div>
@@ -272,6 +278,5 @@
       </div>
     </footer>
     <p class="direitos">Todos os direitos reservados. 2024</p>
-  </body>
   </body>
 </html>
