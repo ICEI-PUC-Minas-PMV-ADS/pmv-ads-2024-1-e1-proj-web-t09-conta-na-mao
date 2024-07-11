@@ -234,7 +234,8 @@ const gerarListaDeInvestimentosLocal = () => {
     localStorage.getItem("listaDeInvestimentos")
   );
 
-  if (!listaDeInvestimentos) return { investimentos: [] };
+  if (!listaDeInvestimentos)
+    return (listaDeInvestimentos = { investimentos: [] });
 
   const investimentos = listaDeInvestimentos.investimentos.filter(
     (investimento) => {

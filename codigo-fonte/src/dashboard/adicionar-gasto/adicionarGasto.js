@@ -11,8 +11,8 @@ const adicionarGasto = () => {
     valorGasto = formatarValorParaJSON(valorGasto);
 
     if (
-      nomeGasto == "investimento".toLowerCase() ||
-      categoriaGasto == "investimento".toLowerCase()
+      nomeGasto.toLowerCase() == "investimento" ||
+      categoriaGasto.toLowerCase() == "investimento"
     ) {
       let novoInvestimento = {
         nomeInvestimento: nomeGasto,
